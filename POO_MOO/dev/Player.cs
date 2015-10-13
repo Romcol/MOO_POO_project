@@ -5,30 +5,34 @@ using System.Text;
 
 namespace dev
 {
-    public class Map
+    public class Player
     {
-
-        public List<Tile> Tiles
+        public string race
         {
             get
             {
                 throw new System.NotImplementedException();
             }
+
+            set
+            {
+            }
+        }
+        public string name
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
             set
             {
             }
         }
 
-        public int size
+        public void getVictoryPoints()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public interface Unit2
+    public interface UnitAPI
     {
         void attack();
 

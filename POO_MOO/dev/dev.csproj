@@ -54,9 +54,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Forest.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameBuilder.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="Plain.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileFactory.cs" />
     <Compile Include="Unit.cs" />

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public interface PlayerAPI
+    public class GameBuilder
     {
     }
 }

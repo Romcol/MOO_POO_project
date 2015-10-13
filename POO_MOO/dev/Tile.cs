@@ -5,7 +5,28 @@ using System.Text;
 
 namespace dev
 {
-    public class Tile
+    public  abstract class Tile
     {
+        public string kind
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+        public List<Unit> Units
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+            set
+            {
+            }
+        }
     }
 }

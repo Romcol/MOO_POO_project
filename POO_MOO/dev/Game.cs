@@ -5,20 +5,9 @@ using System.Text;
 
 namespace dev
 {
-    public abstract class Unit
+    public class Game
     {
-        public int movePoints
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-            set
-            {
-            }
-        }
-
-        public int lifePts
+        public Player Player
         {
             get
             {
@@ -30,7 +19,7 @@ namespace dev
             }
         }
 
-        public int attackPts
+        public Player Player1
         {
             get
             {
@@ -42,7 +31,18 @@ namespace dev
             }
         }
 
-        public int defencePts
+        public int turnsLeft
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+        public bool cheatMode
         {
             get
             {
@@ -54,7 +54,7 @@ namespace dev
             }
         }
 
-        public Tile Tile
+        public Map Map
         {
             get
             {
@@ -66,32 +66,24 @@ namespace dev
             }
         }
 
-        public bool move(Tile tile)
-        {
-            throw new System.NotImplementedException();
-        }
-        public bool attack(Unit unit)
-        {
-            throw new System.NotImplementedException();
-        }
-        public bool canMove(Tile tile)
-        {
-            throw new System.NotImplementedException();
-        }
-        public List<Tile> getPossibleMoves()
+        public void init()
         {
             throw new System.NotImplementedException();
         }
 
-        public bool canAttack(Tile tile)
-        {
-            throw new System.NotImplementedException();
-        }
-        public int getVictoryPoints()
+        public void next()
         {
             throw new System.NotImplementedException();
         }
 
+        public static void save()
+        {
+            throw new System.NotImplementedException();
+        }
 
+        public static void load()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
