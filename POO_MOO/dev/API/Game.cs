@@ -7,5 +7,8 @@ namespace dev
 {
     public interface GameAPI
     {
+        PlayerAPI Player1 { get; set; }
+        PlayerAPI Player2 { get; set; }
+        MapAPI Map { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public class Map
+    public class Map : MapAPI
     {
 
         public List<Tile> Tiles

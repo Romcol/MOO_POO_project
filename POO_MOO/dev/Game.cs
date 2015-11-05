@@ -5,9 +5,9 @@ using System.Text;
 
 namespace dev
 {
-    public class Game
+    public class Game : GameAPI
     {
-        public Player Player
+        public Player Player1
         {
             get
             {
@@ -19,7 +19,7 @@ namespace dev
             }
         }
 
-        public Player Player1
+        public Player Player2
         {
             get
             {
@@ -64,11 +64,6 @@ namespace dev
             set
             {
             }
-        }
-
-        public void init()
-        {
-            throw new System.NotImplementedException();
         }
 
         public void next()

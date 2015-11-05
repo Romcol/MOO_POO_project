@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public abstract class Unit
+    public abstract class Unit : UnitAPI
     {
         public int movePoints
         {

@@ -5,9 +5,21 @@ using System.Text;
 
 namespace dev
 {
-    public class TileFactory
+    public class MapTilesFactory
     {
-        public Tile createTile()
+        public MapStrategy MapStrategy
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public Tile createMap(int size)
         {
             throw new System.NotImplementedException();
         }

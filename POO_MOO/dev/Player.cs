@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public class Player
+    public class Player : PlayerAPI
     {
         public string race
         {
@@ -19,6 +19,18 @@ namespace dev
             }
         }
         public string name
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public List<Unit> Units
         {
             get
             {

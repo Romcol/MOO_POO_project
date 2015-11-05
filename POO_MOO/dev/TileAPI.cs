@@ -5,12 +5,8 @@ using System.Text;
 
 namespace dev
 {
-    public interface UnitAPI
+    public interface TileAPI
     {
-        TileAPI Tile { get; set; }
-
-        void attack();
-
-        void move();
+        UnitAPI Unit { get; set; }
     }
 }

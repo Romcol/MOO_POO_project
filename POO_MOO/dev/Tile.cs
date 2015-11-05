@@ -5,19 +5,8 @@ using System.Text;
 
 namespace dev
 {
-    public  abstract class Tile
+    public abstract class Tile : TileAPI
     {
-        public string kind
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
         public List<Unit> Units
         {
             get

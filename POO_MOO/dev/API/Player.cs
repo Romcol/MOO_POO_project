@@ -7,5 +7,6 @@ namespace dev
 {
     public interface PlayerAPI
     {
+        UnitAPI UnitAPI { get; set; }
     }
 }

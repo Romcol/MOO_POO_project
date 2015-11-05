@@ -7,5 +7,9 @@ namespace dev
 {
     public class GameBuilder
     {
+        public void buildGame()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
