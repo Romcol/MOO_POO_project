@@ -57,10 +57,16 @@
     <Compile Include="Game.cs" />
     <Compile Include="GameBuilder.cs" />
     <Compile Include="Map.cs" />
+    <Compile Include="Map10.cs" />
+    <Compile Include="Map14.cs" />
+    <Compile Include="Map6.cs" />
+    <Compile Include="MapAPI.cs" />
+    <Compile Include="MapStrategy.cs" />
     <Compile Include="Mountain.cs" />
     <Compile Include="Plain.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Tile.cs" />
+    <Compile Include="TileAPI.cs" />
     <Compile Include="TileFactory.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="UnitFactory.cs" />

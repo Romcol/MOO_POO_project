@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.875, 8.5" name="UMLClassDiagram1">
+  <logicalClassDesignerModelMoniker Id="9ea90e76-32d7-4f54-b9a3-593f8e913a3c" />
+  <nestedChildShapes>
+    <packageShape Id="deea8602-f52a-477b-93d5-1ca6d9596a13" absoluteBounds="1.125, 1.25, 5, 4.5" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="fd226de7-82f7-4427-bea1-5dfda8089c5f" LastKnownName="API" />
+    </packageShape>
+    <packageShape Id="59fcc998-6fdf-4b82-b7a7-5bba3100c983" absoluteBounds="6.75, 1.25, 4.875, 4.5" customColor="255, 249, 230" hideQualifiedName="false">
+      <packageMoniker Id="6981b45e-d34b-4eb2-95b1-0031233bfae8" LastKnownName="Implem" />
+    </packageShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>
