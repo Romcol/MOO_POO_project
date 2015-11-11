@@ -66,6 +66,18 @@ namespace dev
             }
         }
 
+        public int currentPlayer
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
         public void next()
         {
             throw new System.NotImplementedException();

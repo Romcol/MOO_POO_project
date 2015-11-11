@@ -8,7 +8,7 @@ namespace dev
     public class UnitFactory
     {
         
-        public Unit invoke(string race)
+        public Unit createUnit(string race)
         {
             throw new System.NotImplementedException();
         }

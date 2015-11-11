@@ -7,5 +7,6 @@ namespace dev
 {
     public interface MapStrategy
     {
+        Map createMap();
     }
 }

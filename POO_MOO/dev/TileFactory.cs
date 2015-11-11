@@ -19,7 +19,7 @@ namespace dev
             }
         }
 
-        public Tile createMap(int size)
+        public dev.Map createMap(int size)
         {
             throw new System.NotImplementedException();
         }
