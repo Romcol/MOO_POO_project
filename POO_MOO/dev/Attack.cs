@@ -31,15 +31,5 @@ namespace dev
             {
             }
         }
-
-        public void cando()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void doit()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

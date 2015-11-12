@@ -66,7 +66,7 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Orientation="Bottom" Position="0.627" />
+    <Lollipop Position="0.565" />
   </Class>
   <Class Name="dev.Plain">
     <Position X="23.75" Y="15" Width="1.5" />
@@ -157,7 +157,7 @@
       <HashCode>AAAAAEAAAAAAAAAAAgAAAAAAAAAkAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Orientation="Left" Position="0.668" />
+    <Lollipop Position="0.524" />
   </Class>
   <Class Name="dev.Game">
     <Position X="16.25" Y="8.25" Width="2.5" />
@@ -204,6 +204,7 @@
       <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>Action.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="dev.Move">
     <Position X="20.5" Y="2.5" Width="2" />
@@ -216,7 +217,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAABgAgAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAACAA=</HashCode>
       <FileName>Move.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -224,7 +225,7 @@
   <Class Name="dev.Attack">
     <Position X="23" Y="2.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Attack.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -245,18 +246,27 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="dev.Turn">
-    <Position X="17.75" Y="0.75" Width="1.5" />
+    <Position X="17.25" Y="0.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAAAABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAQAAAAACCAAAAAAAAA=</HashCode>
       <FileName>Turn.cs</FileName>
     </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="listAction" />
-    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="dev.GameAPI">
     <Position X="7.75" Y="8.75" Width="1.5" />
+    <AssociationLine Name="Player2" Type="dev.PlayerAPI" ManuallyRouted="true">
+      <Path>
+        <Point X="8" Y="8.75" />
+        <Point X="8" Y="8.626" />
+        <Point X="8.354" Y="8.626" Type="JumpStart" />
+        <Point X="8.521" Y="8.626" Type="JumpEnd" />
+        <Point X="9.394" Y="8.626" />
+        <Point X="9.394" Y="8.373" />
+        <Point X="9" Y="8.373" />
+        <Point X="9" Y="7.609" />
+      </Path>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAJCAAAAAwAAAAAAAAAAAACAAAAAAAAIAAAA=</HashCode>
       <FileName>API\Game.cs</FileName>
@@ -315,19 +325,19 @@
   <Interface Name="dev.ActionAPI">
     <Position X="10.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>ActionAPI.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="dev.TurnAPI">
     <Position X="7.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
+      <HashCode>ACAAAAAEIAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>TurnAPI.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="ActionAPI" />
-    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Actions" />
+    </ShowAsCollectionAssociation>
   </Interface>
   <Interface Name="dev.Undoable">
     <Position X="24" Y="0.5" Width="1.5" />

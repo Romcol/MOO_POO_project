@@ -7,19 +7,7 @@ namespace dev
 {
     public class Turn:TurnAPI
     {
-        public List<Action> listAction
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        ActionAPI TurnAPI.ActionAPI
+        List<ActionAPI> TurnAPI.Actions
         {
             get
             {
@@ -32,9 +20,19 @@ namespace dev
             }
         }
 
-        public void addAction(Action a)
+        void TurnAPI.addAction(Action a)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        void TurnAPI.init()
+        {
+            throw new NotImplementedException();
+        }
+
+        void TurnAPI.undo()
+        {
+            throw new NotImplementedException();
         }
     }
 }
