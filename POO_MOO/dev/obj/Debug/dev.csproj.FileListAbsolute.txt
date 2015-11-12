@@ -11,3 +11,11 @@ H:\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.Properties.Resources.resources
 H:\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.csproj.GenerateResource.Cache
 H:\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.exe
 H:\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.pdb
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.csprojResolveAssemblyReference.cache
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\MainWindow.baml
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\MainWindow.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\App.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\dev_MarkupCompile.cache
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.g.resources
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.Properties.Resources.resources
+C:\Users\Romcol\MOO_POO_project\POO_MOO\dev\obj\Debug\dev.csproj.GenerateResource.Cache
