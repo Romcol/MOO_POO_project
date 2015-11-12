@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public class Turn
+    public class Turn:TurnAPI
     {
         public List<Action> listAction
         {
@@ -16,6 +16,19 @@ namespace dev
 
             set
             {
+            }
+        }
+
+        ActionAPI TurnAPI.ActionAPI
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
             }
         }
 

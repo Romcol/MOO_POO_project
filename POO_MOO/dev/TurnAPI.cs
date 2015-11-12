@@ -7,5 +7,6 @@ namespace dev
 {
     public interface TurnAPI
     {
+        ActionAPI ActionAPI { get; set; }
     }
 }

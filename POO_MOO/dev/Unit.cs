@@ -90,14 +90,11 @@ namespace dev
             }
         }
 
-        public abstract bool move(int x, int y);
+        public TileAPI Tile { get; set; }
 
         public abstract bool attack(Unit unit);
-
         public abstract List<Tile> getPossibleMoves();
-
         public abstract int getVictoryPoints();
-
-
+        public abstract bool move(int x, int y);
     }
 }

@@ -94,19 +94,32 @@ namespace dev
             }
         }
 
-        public void next()
+        TurnAPI GameAPI.TurnAPI
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
         }
 
-        public static void save()
+        void GameAPI.load()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public static void load()
+        void GameAPI.next()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
+        }
+
+        void GameAPI.save()
+        {
+            throw new NotImplementedException();
         }
     }
 }

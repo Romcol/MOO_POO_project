@@ -8,5 +8,7 @@ namespace dev
     public interface PlayerAPI
     {
         List<UnitAPI> Units { get; set; }
+
+        void getVictoryPoints();
     }
 }

@@ -7,7 +7,7 @@ namespace dev
 {
     public class Player : PlayerAPI
     {
-        public Race race
+        public string race
         {
             get
             {
@@ -43,9 +43,22 @@ namespace dev
             }
         }
 
-        public void getVictoryPoints()
+        List<UnitAPI> PlayerAPI.Units
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        void PlayerAPI.getVictoryPoints()
+        {
+            throw new NotImplementedException();
         }
     }
 }

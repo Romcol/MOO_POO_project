@@ -4,8 +4,8 @@
     <Position X="23.75" Y="5.25" Width="1.5" />
     <InheritanceLine Type="dev.Unit" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="22" Y="8.04" />
-        <Point X="22.684" Y="8.04" />
+        <Point X="22" Y="8.101" />
+        <Point X="22.684" Y="8.101" />
         <Point X="22.684" Y="6.155" />
         <Point X="23.75" Y="6.155" />
       </Path>
@@ -19,10 +19,10 @@
     <Position X="23.75" Y="7.25" Width="1.5" />
     <InheritanceLine Type="dev.Unit" FixedFromPoint="true">
       <Path>
-        <Point X="22" Y="8.04" />
-        <Point X="22.684" Y="8.04" />
-        <Point X="22.684" Y="8.55" />
-        <Point X="23.75" Y="8.55" />
+        <Point X="22" Y="8.101" />
+        <Point X="22.684" Y="8.101" />
+        <Point X="22.684" Y="8.58" />
+        <Point X="23.75" Y="8.58" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -34,10 +34,10 @@
     <Position X="23.75" Y="9.25" Width="1.5" />
     <InheritanceLine Type="dev.Unit" FixedFromPoint="true">
       <Path>
-        <Point X="22" Y="8.04" />
-        <Point X="22.684" Y="8.04" />
-        <Point X="22.684" Y="10.093" />
-        <Point X="23.75" Y="10.093" />
+        <Point X="22" Y="8.101" />
+        <Point X="22.684" Y="8.101" />
+        <Point X="22.684" Y="10.155" />
+        <Point X="23.75" Y="10.155" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -55,13 +55,13 @@
   <Class Name="dev.Unit">
     <Position X="19.5" Y="7" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>QAAACAAAAAAAAACEAAEAAAAIAAAAAACAAABgCAAgAAA=</HashCode>
+      <HashCode>QAAACAAAAAAAAACEAAEAAAAIAAAAAACAAABgCAAgAQA=</HashCode>
       <FileName>Unit.cs</FileName>
     </TypeIdentifier>
     <Lollipop Orientation="Bottom" Position="0.1" />
   </Class>
   <Class Name="dev.Tile">
-    <Position X="20.25" Y="11.75" Width="2.25" />
+    <Position X="20.25" Y="13" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tile.cs</FileName>
@@ -72,8 +72,8 @@
     <Position X="23.75" Y="15" Width="1.5" />
     <InheritanceLine Type="dev.Tile" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="12.192" />
-        <Point X="22.86" Y="12.192" />
+        <Point X="22.5" Y="13.442" />
+        <Point X="22.86" Y="13.442" />
         <Point X="22.86" Y="15.499" />
         <Point X="23.75" Y="15.499" />
       </Path>
@@ -87,8 +87,8 @@
     <Position X="23.75" Y="13.75" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="12.192" />
-        <Point X="22.86" Y="12.192" />
+        <Point X="22.5" Y="13.442" />
+        <Point X="22.86" Y="13.442" />
         <Point X="22.86" Y="14.249" />
         <Point X="23.75" Y="14.249" />
       </Path>
@@ -102,8 +102,8 @@
     <Position X="23.75" Y="12.5" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="12.192" />
-        <Point X="22.86" Y="12.192" />
+        <Point X="22.5" Y="13.442" />
+        <Point X="22.86" Y="13.442" />
         <Point X="22.86" Y="12.999" />
         <Point X="23.75" Y="12.999" />
       </Path>
@@ -117,8 +117,8 @@
     <Position X="23.75" Y="11.25" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="12.192" />
-        <Point X="22.86" Y="12.192" />
+        <Point X="22.5" Y="13.442" />
+        <Point X="22.86" Y="13.442" />
         <Point X="22.86" Y="11.749" />
         <Point X="23.75" Y="11.749" />
       </Path>
@@ -154,7 +154,7 @@
   <Class Name="dev.Player">
     <Position X="16" Y="5.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAEAAAAAAAACAIAAAA=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAAAgAAAAAAAAAkAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <Lollipop Orientation="Left" Position="0.668" />
@@ -162,16 +162,13 @@
   <Class Name="dev.Game">
     <Position X="16.25" Y="8.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAICAAAACAAACAAIEAAAAAACAAAAAAAIACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAJAACAAACAAIEAAAAAACAAQAAAIAACAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Turn" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dev.GameBuilder">
-    <Position X="17.5" Y="10.5" Width="2" />
+    <Position X="18.25" Y="11" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GameBuilder.cs</FileName>
@@ -201,14 +198,21 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="dev.Action">
+    <Position X="21.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Action.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="dev.Move">
-    <Position X="17.5" Y="2.5" Width="2" />
+    <Position X="20.5" Y="2.5" Width="2" />
     <InheritanceLine Type="dev.Action" ManuallyRouted="true">
       <Path>
-        <Point X="19.5" Y="1.796" />
-        <Point X="19.5" Y="2.125" />
-        <Point X="18.5" Y="2.125" />
-        <Point X="18.5" Y="2.5" />
+        <Point X="22.5" Y="1.796" />
+        <Point X="22.5" Y="2.125" />
+        <Point X="21.5" Y="2.125" />
+        <Point X="21.5" Y="2.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -218,32 +222,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="dev.Attack">
-    <Position X="20" Y="2.5" Width="2.25" />
+    <Position X="23" Y="2.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAgAACAA=</HashCode>
       <FileName>Attack.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="dev.Action">
-    <Position X="18.75" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>Action.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="dev.Turn">
-    <Position X="13.5" Y="0.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>ACAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Turn.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="listAction" />
-    </ShowAsCollectionAssociation>
-  </Class>
   <Class Name="dev.TileFlyweight">
-    <Position X="20.5" Y="13.5" Width="1.5" />
+    <Position X="20.5" Y="14.5" Width="1.5" />
     <AssociationLine Name="mapTile" Type="dev.Tile">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-1.059" Y="0.232" />
@@ -257,22 +244,34 @@
       <Property Name="mapTile" />
     </ShowAsCollectionAssociation>
   </Class>
+  <Class Name="dev.Turn">
+    <Position X="17.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAABAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Turn.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="listAction" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="dev.GameAPI">
     <Position X="7.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAJCAAAAAwAAAAAAAAAAAACAAAAAAAAIAAAA=</HashCode>
       <FileName>API\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Player1" />
       <Property Name="Player2" />
       <Property Name="Map" />
+      <Property Name="TurnAPI" />
     </ShowAsAssociation>
   </Interface>
   <Interface Name="dev.PlayerAPI">
     <Position X="9" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAAAAA=</HashCode>
       <FileName>API\Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -282,7 +281,7 @@
   <Interface Name="dev.UnitAPI">
     <Position X="12" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAQA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACEAAAAAAAAAAAAAACAAAAACAAAAQA=</HashCode>
       <FileName>API\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -313,18 +312,28 @@
       <FileName>TileAPI.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="dev.Undoable">
-    <Position X="21" Y="0.5" Width="1.5" />
+  <Interface Name="dev.ActionAPI">
+    <Position X="10.25" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Undoable.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActionAPI.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="dev.TurnAPI">
-    <Position X="8.25" Y="5.25" Width="1.5" />
+    <Position X="7.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA=</HashCode>
       <FileName>TurnAPI.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ActionAPI" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="dev.Undoable">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Undoable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

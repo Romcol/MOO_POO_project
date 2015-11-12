@@ -9,8 +9,9 @@ namespace dev
     {
         TileAPI Tile { get; set; }
 
-        void attack();
-
-        void move();
+        bool attack(Unit unit);
+        List<Tile> getPossibleMoves();
+        int getVictoryPoints();
+        bool move(int x, int y);
     }
 }
