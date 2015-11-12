@@ -53,9 +53,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Action.cs" />
+    <Compile Include="Attack.cs" />
     <Compile Include="Forest.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBuilder.cs" />
+    <Compile Include="Impl\ActionAPI.cs" />
+    <Compile Include="Impl\TileFlyweight.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Map10.cs" />
     <Compile Include="Map14.cs" />
@@ -63,11 +67,15 @@
     <Compile Include="MapAPI.cs" />
     <Compile Include="MapStrategy.cs" />
     <Compile Include="Mountain.cs" />
+    <Compile Include="Move.cs" />
     <Compile Include="Plain.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Tile.cs" />
     <Compile Include="TileAPI.cs" />
     <Compile Include="TileFactory.cs" />
+    <Compile Include="Turn.cs" />
+    <Compile Include="TurnAPI.cs" />
+    <Compile Include="Undoable.cs" />
     <Compile Include="Unit.cs" />
     <Compile Include="UnitFactory.cs" />
     <Compile Include="Water.cs" />
