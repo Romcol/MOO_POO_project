@@ -5,9 +5,11 @@ using System.Text;
 
 namespace dev
 {
-    public class GameBuilder
+    public class Action
     {
-        public Game buildGame()
+
+        public abstract void doit();
+        public abstract bool cando()
         {
             throw new System.NotImplementedException();
         }

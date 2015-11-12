@@ -5,9 +5,15 @@ using System.Text;
 
 namespace dev
 {
-    public class GameBuilder
+    public interface Undoable
     {
-        public Game buildGame()
+
+        public void undo()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void redo()
         {
             throw new System.NotImplementedException();
         }

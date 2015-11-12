@@ -54,7 +54,7 @@ namespace dev
             }
         }
 
-        public Tile Tile
+        public Race Race
         {
             get
             {
@@ -66,31 +66,37 @@ namespace dev
             }
         }
 
-        public bool move(Tile tile)
+        public int x
         {
-            throw new System.NotImplementedException();
-        }
-        public bool attack(Unit unit)
-        {
-            throw new System.NotImplementedException();
-        }
-        public bool canMove(Tile tile)
-        {
-            throw new System.NotImplementedException();
-        }
-        public List<Tile> getPossibleMoves()
-        {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
 
-        public bool canAttack(Tile tile)
+        public int y
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
-        public int getVictoryPoints()
-        {
-            throw new System.NotImplementedException();
-        }
+
+        public abstract bool move(int x, int y);
+
+        public abstract bool attack(Unit unit);
+
+        public abstract List<Tile> getPossibleMoves();
+
+        public abstract int getVictoryPoints();
 
 
     }

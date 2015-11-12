@@ -5,20 +5,9 @@ using System.Text;
 
 namespace dev
 {
-    public class Player : PlayerAPI
+    public class Move : Action, Undoable
     {
-        public Race race
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-        public string name
+        public int x
         {
             get
             {
@@ -30,20 +19,36 @@ namespace dev
             }
         }
 
-        public UnitAPI UnitAPI
+        public int y
         {
             get
             {
-                throw new NotImplementedException();
+                throw new System.NotImplementedException();
             }
 
             set
             {
-                throw new NotImplementedException();
             }
         }
 
-        public void getVictoryPoints()
+        public Unit playerUnitClone
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public void doit()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void cando()
         {
             throw new System.NotImplementedException();
         }

@@ -5,11 +5,9 @@ using System.Text;
 
 namespace dev
 {
-    public class Map : MapAPI
+    public class Turn
     {
-
-
-        public int size
+        public List<Action> listAction
         {
             get
             {
@@ -21,17 +19,9 @@ namespace dev
             }
         }
 
-        TileAPI[][] MapAPI.Tiles
+        public void addAction(Action a)
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

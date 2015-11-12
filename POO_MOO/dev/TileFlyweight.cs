@@ -5,11 +5,9 @@ using System.Text;
 
 namespace dev
 {
-    public class Map : MapAPI
+    public class TileFlyweight
     {
-
-
-        public int size
+        public Dictionary<String, Tile> mapTile
         {
             get
             {
@@ -21,17 +19,9 @@ namespace dev
             }
         }
 
-        TileAPI[][] MapAPI.Tiles
+        public Tile getTile()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new System.NotImplementedException();
         }
     }
 }

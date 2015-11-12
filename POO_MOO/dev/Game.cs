@@ -7,29 +7,6 @@ namespace dev
 {
     public class Game : GameAPI
     {
-        public Player Player1
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public Player Player2
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
 
         public int turnsLeft
         {
@@ -54,7 +31,7 @@ namespace dev
             }
         }
 
-        public Map Map
+        public int currentPlayer
         {
             get
             {
@@ -66,7 +43,7 @@ namespace dev
             }
         }
 
-        public int currentPlayer
+        public Turn Turn
         {
             get
             {
@@ -75,6 +52,45 @@ namespace dev
 
             set
             {
+            }
+        }
+
+        PlayerAPI GameAPI.Player1
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        PlayerAPI GameAPI.Player2
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        MapAPI GameAPI.Map
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
             }
         }
 

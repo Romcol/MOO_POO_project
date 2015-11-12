@@ -5,9 +5,9 @@ using System.Text;
 
 namespace dev
 {
-    public class GameBuilder
+    public class Race
     {
-        public Game buildGame()
+        public void canMove(Tile tile)
         {
             throw new System.NotImplementedException();
         }

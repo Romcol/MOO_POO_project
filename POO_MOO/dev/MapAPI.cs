@@ -7,6 +7,6 @@ namespace dev
 {
     public interface MapAPI
     {
-        TileAPI TileAPI { get; set; }
+        TileAPI[][] Tiles { get; set; }
     }
 }

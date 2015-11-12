@@ -5,9 +5,10 @@ using System.Text;
 
 namespace dev
 {
-    public class Player : PlayerAPI
+    public class Attack : Action, Undoable
     {
-        public Race race
+
+        public Unit playerUnitClone
         {
             get
             {
@@ -18,7 +19,8 @@ namespace dev
             {
             }
         }
-        public string name
+
+        public Unit attackedUnitClone
         {
             get
             {
@@ -30,20 +32,12 @@ namespace dev
             }
         }
 
-        public UnitAPI UnitAPI
+        public void cando()
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            throw new System.NotImplementedException();
         }
 
-        public void getVictoryPoints()
+        public void doit()
         {
             throw new System.NotImplementedException();
         }
