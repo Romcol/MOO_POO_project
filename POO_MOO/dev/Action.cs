@@ -5,13 +5,10 @@ using System.Text;
 
 namespace dev
 {
-    public class Action
+    public abstract class Action : ActionAPI
     {
+        public abstract bool cando();
 
         public abstract void doit();
-        public abstract bool cando()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

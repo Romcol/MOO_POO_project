@@ -7,6 +7,10 @@ namespace dev
 {
     public interface TurnAPI
     {
-        ActionAPI ActionAPI { get; set; }
+        List<ActionAPI> Actions { get; set; }
+
+        void addAction(Action a);
+        void undo();
+        void init();
     }
 }

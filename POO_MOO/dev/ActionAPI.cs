@@ -7,5 +7,7 @@ namespace dev
 {
     public interface ActionAPI
     {
+        bool cando();
+        void doit();
     }
 }
