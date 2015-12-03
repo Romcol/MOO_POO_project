@@ -6,7 +6,7 @@ using API;
 
 namespace dev
 {
-    public class Game : API.GameAPI
+    public class Game : GameAPI
     {
         public static Game INSTANCE = new Game();
 
@@ -15,30 +15,30 @@ namespace dev
 
         }
 
-        public int turnsLeft {
+        public int turns_left {
             get;
             set;
         }
         
-        public MapAPI Map
+        public MapAPI map
         {
             get;
             set;
         }
 
-        PlayerAPI GameAPI.Player1
+        public PlayerAPI player1
         {
             get;
             set;
         }
 
-        PlayerAPI GameAPI.Player2
+        public PlayerAPI player2
         {
             get;
             set;
         }
 
-        TurnAPI GameAPI.TurnAPI
+        public TurnAPI turn
         {
             get;
             set;

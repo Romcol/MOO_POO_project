@@ -7,11 +7,17 @@ namespace dev
 {
     public class GameBuilder
     {
-        public Game buildGame(int nb_tours)
+        public Game buildGame(string map_type)
         {
             Game game = Game.INSTANCE;
-            game.turnsLeft = nb_tours;
+
+			MapTilesFactory factory = new MapTilesFactory(map_type);
+			game.map = factory.createMap();
+			game.turns_left = factory.map_strategy.nb_turns;
+            
             return game;
         }
+
+
     }
 }

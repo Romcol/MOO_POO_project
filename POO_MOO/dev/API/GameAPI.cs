@@ -7,10 +7,11 @@ namespace API
 {
     public interface GameAPI
     {
-        PlayerAPI Player1 { get; set; }
-        PlayerAPI Player2 { get; set; }
-        MapAPI Map { get; set; }
-        TurnAPI TurnAPI { get; set; }
+        PlayerAPI player1 { get; set; }
+        PlayerAPI player2 { get; set; }
+        MapAPI map { get; set; }
+		int turns_left { get; set; }
+        TurnAPI turn { get; set; }
 
         void load();
         void next();

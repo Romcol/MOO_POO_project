@@ -6,8 +6,8 @@ using API;
 
 namespace dev
 {
-    public class Map : API.MapAPI
-    {
+    public class Map : MapAPI
+	{
 
 
         public int size
@@ -16,12 +16,19 @@ namespace dev
             set;
         }
 
-        TileAPI[][] MapAPI.Tiles
+
+        public TileAPI[,] tiles
         {
             get;
-
             set;
         }
+
+
+		public Map(int size)
+		{
+			this.size = size;
+			this.tiles = new Tile[this.size, this.size];
+		}
 
     }
 }

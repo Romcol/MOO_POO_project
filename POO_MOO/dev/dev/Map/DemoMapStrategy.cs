@@ -5,11 +5,11 @@ using System.Text;
 
 namespace dev
 {
-    public class StandardMapStrategy : MapStrategy
+    public class DemoMapStrategy : MapStrategy
     {
-		private const int SIZE = 14;
-		private const int NB_TURNS = 30;
-		private const int NB_UNITS = 8;
+		private const int SIZE = 6;
+		private const int NB_TURNS = 5;
+		private const int NB_UNITS = 4;
 
 		public override int size
 		{

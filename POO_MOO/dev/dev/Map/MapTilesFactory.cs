@@ -5,26 +5,40 @@ using System.Text;
 
 namespace dev
 {
-    public class MapTilesFactory
-    {
-        public MapStrategy MapStrategy
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+	public class MapTilesFactory
+	{
+		public MapStrategy map_strategy {get;}
 
-            set
-            {
-            }
-        }
 
-        public Map createMap(int size)
-        {
-            switch(size)
-            {
-                case 
-            }
-        }
-    }
+		public MapTilesFactory(string type)
+		{
+			this.map_strategy = this.geMapStrategy(type);
+		}
+
+		public Map createMap()
+		{
+			return this.map_strategy.createMap();
+		}
+
+		private MapStrategy geMapStrategy(string type)
+		{
+			MapStrategy strategy;
+			switch (type)
+			{
+				case "demo":
+					strategy = new DemoMapStrategy();
+					break;
+				case "small":
+					strategy = new SmallMapStrategy();
+					break;
+				case "standard":
+					strategy = new StandardMapStrategy();
+					break;
+				default:
+					throw new ArgumentException("Incorrect map type : " + type + ". Must be \"demo#\", \"small\" or \"standard\".");
+			}
+			return strategy;
+
+		}
+	}
 }

@@ -5,8 +5,17 @@ using System.Text;
 
 namespace dev
 {
-    public interface MapStrategy
+    public abstract class MapStrategy
     {
-        Map createMap();
+		public abstract int size { get; }
+		public abstract int nb_turns { get; }
+		public abstract int nb_units { get; }
+
+		public Map createMap()
+		{
+			Map map = new Map(this.size);
+			return map;
+		}
+
     }
 }

@@ -11,15 +11,31 @@ namespace dev.Tests
     [TestClass()]
     public class GameBuilderTests
     {
-        [TestMethod()]
-        public void buildGameTest()
-        {
-            GameBuilder builder = new GameBuilder();
-            Game game = builder.buildGame(10);
-            Assert.AreEqual(game.turnsLeft, 10);
+		[TestMethod()]
+		public void demoGameTest()
+		{
+			typeGameTest("demo", 6, 5);
+		}
 
-            MapTilesFactory map = new MapTilesFactory();
+		[TestMethod()]
+		public void smallGameTest()
+		{
+			typeGameTest("small", 10, 20);
+		}
 
-        }
-    }
+		[TestMethod()]
+		public void standardGameTest()
+		{
+			typeGameTest("standard", 14, 30);
+		}
+
+		private void typeGameTest(string type, int size, int turns_left)
+		{
+			GameBuilder builder = new GameBuilder();
+			Game game = builder.buildGame(type);
+			Assert.AreEqual(game.turns_left, turns_left);
+			Assert.AreEqual(game.map.size, size);
+
+		}
+	}
 }
