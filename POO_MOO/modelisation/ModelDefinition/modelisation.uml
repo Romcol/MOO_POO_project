@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="bcf27f8b-75ba-4b2d-a185-150015506a88"
   name="modelisation" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -321,22 +321,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="e709d0a7-c1ae-424e-b62c-43e1bf9f982b"
-            name="MessageOccurrenceSpecification22">
-            <covered>
-              <lifelineMoniker
-                Id="dbfd7785-7ac9-409c-9720-5d5b258a21d6"
-                LastKnownName="MapTilesFactory"
-                LastKnownLocation="modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="ba551e48-d491-4d6e-8f5b-538b847a0259"
             name="MessageOccurrenceSpecification21">
             <covered>
               <lifelineMoniker
                 Id="250db0a4-51dc-4161-94c2-e6cb85ecf009"
                 LastKnownName="game : Game"
+                LastKnownLocation="modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="e709d0a7-c1ae-424e-b62c-43e1bf9f982b"
+            name="MessageOccurrenceSpecification22">
+            <covered>
+              <lifelineMoniker
+                Id="dbfd7785-7ac9-409c-9720-5d5b258a21d6"
+                LastKnownName="MapTilesFactory"
                 LastKnownLocation="modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -523,6 +523,16 @@
             </operands>
           </combinedFragment>
           <operandOccurrenceSpecification
+            Id="2ad5cb87-3853-43d6-a569-a9e44dda8dc8"
+            name="OperandOccurrenceSpecification11">
+            <covered>
+              <lifelineMoniker
+                Id="8435c293-d5be-48a9-a1d9-9dc83c883668"
+                LastKnownName="MapStrategy"
+                LastKnownLocation="modelisation.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="a5b3afb2-968c-4ab0-8e6a-91dfa54b2f08"
             name="OperandOccurrenceSpecification13">
             <covered>
@@ -539,16 +549,6 @@
               <lifelineMoniker
                 Id="34ef8557-bb34-4e0f-9b2c-8402602b0935"
                 LastKnownName="TileFlyweight"
-                LastKnownLocation="modelisation.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="2ad5cb87-3853-43d6-a569-a9e44dda8dc8"
-            name="OperandOccurrenceSpecification11">
-            <covered>
-              <lifelineMoniker
-                Id="8435c293-d5be-48a9-a1d9-9dc83c883668"
-                LastKnownName="MapStrategy"
                 LastKnownLocation="modelisation.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -681,16 +681,6 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="84e15945-5be0-4f44-a3fe-40c8f676806a"
-            name="MessageOccurrenceSpecification45">
-            <covered>
-              <lifelineMoniker
-                Id="34ef8557-bb34-4e0f-9b2c-8402602b0935"
-                LastKnownName="TileFlyweight"
-                LastKnownLocation="modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="887daee2-adf1-47a0-aa05-18e1514a4f89"
             name="MessageOccurrenceSpecification46">
             <covered>
@@ -701,12 +691,12 @@
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="9adbbade-ab8a-4f45-ab87-7c694fcc2cd0"
-            name="MessageOccurrenceSpecification47">
+            Id="84e15945-5be0-4f44-a3fe-40c8f676806a"
+            name="MessageOccurrenceSpecification45">
             <covered>
               <lifelineMoniker
-                Id="41424ada-45fc-45d8-8a46-154c8225e365"
-                LastKnownName="tileN : Tile"
+                Id="34ef8557-bb34-4e0f-9b2c-8402602b0935"
+                LastKnownName="TileFlyweight"
                 LastKnownLocation="modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -717,6 +707,16 @@
               <lifelineMoniker
                 Id="34ef8557-bb34-4e0f-9b2c-8402602b0935"
                 LastKnownName="TileFlyweight"
+                LastKnownLocation="modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="9adbbade-ab8a-4f45-ab87-7c694fcc2cd0"
+            name="MessageOccurrenceSpecification47">
+            <covered>
+              <lifelineMoniker
+                Id="41424ada-45fc-45d8-8a46-154c8225e365"
+                LastKnownName="tileN : Tile"
                 LastKnownLocation="modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -812,12 +812,12 @@
             interactionOperator="Loop">
             <coveredLifelines>
               <lifelineMoniker
-                Id="9033a3ea-0408-43bc-93f9-3ef16b34dd7e"
-                LastKnownName="UnitFactory"
-                LastKnownLocation="modelisation.uml" />
-              <lifelineMoniker
                 Id="8435c293-d5be-48a9-a1d9-9dc83c883668"
                 LastKnownName="MapStrategy"
+                LastKnownLocation="modelisation.uml" />
+              <lifelineMoniker
+                Id="9033a3ea-0408-43bc-93f9-3ef16b34dd7e"
+                LastKnownName="UnitFactory"
                 LastKnownLocation="modelisation.uml" />
               <lifelineMoniker
                 Id="f4fb8f4e-fabf-4197-a64b-6f76d2146229"
@@ -830,12 +830,12 @@
                 name="InteractionOperand1">
                 <coveredLifelines>
                   <lifelineMoniker
-                    Id="9033a3ea-0408-43bc-93f9-3ef16b34dd7e"
-                    LastKnownName="UnitFactory"
-                    LastKnownLocation="modelisation.uml" />
-                  <lifelineMoniker
                     Id="8435c293-d5be-48a9-a1d9-9dc83c883668"
                     LastKnownName="MapStrategy"
+                    LastKnownLocation="modelisation.uml" />
+                  <lifelineMoniker
+                    Id="9033a3ea-0408-43bc-93f9-3ef16b34dd7e"
+                    LastKnownName="UnitFactory"
                     LastKnownLocation="modelisation.uml" />
                   <lifelineMoniker
                     Id="f4fb8f4e-fabf-4197-a64b-6f76d2146229"
@@ -1141,6 +1141,16 @@
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
+            Id="33b6a5b5-8343-480e-9c86-ca558728d62f"
+            name="OperandOccurrenceSpecification18">
+            <covered>
+              <lifelineMoniker
+                Id="8435c293-d5be-48a9-a1d9-9dc83c883668"
+                LastKnownName="MapStrategy"
+                LastKnownLocation="modelisation.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
             Id="6e0d2212-32cb-43f4-80a1-513ca80cc42c"
             name="OperandOccurrenceSpecification16">
             <covered>
@@ -1157,16 +1167,6 @@
               <lifelineMoniker
                 Id="f4fb8f4e-fabf-4197-a64b-6f76d2146229"
                 LastKnownName="unitN : Unit"
-                LastKnownLocation="modelisation.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
-            Id="33b6a5b5-8343-480e-9c86-ca558728d62f"
-            name="OperandOccurrenceSpecification18">
-            <covered>
-              <lifelineMoniker
-                Id="8435c293-d5be-48a9-a1d9-9dc83c883668"
-                LastKnownName="MapStrategy"
                 LastKnownLocation="modelisation.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -1209,22 +1209,22 @@
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="29915e3e-61c2-447d-a481-fad028e921eb"
-            name="MessageOccurrenceSpecification23">
-            <covered>
-              <lifelineMoniker
-                Id="dbfd7785-7ac9-409c-9720-5d5b258a21d6"
-                LastKnownName="MapTilesFactory"
-                LastKnownLocation="modelisation.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="304f0cc5-04bc-4f99-bd2b-dd060b4796c5"
             name="MessageOccurrenceSpecification24">
             <covered>
               <lifelineMoniker
                 Id="250db0a4-51dc-4161-94c2-e6cb85ecf009"
                 LastKnownName="game : Game"
+                LastKnownLocation="modelisation.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="29915e3e-61c2-447d-a481-fad028e921eb"
+            name="MessageOccurrenceSpecification23">
+            <covered>
+              <lifelineMoniker
+                Id="dbfd7785-7ac9-409c-9720-5d5b258a21d6"
+                LastKnownName="MapTilesFactory"
                 LastKnownLocation="modelisation.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -1839,6 +1839,24 @@
       <executionEvent
         Id="709e2091-fc61-426e-93a1-2fb7255921c9"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="8050cadd-081a-4481-a5e4-cf15b3906d66"
+        name="Sequence3"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <lifelines>
+          <lifeline
+            Id="c6f45868-79d6-4657-8ea1-1b0a4bb4346c"
+            name="Lifeline1"
+            isActor="false"
+            lifelineDisplayName="Lifeline1" />
+        </lifelines>
+      </interaction>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

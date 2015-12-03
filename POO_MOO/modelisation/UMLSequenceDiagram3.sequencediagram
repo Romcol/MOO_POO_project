@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="b7150187-20be-4b5d-9cfd-70ced6642fd3" name="Sequence3" linkedPackageId="e6bfcac2-3112-4524-b011-981f961e9945" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="5b7fbc8b-2d64-4ea2-aa84-e6aeb4c62336" name="Sequence3" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="8050cadd-081a-4481-a5e4-cf15b3906d66" />
+        <lifelines>
+          <lifeline Id="d4824de8-4a17-40ef-bb17-7a8a7c8a6bdb" name="Lifeline1" isActor="false" lifelineDisplayName="Lifeline1">
+            <elementDefinition Id="c6f45868-79d6-4657-8ea1-1b0a4bb4346c" />
+          </lifeline>
+        </lifelines>
+      </interaction>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="e6bfcac2-3112-4524-b011-981f961e9945" name="modelisation">
+    <elementDefinition Id="bcf27f8b-75ba-4b2d-a185-150015506a88" />
+  </package>
+</SequenceDesignerModel>

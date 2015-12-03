@@ -53,32 +53,32 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Action.cs" />
-    <Compile Include="Attack.cs" />
-    <Compile Include="Forest.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="GameBuilder.cs" />
-    <Compile Include="Impl\ActionAPI.cs" />
-    <Compile Include="Impl\TileFlyweight.cs" />
-    <Compile Include="Map.cs" />
-    <Compile Include="Map10.cs" />
-    <Compile Include="Map14.cs" />
-    <Compile Include="Map6.cs" />
-    <Compile Include="MapAPI.cs" />
-    <Compile Include="MapStrategy.cs" />
-    <Compile Include="Mountain.cs" />
-    <Compile Include="Move.cs" />
-    <Compile Include="Plain.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="Tile.cs" />
-    <Compile Include="TileAPI.cs" />
-    <Compile Include="TileFactory.cs" />
-    <Compile Include="Turn.cs" />
-    <Compile Include="TurnAPI.cs" />
-    <Compile Include="Undoable.cs" />
-    <Compile Include="Unit.cs" />
-    <Compile Include="UnitFactory.cs" />
-    <Compile Include="Water.cs" />
+    <Compile Include="dev\Action.cs" />
+    <Compile Include="dev\Attack.cs" />
+    <Compile Include="dev\Forest.cs" />
+    <Compile Include="dev\Game.cs" />
+    <Compile Include="dev\GameBuilder.cs" />
+    <Compile Include="API\ActionAPI.cs" />
+    <Compile Include="dev\TileFlyweight.cs" />
+    <Compile Include="dev\Map.cs" />
+    <Compile Include="dev\Map10.cs" />
+    <Compile Include="dev\Map14.cs" />
+    <Compile Include="dev\Map6.cs" />
+    <Compile Include="API\MapAPI.cs" />
+    <Compile Include="dev\MapStrategy.cs" />
+    <Compile Include="dev\Mountain.cs" />
+    <Compile Include="dev\Move.cs" />
+    <Compile Include="dev\Plain.cs" />
+    <Compile Include="dev\Player.cs" />
+    <Compile Include="dev\Tile.cs" />
+    <Compile Include="API\TileAPI.cs" />
+    <Compile Include="dev\TileFactory.cs" />
+    <Compile Include="dev\Turn.cs" />
+    <Compile Include="API\TurnAPI.cs" />
+    <Compile Include="dev\Undoable.cs" />
+    <Compile Include="dev\Unit.cs" />
+    <Compile Include="dev\UnitFactory.cs" />
+    <Compile Include="dev\Water.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,18 +87,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="API\Unit.cs" />
-    <Compile Include="Impl\Elf.cs" />
-    <Compile Include="API\Game.cs" />
-    <Compile Include="Impl\Human.cs" />
+    <Compile Include="API\UnitAPI.cs" />
+    <Compile Include="dev\Elf.cs" />
+    <Compile Include="API\GameAPI.cs" />
+    <Compile Include="dev\Human.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Impl\Orc.cs" />
-    <Compile Include="API\Player.cs" />
+    <Compile Include="dev\Orc.cs" />
+    <Compile Include="API\PlayerAPI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
