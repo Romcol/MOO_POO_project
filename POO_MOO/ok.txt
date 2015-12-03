@@ -1,3 +1,0 @@
-builder strategy : Map
-
-différentes strategy pour differentes tailles de carte
