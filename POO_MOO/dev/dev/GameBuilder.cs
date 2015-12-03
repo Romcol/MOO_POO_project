@@ -7,10 +7,10 @@ namespace dev
 {
     public class GameBuilder
     {
-        public Game buildGame()
+        public Game buildGame(int nb_tours)
         {
-            Game game = new Game();
-            game.turnsLeft = 0;
+            Game game = Game.INSTANCE;
+            game.turnsLeft = nb_tours;
             return game;
         }
     }

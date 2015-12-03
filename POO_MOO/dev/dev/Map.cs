@@ -12,27 +12,15 @@ namespace dev
 
         public int size
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            get;
+            set;
         }
 
         TileAPI[][] MapAPI.Tiles
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get;
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set;
         }
 
     }

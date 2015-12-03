@@ -72,7 +72,7 @@
     <Compile Include="dev\Player.cs" />
     <Compile Include="dev\Tile.cs" />
     <Compile Include="API\TileAPI.cs" />
-    <Compile Include="dev\TileFactory.cs" />
+    <Compile Include="dev\MapTilesFactory.cs" />
     <Compile Include="dev\Turn.cs" />
     <Compile Include="API\TurnAPI.cs" />
     <Compile Include="dev\Undoable.cs" />

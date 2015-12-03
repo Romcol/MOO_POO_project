@@ -5,23 +5,28 @@ using System.Text;
 
 namespace dev
 {
-    public class TileFlyweight
-    {
-        public Dictionary<String, Tile> mapTile
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+	public class TileFlyweight
+	{
 
-            set
-            {
-            }
+		private Dictionary<String, Tile> tiles
+		{
+			get;
+			set;
+		}
+
+		public TileFlyweight()
+		{
+			this.tiles = new Dictionary<string, Tile>();
+            this.tiles.Add("mountain", new Mountain());
+            this.tiles.Add("plain", new Plain());
+            this.tiles.Add("forest", new Forest());
+            this.tiles.Add("water", new Water());
         }
 
-        public Tile getTile()
-        {
-            throw new System.NotImplementedException();
-        }
-    }
+
+        public Tile getTile(string key)
+		{
+            return this.tiles[key];
+		}
+	}
 }

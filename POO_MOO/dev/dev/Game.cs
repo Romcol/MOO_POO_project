@@ -8,76 +8,43 @@ namespace dev
 {
     public class Game : API.GameAPI
     {
+        public static Game INSTANCE = new Game();
 
-        public Game()
+        private Game()
         {
 
         }
 
-       public int turnsLeft
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+        public int turnsLeft {
+            get;
+            set;
         }
-
-        MapAPI GameAPI.Map
+        
+        public MapAPI Map
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         PlayerAPI GameAPI.Player1
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         PlayerAPI GameAPI.Player2
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
 
         TurnAPI GameAPI.TurnAPI
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get;
+            set;
         }
+
+
 
         void GameAPI.load()
         {
