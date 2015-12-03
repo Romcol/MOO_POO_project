@@ -19,9 +19,12 @@ namespace dev
             }
         }
 
-        public dev.Map createMap(int size)
+        public Map createMap(int size)
         {
-            throw new System.NotImplementedException();
+            switch(size)
+            {
+                case 
+            }
         }
     }
 }

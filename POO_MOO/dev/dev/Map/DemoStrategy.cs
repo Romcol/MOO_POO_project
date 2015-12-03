@@ -5,7 +5,7 @@ using System.Text;
 
 namespace dev
 {
-    public class StandardCreator : MapStrategy
+    public class DemoMapStrategy : MapStrategy
     {
         Map MapStrategy.createMap()
         {

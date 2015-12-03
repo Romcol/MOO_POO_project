@@ -17,7 +17,8 @@ namespace dev.Tests
             GameBuilder builder = new GameBuilder();
             Game game = builder.buildGame(10);
             Assert.AreEqual(game.turnsLeft, 10);
-            
+
+            MapTilesFactory map = new MapTilesFactory();
 
         }
     }
