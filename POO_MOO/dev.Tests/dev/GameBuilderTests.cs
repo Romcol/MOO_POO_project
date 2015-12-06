@@ -8,33 +8,74 @@ using System.Threading.Tasks;
 
 namespace dev.Tests
 {
-    [TestClass()]
-    public class GameBuilderTests
-    {
+	[TestClass()]
+	public class GameBuilderTests
+	{
 		[TestMethod()]
 		public void demoGameTest()
 		{
-			typeGameTest("demo", 6, 5);
+			typeMapTest("demo", 6, 5);
 		}
 
 		[TestMethod()]
 		public void smallGameTest()
 		{
-			typeGameTest("small", 10, 20);
+			typeMapTest("small", 10, 20);
 		}
 
 		[TestMethod()]
 		public void standardGameTest()
 		{
-			typeGameTest("standard", 14, 30);
+			typeMapTest("standard", 14, 30);
 		}
 
-		private void typeGameTest(string type, int size, int turns_left)
+		private void typeMapTest(string type, int size, int turns_left)
 		{
 			GameBuilder builder = new GameBuilder();
-			Game game = builder.buildGame(type);
-			Assert.AreEqual(game.turns_left, turns_left);
-			Assert.AreEqual(game.map.size, size);
+			builder.createMap(type);
+			Assert.AreEqual(Game.INSTANCE.turns_left, turns_left);
+			Assert.AreEqual(Game.INSTANCE.map.size, size);
+
+		}
+
+		[TestMethod()]
+		public void setPlayerTest()
+		{
+			GameBuilder builder = new GameBuilder();
+			builder.setPlayer1("john", "orc");
+			Assert.AreEqual(Game.INSTANCE.player1.name, "john");
+			Assert.AreEqual(Game.INSTANCE.player1.race, "orc");
+			builder.setPlayer2("james", "human");
+			Assert.AreEqual(Game.INSTANCE.player2.name, "james");
+			Assert.AreEqual(Game.INSTANCE.player2.race, "human");
+
+		}
+
+		[TestMethod()]
+		public void populateMapTest()
+		{
+			GameBuilder builder = new GameBuilder();
+			try {
+				builder.populateMap();
+				Assert.Fail();
+			}
+			catch (Exception e) { }
+
+			builder.setPlayer1("james", "human");
+
+			try {
+				builder.populateMap();
+				Assert.Fail();
+			}
+			catch (Exception e) { }
+
+			builder.setPlayer2("james", "human");
+
+			try
+			{
+				builder.populateMap();
+			}
+			catch (Exception e) { Assert.Fail(); }
 
 		}
 	}

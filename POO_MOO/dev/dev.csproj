@@ -77,7 +77,6 @@
     <Compile Include="API\TurnAPI.cs" />
     <Compile Include="dev\Game\Undoable.cs" />
     <Compile Include="dev\Unit\Unit.cs" />
-    <Compile Include="dev\Unit\UnitFactory.cs" />
     <Compile Include="dev\Tile\Water.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

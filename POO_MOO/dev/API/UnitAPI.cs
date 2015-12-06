@@ -7,7 +7,8 @@ namespace API
 {
     public interface UnitAPI
     {
-        TileAPI Tile { get; set; }
+		int x { get; set; }
+		int y { get; set; }
 
         bool attack(UnitAPI unit);
         List<TileAPI> getPossibleMoves();

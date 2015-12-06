@@ -10,5 +10,7 @@ namespace API
         TileAPI[,] tiles{ get; set; }
 
 		int size { get; set; }
+
+		bool verifyCoord(int x);
 	}
 }

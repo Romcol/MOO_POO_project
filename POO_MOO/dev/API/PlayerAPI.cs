@@ -7,8 +7,11 @@ namespace API
 {
     public interface PlayerAPI
     {
-        List<UnitAPI> Units { get; set; }
+        List<UnitAPI> units { get; set; }
 
+		string race { get; set; }
+
+		string name { get; set; }
         void getVictoryPoints();
     }
 }

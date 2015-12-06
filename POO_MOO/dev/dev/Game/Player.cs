@@ -6,20 +6,19 @@ using API;
 
 namespace dev
 {
-    public class Player : API.PlayerAPI
+    public class Player : PlayerAPI
     {
-        List<UnitAPI> PlayerAPI.Units
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+		public string name { get; set; }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+		public string race { get; set; }
+
+		public List<UnitAPI> units { get; set; }
+
+		public Player(string name, string race)
+		{
+			this.name = name;
+			this.race = race;
+		}
 
         void PlayerAPI.getVictoryPoints()
         {
