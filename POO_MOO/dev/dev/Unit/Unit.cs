@@ -6,7 +6,7 @@ using API;
 
 namespace dev
 {
-    public abstract class Unit : API.UnitAPI
+    public abstract class Unit : UnitAPI
     {
 		public int x {
 			get { return this.x; }
@@ -37,26 +37,40 @@ namespace dev
 			}
 		}
 
-		bool UnitAPI.attack(UnitAPI unit)
+		public int lifePoints { get; set; }
+		public int attackPoints { get; set; }
+		public int defencePoints { get; set; }
+		public int movePoints { get; set; }
+
+		const int MOV_PTS = 2;
+
+		public bool attack(UnitAPI unit)
         {
             throw new NotImplementedException();
         }
 
-        List<TileAPI> UnitAPI.getPossibleMoves()
+        public List<TileAPI> getPossibleMoves()
         {
             throw new NotImplementedException();
         }
 
 
 
-        int UnitAPI.getVictoryPoints()
+        public int getVictoryPoints()
         {
             throw new NotImplementedException();
         }
 
-        bool UnitAPI.move(int x, int y)
+        public bool move(int x, int y)
         {
             throw new NotImplementedException();
         }
+
+		public abstract Race getRace();
+
+		public void initMovePoints()
+		{
+			this.defencePoints = MOV_PTS;
+		}
     }
 }

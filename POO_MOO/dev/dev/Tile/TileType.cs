@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using API;
+using System.Threading.Tasks;
 
 namespace dev
 {
-	public class Forest : Tile
+	public enum TileType
 	{
-		public override TileType getType()
-		{
-			return TileType.Forest;
-		}
+		Plain = 0,
+		Mountain = 1,
+		Forest = 2,
+		Water = 3
 	}
+
 }

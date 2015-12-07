@@ -13,7 +13,10 @@ namespace API
 		int turns_left { get; set; }
         TurnAPI turn { get; set; }
 
-        void load();
+		bool isFinished();
+		PlayerAPI getWinner();
+
+		void load();
         void next();
         void save();
     }

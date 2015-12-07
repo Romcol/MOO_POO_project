@@ -7,5 +7,9 @@ namespace dev
 {
     public class Plain : Tile
     {
-    }
+		public override TileType getType()
+		{
+			return TileType.Plain;
+		}
+	}
 }

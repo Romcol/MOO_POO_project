@@ -32,6 +32,9 @@ namespace dev.Tests
 		private void typeMapTest(string type, int size, int turns_left)
 		{
 			GameBuilder builder = new GameBuilder();
+			builder.setPlayer1("john", "orc");
+			builder.setPlayer2("james", "human");
+
 			builder.createMap(type);
 			Assert.AreEqual(Game.INSTANCE.turns_left, turns_left);
 			Assert.AreEqual(Game.INSTANCE.map.size, size);
@@ -56,7 +59,7 @@ namespace dev.Tests
 		{
 			GameBuilder builder = new GameBuilder();
 			try {
-				builder.populateMap();
+				builder.createMap("demo");
 				Assert.Fail();
 			}
 			catch (Exception e) { }
@@ -64,7 +67,7 @@ namespace dev.Tests
 			builder.setPlayer1("james", "human");
 
 			try {
-				builder.populateMap();
+				builder.createMap("demo");
 				Assert.Fail();
 			}
 			catch (Exception e) { }
@@ -73,7 +76,7 @@ namespace dev.Tests
 
 			try
 			{
-				builder.populateMap();
+				builder.createMap("demo");
 			}
 			catch (Exception e) { Assert.Fail(); }
 

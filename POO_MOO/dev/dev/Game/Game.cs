@@ -46,17 +46,40 @@ namespace dev
 
 
 
-        void GameAPI.load()
+        public void load()
         {
             throw new NotImplementedException();
         }
 
-        void GameAPI.next()
+        public void next()
         {
+			this.turn.init();
+			this.turns_left--;
             throw new NotImplementedException();
         }
 
-        void GameAPI.save()
+		public bool isFinished()
+		{
+			return this.turns_left == 0 || this.player1.units.Count() == 0 || this.player2.units.Count() == 0;
+        }
+
+		public PlayerAPI getResult()
+		{
+			if(!this.isFinished())
+			{
+				throw new Exception("Game is not finished.");
+			}
+			if (this.player1.units.Count() == 0)
+				return this.player2;
+			if (this.player2.units.Count() == 0)
+				return this.player1;
+			if (this.turns_left == 0)
+				return null;
+
+			return null;
+		}
+
+		public void save()
         {
             throw new NotImplementedException();
         }

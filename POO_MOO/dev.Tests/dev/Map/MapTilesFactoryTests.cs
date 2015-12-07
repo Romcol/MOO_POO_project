@@ -38,6 +38,7 @@ namespace dev.Tests
 
 			Map map = factory.createMap();
 			Assert.AreEqual(map.size, size);
+			
 		}
 	}
 }

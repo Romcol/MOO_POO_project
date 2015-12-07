@@ -7,10 +7,14 @@ namespace API
 {
     public interface TurnAPI
     {
-        List<ActionAPI> Actions { get; set; }
+        Stack<ActionAPI> actions { get; set; }
 
-        void addAction(Action a);
+		PlayerAPI currentPlayer { get; set; }
+        void addAction(ActionAPI a);
         void undo();
-        void init();
+
+		void init();
+
+
     }
 }

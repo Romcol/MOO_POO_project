@@ -8,7 +8,7 @@ namespace dev
 	public class TileFlyweight
 	{
 
-		private Dictionary<String, Tile> tiles
+		private Dictionary<TileType, Tile> tiles
 		{
 			get;
 			set;
@@ -16,17 +16,17 @@ namespace dev
 
 		public TileFlyweight()
 		{
-			this.tiles = new Dictionary<string, Tile>();
-            this.tiles.Add("mountain", new Mountain());
-            this.tiles.Add("plain", new Plain());
-            this.tiles.Add("forest", new Forest());
-            this.tiles.Add("water", new Water());
+			this.tiles = new Dictionary<TileType, Tile>();
+            this.tiles.Add(TileType.Mountain, new Mountain());
+            this.tiles.Add(TileType.Plain, new Plain());
+            this.tiles.Add(TileType.Forest, new Forest());
+            this.tiles.Add(TileType.Water, new Water());
         }
 
 
-        public Tile getTile(string key)
+        public Tile getTile(TileType type)
 		{
-            return this.tiles[key];
+            return this.tiles[type];
 		}
 	}
 }

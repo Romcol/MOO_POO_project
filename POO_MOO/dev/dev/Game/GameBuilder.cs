@@ -19,18 +19,15 @@ namespace dev
 
 		public void createMap(string map_type)
 		{
-            MapTilesFactory factory = new MapTilesFactory(map_type);
-			Game.INSTANCE.map = factory.createMap();
-			Game.INSTANCE.turns_left = factory.map_strategy.nb_turns;
-		}
-
-		public void populateMap()
-		{
 			if (Game.INSTANCE.player1 == null || Game.INSTANCE.player2 == null)
 			{
 				throw new Exception("Players must be initialized before the map filling.");
 			}
 
+			MapTilesFactory factory = new MapTilesFactory(map_type);
+			Game.INSTANCE.map = factory.createMap();
+			Game.INSTANCE.turns_left = factory.map_strategy.nb_turns;
 		}
+
 	}
 }

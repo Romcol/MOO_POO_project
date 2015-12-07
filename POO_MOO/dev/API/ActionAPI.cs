@@ -9,5 +9,7 @@ namespace API
     {
         bool cando();
         void doit();
+
+		void undo();
     }
 }

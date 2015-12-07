@@ -12,7 +12,7 @@ namespace dev
 
 		public MapTilesFactory(string type)
 		{
-			this.map_strategy = this.geMapStrategy(type);
+			this.map_strategy = this.getMapStrategy(type);
 		}
 
 		public Map createMap()
@@ -20,7 +20,7 @@ namespace dev
 			return this.map_strategy.createMap();
 		}
 
-		private MapStrategy geMapStrategy(string type)
+		private MapStrategy getMapStrategy(string type)
 		{
 			MapStrategy strategy;
 			switch (type)

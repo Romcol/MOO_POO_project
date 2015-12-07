@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using API;
+using System.Threading.Tasks;
 
 namespace dev
 {
-	public class Forest : Tile
+	public enum Race
 	{
-		public override TileType getType()
-		{
-			return TileType.Forest;
-		}
+		Human = 0,
+		Elf = 1,
+		Orc = 2
 	}
+
 }

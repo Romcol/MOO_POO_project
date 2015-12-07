@@ -7,5 +7,9 @@ namespace dev
 {
     public class Water : Tile
     {
-    }
+		public override TileType getType()
+		{
+			return TileType.Water;
+		}
+	}
 }

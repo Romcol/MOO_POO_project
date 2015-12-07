@@ -8,7 +8,12 @@ namespace dev
 {
     public abstract class Action : API.ActionAPI
     {
-        bool ActionAPI.cando()
+		public void undo()
+		{
+			throw new NotImplementedException();
+		}
+
+		bool ActionAPI.cando()
         {
             throw new NotImplementedException();
         }

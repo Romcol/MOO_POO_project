@@ -17,16 +17,16 @@ namespace dev.Tests
             TileFlyweight tileFlyweight = new TileFlyweight();
 
             // Test types coherence
-            Assert.AreEqual(tileFlyweight.getTile("mountain").GetType(), typeof(Mountain));
-            Assert.AreEqual(tileFlyweight.getTile("plain").GetType(), typeof(Plain));
-            Assert.AreEqual(tileFlyweight.getTile("forest").GetType(), typeof(Forest));
-            Assert.AreEqual(tileFlyweight.getTile("water").GetType(), typeof(Water));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Mountain).GetType(), typeof(Mountain));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Plain).GetType(), typeof(Plain));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Forest).GetType(), typeof(Forest));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Water).GetType(), typeof(Water));
 
             // Test references equality
-            Assert.AreEqual(tileFlyweight.getTile("mountain"), tileFlyweight.getTile("mountain"));
-            Assert.AreEqual(tileFlyweight.getTile("plain"), tileFlyweight.getTile("plain"));
-            Assert.AreEqual(tileFlyweight.getTile("forest"), tileFlyweight.getTile("forest"));
-            Assert.AreEqual(tileFlyweight.getTile("water"), tileFlyweight.getTile("water"));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Mountain), tileFlyweight.getTile(TileType.Mountain));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Plain), tileFlyweight.getTile(TileType.Plain));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Forest), tileFlyweight.getTile(TileType.Forest));
+            Assert.AreEqual(tileFlyweight.getTile(TileType.Water), tileFlyweight.getTile(TileType.Water));
         }
     }
 }

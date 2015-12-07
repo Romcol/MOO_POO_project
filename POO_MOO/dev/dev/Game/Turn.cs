@@ -6,34 +6,43 @@ using API;
 
 namespace dev
 {
-    public class Turn : API.TurnAPI
+    public class Turn : TurnAPI
     {
-        List<ActionAPI> TurnAPI.Actions
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
+		public PlayerAPI currentPlayer
+		{
+			get;
+			set;
+		}
 
-            set
-            {
-                throw new NotImplementedException();
-            }
+		public Stack<ActionAPI> actions
+        {
+			get;
+			set;
         }
 
-        void TurnAPI.addAction(System.Action a)
+        public void addAction(ActionAPI	a)
         {
-            throw new NotImplementedException();
+			this.actions.Push(a);
         }
 
-        void TurnAPI.init()
+        public void init()
         {
-            throw new NotImplementedException();
+			this.actions.Clear();
+            if(this.currentPlayer == Game.INSTANCE.player1)
+			{
+				this.currentPlayer = Game.INSTANCE.player2;
+			} else
+			{
+				this.currentPlayer = Game.INSTANCE.player1;
+			}
         }
 
-        void TurnAPI.undo()
+        public void undo()
         {
-            throw new NotImplementedException();
+			ActionAPI action = this.actions.Pop();
+			action.undo();
+			throw new NotImplementedException();
         }
+		
     }
 }
