@@ -53,6 +53,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="dev\Algo.cs" />
     <Compile Include="dev\Game\Action.cs" />
     <Compile Include="dev\Game\Attack.cs" />
     <Compile Include="dev\Tile\Forest.cs" />

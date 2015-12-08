@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using API;
+using System.Threading.Tasks;
 
 namespace dev
 {
     public class Map : MapAPI
 	{
 
+        public Map(TileAPI[,] tiles)
+        {
+            Tiles = tiles;
+        }
 
         public int size
         {
@@ -16,18 +21,16 @@ namespace dev
             set;
         }
 
-
-        public TileAPI[,] tiles
+        public TileAPI[,] Tiles
         {
             get;
             set;
         }
 
-
-		public Map(int size)
+        public Map(int size)
 		{
 			this.size = size;
-			this.tiles = new Tile[this.size, this.size];
+			this.Tiles = new Tile[this.size, this.size];
 		}
 
 
@@ -39,7 +42,7 @@ namespace dev
 				throw new ArgumentException("x or y out of bounds.");
 			}
 
-			return this.tiles[x,y];
+			return this.Tiles[x,y];
 		}
 
 		public bool verifyCoord(int x)

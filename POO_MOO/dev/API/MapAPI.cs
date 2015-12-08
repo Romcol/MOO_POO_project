@@ -7,7 +7,7 @@ namespace API
 {
     public interface MapAPI
     {
-        TileAPI[,] tiles{ get; set; }
+        TileAPI[,] Tiles{ get; set; }
 
 		int size { get; set; }
 
