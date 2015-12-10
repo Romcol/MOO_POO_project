@@ -1,0 +1,4 @@
+C:\Users\Romcol\MOO_POO_project\POO_MOO\Wrapper\bin\Debug\TestWrapper.exe.config
+C:\Users\Romcol\MOO_POO_project\POO_MOO\Wrapper\obj\Debug\TestWrapper.exe
+C:\Users\Romcol\MOO_POO_project\POO_MOO\Wrapper\obj\Debug\TestWrapper.pdb
+C:\Users\Romcol\MOO_POO_project\POO_MOO\Wrapper\obj\Debug\Wrapper.csprojResolveAssemblyReference.cache
