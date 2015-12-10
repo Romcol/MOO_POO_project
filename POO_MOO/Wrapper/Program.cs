@@ -13,7 +13,7 @@ namespace Wrapper
         {
             var algo = new Algo();
             var res = algo.CreateMap(42);
-            foreach (var tile in res.Tiles)
+            foreach (var tile in res.tiles)
                 Console.WriteLine(tile); 
             Console.ReadLine();
         }

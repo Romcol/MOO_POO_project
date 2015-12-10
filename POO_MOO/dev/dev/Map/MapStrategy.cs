@@ -52,7 +52,7 @@ namespace dev
 			{
 				for (int j = 0; j < this.size; j++)
 				{
-					map.tiles[i, j] = tileFlyweight.getTile(tiles[i, j]);
+					//map.tiles[i, j] = tileFlyweight.getTile(tiles[i, j]);
 				}
 			}
 

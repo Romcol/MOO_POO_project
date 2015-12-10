@@ -14,7 +14,7 @@ namespace API
 		int lifePoints { get; set; }
 		int attackPoints { get; set; }
 		int defencePoints { get; set; }
-		int movePoints { get; set; }
+		double movePoints { get; set; }
 
 		bool attack(UnitAPI unit);
         List<TileAPI> getPossibleMoves();

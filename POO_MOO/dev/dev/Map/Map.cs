@@ -12,7 +12,7 @@ namespace dev
 
         public Map(TileAPI[,] tiles)
         {
-            Tiles = tiles;
+            this.tiles = tiles;
         }
 
         public int size
@@ -21,7 +21,7 @@ namespace dev
             set;
         }
 
-        public TileAPI[,] Tiles
+        public TileAPI[,] tiles
         {
             get;
             set;
@@ -30,7 +30,7 @@ namespace dev
         public Map(int size)
 		{
 			this.size = size;
-			this.Tiles = new Tile[this.size, this.size];
+			this.tiles = new Tile[this.size, this.size];
 		}
 
 
@@ -42,7 +42,7 @@ namespace dev
 				throw new ArgumentException("x or y out of bounds.");
 			}
 
-			return this.Tiles[x,y];
+			return this.tiles[x,y];
 		}
 
 		public bool verifyCoord(int x)

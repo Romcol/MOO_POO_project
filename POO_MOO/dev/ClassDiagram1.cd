@@ -63,7 +63,7 @@
   <Class Name="dev.Tile">
     <Position X="20.25" Y="13" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>dev\Tile\Tile.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -72,8 +72,8 @@
     <Position X="23.75" Y="15" Width="1.5" />
     <InheritanceLine Type="dev.Tile" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.508" />
-        <Point X="22.86" Y="13.508" />
+        <Point X="22.5" Y="13.433" />
+        <Point X="22.86" Y="13.433" />
         <Point X="22.86" Y="15.499" />
         <Point X="23.75" Y="15.499" />
       </Path>
@@ -87,10 +87,10 @@
     <Position X="23.75" Y="13.75" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.508" />
-        <Point X="22.86" Y="13.508" />
-        <Point X="22.86" Y="14.249" />
-        <Point X="23.75" Y="14.249" />
+        <Point X="22.5" Y="13.433" />
+        <Point X="22.86" Y="13.433" />
+        <Point X="22.86" Y="14.366" />
+        <Point X="23.75" Y="14.366" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -102,10 +102,10 @@
     <Position X="23.75" Y="12.5" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.508" />
-        <Point X="22.86" Y="13.508" />
-        <Point X="22.86" Y="12.999" />
-        <Point X="23.75" Y="12.999" />
+        <Point X="22.5" Y="13.433" />
+        <Point X="22.86" Y="13.433" />
+        <Point X="22.86" Y="13.213" />
+        <Point X="23.75" Y="13.213" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -117,10 +117,10 @@
     <Position X="23.75" Y="11.25" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.508" />
-        <Point X="22.86" Y="13.508" />
-        <Point X="22.86" Y="11.749" />
-        <Point X="23.75" Y="11.749" />
+        <Point X="22.5" Y="13.433" />
+        <Point X="22.86" Y="13.433" />
+        <Point X="22.86" Y="11.963" />
+        <Point X="23.75" Y="11.963" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -278,7 +278,7 @@
   <Interface Name="API.TurnAPI">
     <Position X="7.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAAAEAAAAACAAAAAAAAAAAAAAAAKAAAAAAAAAAAA=</HashCode>
+      <HashCode>ACAAAAAEAAAAACAAAAAAAAAAAAAAAAKAAAAAAAIAAAA=</HashCode>
       <FileName>API\TurnAPI.cs</FileName>
     </TypeIdentifier>
   </Interface>

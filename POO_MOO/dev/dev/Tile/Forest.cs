@@ -13,7 +13,7 @@ namespace dev
 			return TileType.Forest;
 		}
 
-		public override double moveCost(Race race)
+		public double moveCost(Race race)
 		{
 			switch (race)
 			{

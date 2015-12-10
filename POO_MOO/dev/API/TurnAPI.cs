@@ -13,6 +13,7 @@ namespace API
         void addAction(ActionAPI a);
         void undo();
 
+		void next();
 		void init();
 
 
