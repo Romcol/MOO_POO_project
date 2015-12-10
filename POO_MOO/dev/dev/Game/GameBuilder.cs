@@ -27,6 +27,7 @@ namespace dev
 			MapTilesFactory factory = new MapTilesFactory(map_type);
 			Game.INSTANCE.map = factory.createMap();
 			Game.INSTANCE.turns_left = factory.map_strategy.nb_turns;
+            
 		}
 
 	}

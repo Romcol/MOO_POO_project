@@ -33,8 +33,6 @@ namespace dev
 			this.tiles = new Tile[this.size, this.size];
 		}
 
-
-
 		public TileAPI getTile(int x, int y)
 		{
 			if(!verifyCoord(x) || !verifyCoord(y))

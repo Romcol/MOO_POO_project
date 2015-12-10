@@ -19,7 +19,7 @@ namespace dev
 
 		public MapStrategy()
 		{
-		//	nativeAlgo = Algo_new();
+			nativeAlgo = Algo_new();
 		}
 
 
@@ -30,21 +30,10 @@ namespace dev
 		{
 			Map map = new Map(this.size);
 			TileFlyweight tileFlyweight = new TileFlyweight();
-			TileType[,] tiles = new TileType[this.size, this.size];
+			TileType[] tiles1D = new TileType[this.size * this.size];
 
-			// Call to the dll method
-			//Algo_fillMap(nativeAlgo, tiles, this.size);
-			// algo provisoir en attendant le wrapper
-
-			int k = 0;
-			for (int i = 0; i < size; i++) {
-				for (int j = 0; j < size; j++)
-				{
-					tiles[i, j] = (TileType)(k % 4);
-					System.Diagnostics.Debug.WriteLine(tiles[i,j]);
-					k++;
-				}
-			}
+            // Call to the dll method
+            Algo_fillMap(nativeAlgo, tiles1D, this.size);
 
 
 			// Converts TileType (enum) 2D array into a Tile (object) array
@@ -52,7 +41,7 @@ namespace dev
 			{
 				for (int j = 0; j < this.size; j++)
 				{
-					//map.tiles[i, j] = tileFlyweight.getTile(tiles[i, j]);
+					map.tiles[i, j] = tileFlyweight.getTile(tiles1D[i+size*j]);
 				}
 			}
 
@@ -62,7 +51,7 @@ namespace dev
 		~MapStrategy()
 		{
 			Dispose(false);
-			//Algo_delete(nativeAlgo);
+			Algo_delete(nativeAlgo);
 		}
 
 
@@ -78,20 +67,18 @@ namespace dev
 				return;
 			if (disposing)
 			{
-				//Algo_delete(nativeAlgo);
+				Algo_delete(nativeAlgo);
 			}
 			disposed = true;
 		}
 
-		/*
-		[DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
-		extern static void Algo_fillMap(IntPtr algo, TileType[,] tiles, int nbTiles);
+        [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+		extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles);
 
-		[DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
 		extern static IntPtr Algo_new();
 
-		[DllImport("libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+		[DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
 		extern static IntPtr Algo_delete(IntPtr algo);
-		*/
 	}
 }
