@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace dev
+public enum Race
 {
-	public enum TileType
-	{
-		Plain = 0,
-		Mountain = 1,
-		Forest = 2,
-		Water = 3
-	}
-
+	Human = 0,
+	Elf = 1,
+	Orc = 2
 }

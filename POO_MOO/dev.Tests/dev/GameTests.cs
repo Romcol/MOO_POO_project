@@ -22,8 +22,8 @@ namespace dev.Tests
 		{
 
 			GameBuilder builder = new GameBuilder();
-			builder.setPlayer1("john", "orc");
-			builder.setPlayer2("james", "human");
+			builder.setPlayer1("john", Race.Orc);
+			builder.setPlayer2("james", Race.Human);
 			builder.createMap("small");
 
 			Game.INSTANCE.save();

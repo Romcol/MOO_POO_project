@@ -11,5 +11,21 @@ namespace dev
 		{
 			return TileType.Water;
 		}
+
+		public override int getVictoryPoints(Race race)
+		{
+			return 0;
+		}
+
+		public override double moveCost(Race race)
+		{
+			switch (race)
+			{
+				case Race.Human:
+					return 1;
+				default:
+					return 0;
+			}
+		}
 	}
 }

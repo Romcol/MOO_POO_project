@@ -13,21 +13,24 @@ namespace dev
 			return TileType.Forest;
 		}
 
-		public double moveCost(Race race)
+		public override int getVictoryPoints(Race race)
 		{
 			switch (race)
 			{
 				case Race.Human:
-
-					break;
+					return 1;
 				case Race.Elf:
-					break;
+					return 3;
 				case Race.Orc:
-					break;
+					return 1;
 				default:
-					break;
+					return 0;
 			}
-			throw new NotImplementedException();
+		}
+
+		public override double moveCost(Race race)
+		{
+			return 1;
 		}
 	}
 }

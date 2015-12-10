@@ -7,12 +7,12 @@ namespace dev
 {
     public class GameBuilder
     {
-		public void setPlayer1(string name, string race)
+		public void setPlayer1(string name, Race race)
 		{
 			Game.INSTANCE.player1 = new Player(name, race);
 		}
 
-		public void setPlayer2(string name, string race)
+		public void setPlayer2(string name, Race race)
 		{
 			Game.INSTANCE.player2 = new Player(name, race);
 		}

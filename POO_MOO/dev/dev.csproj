@@ -91,8 +91,8 @@
     <Compile Include="dev\Game\Turn.cs" />
     <Compile Include="API\TurnAPI.cs" />
     <Compile Include="dev\Game\Undoable.cs" />
-    <Compile Include="dev\Tile\TileType.cs" />
-    <Compile Include="dev\Unit\Race.cs" />
+    <Compile Include="TileType.cs" />
+    <Compile Include="Race.cs" />
     <Compile Include="dev\Unit\Unit.cs" />
     <Compile Include="dev\Tile\Water.cs" />
     <Page Include="MainWindow.xaml">

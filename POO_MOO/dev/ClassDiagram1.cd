@@ -63,7 +63,7 @@
   <Class Name="dev.Tile">
     <Position X="20.25" Y="13" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>dev\Tile\Tile.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -72,14 +72,14 @@
     <Position X="23.75" Y="15" Width="1.5" />
     <InheritanceLine Type="dev.Tile" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.433" />
-        <Point X="22.86" Y="13.433" />
-        <Point X="22.86" Y="15.499" />
-        <Point X="23.75" Y="15.499" />
+        <Point X="22.5" Y="13.508" />
+        <Point X="22.86" Y="13.508" />
+        <Point X="22.86" Y="15.577" />
+        <Point X="23.75" Y="15.577" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>dev\Tile\Plain.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -87,14 +87,14 @@
     <Position X="23.75" Y="13.75" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.433" />
-        <Point X="22.86" Y="13.433" />
-        <Point X="22.86" Y="14.366" />
-        <Point X="23.75" Y="14.366" />
+        <Point X="22.5" Y="13.508" />
+        <Point X="22.86" Y="13.508" />
+        <Point X="22.86" Y="14.463" />
+        <Point X="23.75" Y="14.463" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>dev\Tile\Water.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,8 +102,8 @@
     <Position X="23.75" Y="12.5" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.433" />
-        <Point X="22.86" Y="13.433" />
+        <Point X="22.5" Y="13.508" />
+        <Point X="22.86" Y="13.508" />
         <Point X="22.86" Y="13.213" />
         <Point X="23.75" Y="13.213" />
       </Path>
@@ -117,8 +117,8 @@
     <Position X="23.75" Y="11.25" Width="1.5" />
     <InheritanceLine Type="dev.Tile" FixedFromPoint="true">
       <Path>
-        <Point X="22.5" Y="13.433" />
-        <Point X="22.86" Y="13.433" />
+        <Point X="22.5" Y="13.508" />
+        <Point X="22.86" Y="13.508" />
         <Point X="22.86" Y="11.963" />
         <Point X="23.75" Y="11.963" />
       </Path>
@@ -236,7 +236,7 @@
   <Interface Name="API.PlayerAPI">
     <Position X="9" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAUAAAAAAAACAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAUAAAAAAAACAAAAAA=</HashCode>
       <FileName>API\PlayerAPI.cs</FileName>
     </TypeIdentifier>
   </Interface>

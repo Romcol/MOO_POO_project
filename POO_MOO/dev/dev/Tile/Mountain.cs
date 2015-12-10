@@ -12,9 +12,30 @@ namespace dev
 			return TileType.Mountain;
 		}
 
-		public double moveCost(Race race)
+		public override int getVictoryPoints(Race race)
 		{
-			throw new NotImplementedException();
+			switch (race)
+			{
+				case Race.Human:
+					return 1;
+				case Race.Elf:
+					return 0;
+				case Race.Orc:
+					return 2;
+				default:
+					return 0;
+			}
+		}
+
+		public override double moveCost(Race race)
+		{
+			switch (race)
+			{
+				case Race.Elf:
+					return 2;
+				default:
+					return 1;
+			}
 		}
 	}
 }

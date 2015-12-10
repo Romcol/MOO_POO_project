@@ -7,7 +7,6 @@ namespace dev
 {
     public class Elf : Unit
     {
-
 		public Elf()
 		{
 			this.lifePoints = 12;
@@ -20,5 +19,6 @@ namespace dev
 		{
 			return Race.Elf;
         }
+
 	}
 }
