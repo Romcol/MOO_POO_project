@@ -51,12 +51,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Debug\libCPP.dll">
-      <Link>libCPP.dll</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\dev\dev.csproj">
       <Project>{cbdbe84f-d54e-4394-be90-84cfc63ed8bb}</Project>
       <Name>dev</Name>

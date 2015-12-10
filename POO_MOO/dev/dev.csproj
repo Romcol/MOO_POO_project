@@ -68,8 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="dev\Game\Action.cs" />
+    <Compile Include="dev\Map\Action.cs" />
     <Compile Include="dev\Game\Attack.cs" />
+    <Compile Include="dev\Map\Wrapper.cs" />
     <Compile Include="dev\Tile\Forest.cs" />
     <Compile Include="dev\Game\Game.cs" />
     <Compile Include="dev\Game\GameBuilder.cs" />
@@ -91,10 +92,10 @@
     <Compile Include="dev\Game\Turn.cs" />
     <Compile Include="API\TurnAPI.cs" />
     <Compile Include="dev\Game\Undoable.cs" />
-    <Compile Include="TileType.cs" />
-    <Compile Include="Race.cs" />
     <Compile Include="dev\Unit\Unit.cs" />
     <Compile Include="dev\Tile\Water.cs" />
+    <Compile Include="Race.cs" />
+    <Compile Include="TileType.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -18,6 +18,7 @@ namespace dev
 		{
 			this.name = name;
 			this.race = race;
+            this.units = new List<UnitAPI>();
 		}
 
         void PlayerAPI.getVictoryPoints()

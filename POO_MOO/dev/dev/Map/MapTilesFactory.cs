@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace dev
 			this.map_strategy = this.getMapStrategy(type);
 		}
 
-		public Map createMap()
+		public MapAPI createMap()
 		{
 			return this.map_strategy.createMap();
 		}

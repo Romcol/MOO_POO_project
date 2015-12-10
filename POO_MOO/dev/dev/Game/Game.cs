@@ -12,11 +12,6 @@ namespace dev
     {
         public static Game INSTANCE = new Game();
 
-        private Game()
-        {
-
-        }
-
         public int turns_left {
             get;
             set;

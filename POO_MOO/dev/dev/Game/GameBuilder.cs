@@ -7,6 +7,10 @@ namespace dev
 {
     public class GameBuilder
     {
+       public GameBuilder()
+        {
+            Game.INSTANCE = new Game();
+        }
 		public void setPlayer1(string name, Race race)
 		{
 			Game.INSTANCE.player1 = new Player(name, race);
