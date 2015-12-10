@@ -12,5 +12,22 @@ namespace dev
 		{
 			return TileType.Forest;
 		}
+
+		public override double moveCost(Race race)
+		{
+			switch (race)
+			{
+				case Race.Human:
+
+					break;
+				case Race.Elf:
+					break;
+				case Race.Orc:
+					break;
+				default:
+					break;
+			}
+			throw new NotImplementedException();
+		}
 	}
 }

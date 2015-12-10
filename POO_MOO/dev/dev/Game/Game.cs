@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using API;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace dev
 {
@@ -51,9 +53,14 @@ namespace dev
             throw new NotImplementedException();
         }
 
+		public void start()
+		{
+			this.turn.init();
+		}
+
         public void next()
         {
-			this.turn.init();
+			this.turn.next();
 			this.turns_left--;
             throw new NotImplementedException();
         }
@@ -63,7 +70,7 @@ namespace dev
 			return this.turns_left == 0 || this.player1.units.Count() == 0 || this.player2.units.Count() == 0;
         }
 
-		public PlayerAPI getResult()
+		public PlayerAPI getWinner()
 		{
 			if(!this.isFinished())
 			{
@@ -81,7 +88,12 @@ namespace dev
 
 		public void save()
         {
-            throw new NotImplementedException();
+			XmlSerializer xs = new XmlSerializer(typeof(Game));
+			using (StreamWriter wr = new StreamWriter("person.xml"))
+			{
+				xs.Serialize(wr, this);
+			}
+
         }
     }
 }

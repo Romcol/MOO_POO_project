@@ -17,7 +17,8 @@ namespace API
 		PlayerAPI getWinner();
 
 		void load();
-        void next();
-        void save();
+		void next();
+		void start();
+		void save();
     }
 }

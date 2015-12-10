@@ -11,5 +11,10 @@ namespace dev
 		{
 			return TileType.Mountain;
 		}
+
+		public override double moveCost(Race race)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }

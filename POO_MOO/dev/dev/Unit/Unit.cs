@@ -40,9 +40,9 @@ namespace dev
 		public int lifePoints { get; set; }
 		public int attackPoints { get; set; }
 		public int defencePoints { get; set; }
-		public int movePoints { get; set; }
+		public double movePoints { get; set; }
 
-		const int MOV_PTS = 2;
+		const double MOV_PTS = 2;
 
 		public bool attack(UnitAPI unit)
         {
@@ -70,7 +70,7 @@ namespace dev
 
 		public void initMovePoints()
 		{
-			this.defencePoints = MOV_PTS;
+			this.movePoints = MOV_PTS;
 		}
     }
 }
