@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using API;
 
 namespace dev.Tests
 {
@@ -36,7 +37,7 @@ namespace dev.Tests
 			Assert.AreEqual(factory.map_strategy.nb_units, nb_units);
 			Assert.AreEqual(factory.map_strategy.size, size);
 
-			Map map = factory.createMap();
+			MapAPI map = factory.createMap();
 			Assert.AreEqual(map.size, size);
 			
 		}

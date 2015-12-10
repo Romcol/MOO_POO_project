@@ -9,32 +9,13 @@ namespace dev
     public abstract class Unit : UnitAPI
     {
 		public int x {
-			get { return this.x; }
-			set {
-				if (Game.INSTANCE.map.verifyCoord(value))
-				{
-					this.y = value;
-				}
-				else
-				{
-					throw new ArgumentException("Value " + value + " for x is out of bounds [0," + Game.INSTANCE.map.size + "]");
-				}
-			}
+            get;
+            set;
 		}
 		public int y
 		{
-			get { return this.y; }
-			set
-			{
-				if (Game.INSTANCE.map.verifyCoord(value))
-				{
-					this.y = value;
-				}
-				else
-				{
-					throw new ArgumentException("Value " + value + " for y is out of bounds [0," + Game.INSTANCE.map.size + "]");
-				}
-			}
+            get;
+            set;
 		}
 
 		public int lifePoints { get; set; }
