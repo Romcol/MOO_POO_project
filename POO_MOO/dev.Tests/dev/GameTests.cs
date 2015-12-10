@@ -26,7 +26,7 @@ namespace dev.Tests
 			builder.setPlayer2("james", Race.Human);
 			builder.createMap("small");
 
-			Game.INSTANCE.save();
+			//Game.INSTANCE.save();
 
 
 		}

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace dev
 {
-    class Wrapper : IDisposable
+    public class Wrapper : IDisposable
     {
 
         bool disposed = false;
@@ -24,6 +24,36 @@ namespace dev
 		* Create a map using the C++ library
 		*/
 
+        public int[] getMoves(MapStrategy strategy, UnitAPI unit, PlayerAPI p1, PlayerAPI p2, int curr_p)
+        {
+            int[] curr_pos = { unit.x, unit.y };
+            Race race = (curr_p == 1) ? p1.race : p2.race;
+            int[] moves = new int[strategy.size * strategy.size];
+            TileType[] tiles = new TileType[strategy.size * strategy.size];
+            int[] pos = new int[strategy.size * strategy.size];
+
+
+            foreach (var tmpUnit in p1.units)
+            {
+                pos[tmpUnit.y * strategy.size + tmpUnit.x] = 1;
+            }
+            foreach (var tmpUnit in p1.units)
+            {
+                pos[tmpUnit.y * strategy.size + tmpUnit.x] = 2;
+            }
+
+
+            for (int i = 0; i < strategy.size; i++)
+            {
+                for (int j = 0; j < strategy.size; j++)
+                {
+                    tiles[i + strategy.size * j] = Game.INSTANCE.map.tiles[i, j].getType();
+                }
+            }
+
+            Algo_getMoves(nativeAlgo, tiles, strategy.size, pos, curr_pos, curr_p, race, moves);
+            return moves;
+        }
         public MapAPI createMap(MapStrategy strategy, GameAPI game)
         {
             MapAPI map = new Map(strategy.size);
@@ -34,7 +64,6 @@ namespace dev
             int[] posp2 = new int[2];
             // Call to the dll method
             Algo_fillMap(nativeAlgo, tiles1D, strategy.size, pos);
-
 
             // Converts TileType (enum) 2D array into a Tile (object) array
             for (int i = 0; i < strategy.size; i++)
@@ -113,7 +142,7 @@ namespace dev
         }
 
         [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
-        extern static void Algo_getMoves(IntPtr algo, TileType[] tiles, int nbTiles, int[] pos, int[] curr_pos, Race race, int[] moves);
+        extern static void Algo_getMoves(IntPtr algo, TileType[] tiles, int nbTiles, int[] pos, int[] curr_pos, int curr_p, Race race, int[] moves);
 
         [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles, int[] pos);

@@ -2,9 +2,15 @@
 
 enum TileType {
 	Plain = 0,
-	Moutain = 1,
+	Mountain = 1,
 	Forest = 2,
 	Water = 3
+};
+
+enum Race {
+	Human = 0,
+	Elf = 1,
+	Orc = 2
 };
 
 class Algo {
@@ -14,7 +20,8 @@ public:
 	~Algo() {}
 
 	// You can change the return type and the parameters according to your needs.
-	void fillMap(TileType map[], int size);
+	void fillMap(TileType map[], int size, int pos[]);
+	void getMoves(TileType map[], int nbTiles, int pos[], int curr_pos[], int curr_p, Race race, int moves[]);
 };
 
 
@@ -23,8 +30,12 @@ public:
 // export all C++ class/methods as friendly C functions to be consumed by external component in a portable way
 ///
 
-EXPORTCDECL void Algo_fillMap(Algo* algo, TileType map[], int size) {
-	return algo->fillMap(map, size);
+EXPORTCDECL void Algo_getMoves(Algo* algo, TileType map[], int size, int pos[], int curr_pos[], int curr_p, Race race, int moves[]){
+	return algo->getMoves(map, size, pos, curr_pos, curr_p, race, moves);
+}
+
+EXPORTCDECL void Algo_fillMap(Algo* algo, TileType map[], int size, int pos[]) {
+	return algo->fillMap(map, size, pos);
 }
 
 EXPORTCDECL Algo* Algo_new() {
