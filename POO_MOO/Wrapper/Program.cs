@@ -13,9 +13,9 @@ namespace Wrapper
         {
             var algo = new Algo();
             var res = algo.CreateMap(42);
-            /*foreach (var tile in res.Tiles)
+            foreach (var tile in res.Tiles)
                 Console.WriteLine(tile); 
-            Console.ReadLine();*/
+            Console.ReadLine();
         }
     }
 }
