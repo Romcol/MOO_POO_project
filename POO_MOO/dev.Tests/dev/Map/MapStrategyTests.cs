@@ -20,8 +20,7 @@ namespace dev.Tests
 
 			Assert.AreEqual(demoMap.size, 6);
 			Assert.AreEqual(demoMap.tiles.Length, 6*6);
-
-			Type tmp;
+			
 
 			int forest = 0;
 			int water = 0;

@@ -1,9 +1,0 @@
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\bin\Debug\TestWrapper.exe.config
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\bin\Debug\libCPP.dll
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\bin\Debug\TestWrapper.exe
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\bin\Debug\TestWrapper.pdb
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\bin\Debug\ModelEtudiant.dll
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\bin\Debug\ModelEtudiant.pdb
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\obj\Debug\TestWrapper.csprojResolveAssemblyReference.cache
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\obj\Debug\TestWrapper.exe
-C:\Users\Romcol\MOO_POO_ex\CppLibProjetEtudiant\TestWrapper\obj\Debug\TestWrapper.pdb

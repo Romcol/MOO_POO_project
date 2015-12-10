@@ -32,8 +32,8 @@ namespace dev.Tests
 		private void typeMapTest(string type, int size, int turns_left)
 		{
 			GameBuilder builder = new GameBuilder();
-			builder.setPlayer1("john", "orc");
-			builder.setPlayer2("james", "human");
+			builder.setPlayer1("john", Race.Orc);
+			builder.setPlayer2("james", Race.Human);
 
 			builder.createMap(type);
 			Assert.AreEqual(Game.INSTANCE.turns_left, turns_left);
@@ -45,12 +45,12 @@ namespace dev.Tests
 		public void setPlayerTest()
 		{
 			GameBuilder builder = new GameBuilder();
-			builder.setPlayer1("john", "orc");
+			builder.setPlayer1("john", Race.Orc);
 			Assert.AreEqual(Game.INSTANCE.player1.name, "john");
-			Assert.AreEqual(Game.INSTANCE.player1.race, "orc");
-			builder.setPlayer2("james", "human");
+			Assert.AreEqual(Game.INSTANCE.player1.race, Race.Orc);
+			builder.setPlayer2("james", Race.Human);
 			Assert.AreEqual(Game.INSTANCE.player2.name, "james");
-			Assert.AreEqual(Game.INSTANCE.player2.race, "human");
+			Assert.AreEqual(Game.INSTANCE.player2.race, Race.Human);
 
 		}
 
@@ -64,7 +64,7 @@ namespace dev.Tests
 			}
 			catch (Exception e) { }
 
-			builder.setPlayer1("james", "human");
+			builder.setPlayer1("james", Race.Human);
 
 			try {
 				builder.createMap("demo");
@@ -72,7 +72,7 @@ namespace dev.Tests
 			}
 			catch (Exception e) { }
 
-			builder.setPlayer2("james", "human");
+			builder.setPlayer2("james", Race.Human);
 
 			try
 			{

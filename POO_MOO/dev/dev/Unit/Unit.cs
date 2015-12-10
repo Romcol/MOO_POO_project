@@ -55,12 +55,6 @@ namespace dev
         }
 
 
-
-        public int getVictoryPoints()
-        {
-            throw new NotImplementedException();
-        }
-
         public bool move(int x, int y)
         {
             throw new NotImplementedException();

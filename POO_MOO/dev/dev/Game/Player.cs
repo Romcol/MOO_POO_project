@@ -10,11 +10,11 @@ namespace dev
     {
 		public string name { get; set; }
 
-		public string race { get; set; }
+		public Race race { get; set; }
 
 		public List<UnitAPI> units { get; set; }
 
-		public Player(string name, string race)
+		public Player(string name, Race race)
 		{
 			this.name = name;
 			this.race = race;

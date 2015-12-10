@@ -9,8 +9,7 @@ namespace API
     {
         List<UnitAPI> units { get; set; }
 
-		string race { get; set; }
-
+		Race race { get; set; }
 		string name { get; set; }
         void getVictoryPoints();
     }

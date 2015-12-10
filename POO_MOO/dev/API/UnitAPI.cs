@@ -18,7 +18,6 @@ namespace API
 
 		bool attack(UnitAPI unit);
         List<TileAPI> getPossibleMoves();
-        int getVictoryPoints();
         bool move(int x, int y);
 
 		void initMovePoints();
