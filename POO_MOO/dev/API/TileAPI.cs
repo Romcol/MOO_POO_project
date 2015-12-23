@@ -7,7 +7,6 @@ namespace API
 {
     public interface TileAPI
     {
-		
-
+        TileType getType();
 	}
 }
