@@ -90,5 +90,25 @@ namespace dev
 			}
 
         }
-    }
+
+		public UnitAPI getUnit(int x, int y)
+		{
+			for (int i = 0; i < this.player1.units.Count; i++)
+			{
+				if (this.player1.units[i].x == x && this.player1.units[i].y == y)
+				{
+					return this.player1.units[i];
+				}
+			}
+			for (int i = 0; i < this.player2.units.Count; i++)
+			{
+				if (this.player2.units[i].x == x && this.player2.units[i].y == y)
+				{
+					return this.player2.units[i];
+				}
+			}
+
+			return null;
+		}
+	}
 }

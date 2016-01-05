@@ -141,16 +141,16 @@ namespace dev
             disposed = true;
         }
 
-        [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\Guillaume\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_getMoves(IntPtr algo, TileType[] tiles, int nbTiles, int[] pos, int[] curr_pos, int curr_p, Race race, int[] moves);
 
-        [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\Guillaume\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static void Algo_fillMap(IntPtr algo, TileType[] tiles, int nbTiles, int[] pos);
 
-        [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\Guillaume\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_new();
 
-        [DllImport("C:\\Users\\Romcol\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\Guillaume\\MOO_POO_project\\POO_MOO\\Debug\\libCPP.dll", CallingConvention = CallingConvention.Cdecl)]
         extern static IntPtr Algo_delete(IntPtr algo);
     }
 }

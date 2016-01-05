@@ -47,5 +47,16 @@ namespace dev
 		{
 			return x >= 0 && x < this.size;
         }
-    }
+
+		public static bool areAdjacent(int x1, int y1, int x2, int y2)
+		{
+			return Map.distance(x1,y1,x2, y2) == 1;
+		}
+
+		public static int distance(int x1, int y1, int x2, int y2)
+		{
+			return Math.Abs(x1 - x2) + Math.Abs(y1 - y2);
+        }
+
+	}
 }

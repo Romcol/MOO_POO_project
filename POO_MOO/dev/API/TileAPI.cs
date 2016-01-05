@@ -8,5 +8,7 @@ namespace API
     public interface TileAPI
     {
         TileType getType();
+		double moveCost(Race race);
+
 	}
 }
