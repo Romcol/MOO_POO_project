@@ -31,8 +31,8 @@ namespace dev
 			}
 
 			MapTilesFactory factory = new MapTilesFactory(map_type);
-			this.game.map = factory.createMap(this.game);
-			this.game.turns_left = factory.map_strategy.nb_turns;
+// this.game.map = factory.createMap(this.game);
+            this.game.turns_left = factory.map_strategy.nb_turns;
 
 			Game.INSTANCE = this.game;
 
