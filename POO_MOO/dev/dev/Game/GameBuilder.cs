@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,31 +8,35 @@ namespace dev
 {
     public class GameBuilder
     {
+		Game game = new Game();
        public GameBuilder()
         {
-            Game.INSTANCE = new Game();
+            this.game = new Game();
         }
 		public void setPlayer1(string name, Race race)
 		{
-			Game.INSTANCE.player1 = new Player(name, race);
+			this.game.player1 = new Player(name, race);
 		}
 
 		public void setPlayer2(string name, Race race)
 		{
-			Game.INSTANCE.player2 = new Player(name, race);
+			this.game.player2 = new Player(name, race);
 		}
 
-		public void createMap(string map_type)
+		public GameAPI createMap(string map_type)
 		{
-			if (Game.INSTANCE.player1 == null || Game.INSTANCE.player2 == null)
+			if (this.game.player1 == null || this.game.player2 == null)
 			{
 				throw new Exception("Players must be initialized before the map filling.");
 			}
 
 			MapTilesFactory factory = new MapTilesFactory(map_type);
-			Game.INSTANCE.map = factory.createMap();
-			Game.INSTANCE.turns_left = factory.map_strategy.nb_turns;
-            
+			this.game.map = factory.createMap(this.game);
+			this.game.turns_left = factory.map_strategy.nb_turns;
+
+			Game.INSTANCE = this.game;
+
+			return game;
 		}
 
 	}
