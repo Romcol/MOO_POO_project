@@ -16,10 +16,17 @@ namespace API
 		int defencePoints { get; set; }
 		double movePoints { get; set; }
 
-		bool attack(UnitAPI unit);
-        List<TileAPI> getPossibleMoves();
-        bool move(int x, int y);
+        //List<TileAPI> getPossibleMoves();
 
 		void initMovePoints();
-    }
+
+
+		bool canMove(int x, int y);
+		void move(int x, int y);
+		bool canAttack(UnitAPI unit);
+		void attack(UnitAPI unit);
+		void kill();
+
+		Race getRace();
+	}
 }

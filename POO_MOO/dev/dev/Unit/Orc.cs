@@ -2,17 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using API;
 
 namespace dev
 {
 	public class Orc : Unit
 	{
+		public override int InitialLifePoints { get { return 17; } }
+
 		public Orc()
 		{
-			this.lifePoints = 17;
+			this.lifePoints = InitialLifePoints;
 			this.attackPoints = 5;
 			this.defencePoints = 2;
 			this.initMovePoints();
+		}
+		
+
+		public override bool canAttack(UnitAPI unit)
+		{
+			if (unit.getRace() == this.getRace()) return false;
+
+			if (Game.INSTANCE.map.getTile(this.x,this.y).getType() == TileType.Mountain)
+			{
+				return Map.distance(unit.x, unit.y, this.x, this.y) <= 2;
+            } else
+			{
+				return Map.distance(unit.x, unit.y, this.x, this.y) <= 1;
+			}
 		}
 
 		public override Race getRace()

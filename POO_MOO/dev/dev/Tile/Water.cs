@@ -24,7 +24,7 @@ namespace dev
 				case Race.Human:
 					return 1;
 				default:
-					return 0;
+					return -1;
 			}
 		}
 	}
