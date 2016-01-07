@@ -5,6 +5,7 @@ using System.Text;
 using API;
 using System.Xml.Serialization;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace dev
 {
@@ -89,8 +90,12 @@ namespace dev
 			{
 				xs.Serialize(wr, this);
 			}
+			BinaryFormatter formatter = new BinaryFormatter();
+            FileStream fileStream = new FileStream("save.dat", FileMode.Create, FileAccess.Write);
+			formatter.Serialize(fileStream, this);
+			fileStream.Close();
 
-        }
+		}
 
 		public UnitAPI getUnit(int x, int y)
 		{
