@@ -1,0 +1,17 @@
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\IHM.MVVM.exe.config
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.csprojResolveAssemblyReference.cache
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\Views\MainWindow.baml
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\App.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM_MarkupCompile.cache
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.g.resources
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.Properties.Resources.resources
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.csproj.GenerateResource.Cache
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\Views\Home.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\IHM.MVVM.exe
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\IHM.MVVM.pdb
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\dev.exe
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\dev.pdb
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\Views\Home.baml
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.exe
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.pdb

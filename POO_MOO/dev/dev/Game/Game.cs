@@ -13,6 +13,7 @@ namespace dev
     {
         public static Game INSTANCE = new Game();
 
+
         public int turns_left {
             get;
             set;

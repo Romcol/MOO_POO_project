@@ -8,7 +8,7 @@ namespace dev
 {
     public class GameBuilder
     {
-		Game game = new Game();
+		public Game game = new Game();
        public GameBuilder()
         {
             this.game = new Game();
@@ -22,7 +22,7 @@ namespace dev
 		{
 			this.game.player2 = new Player(name, race);
 		}
-
+		
 		public GameAPI createMap(string map_type)
 		{
 			if (this.game.player1 == null || this.game.player2 == null)
@@ -38,6 +38,7 @@ namespace dev
 
 			return game;
 		}
+
 
 	}
 }
