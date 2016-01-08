@@ -13,14 +13,20 @@ namespace IHM.MVVM.ViewModels
     public class MainViewModel : ViewModelBase
     {
 
-        public string p1Name;
-        public string p2Name;
+        public string p1Name
+		{
+			get; set;
+		}
+        public string p2Name {
+			get; set;
+		}
 
         /// <summary>
         /// Constructeur de la VueModele pricipale
         /// </summary>
         public MainViewModel()
         {
+			
             /*engine = new Cours.Engine.Engine();
             map = engine.GetMap();
 
@@ -39,8 +45,8 @@ namespace IHM.MVVM.ViewModels
         public ICommand Play
         {
             get
-            {
-                if (play == null)
+            {;
+				if (play == null)
                     play = new RelayCommand(playAction);
                 return play;
             }
@@ -48,8 +54,8 @@ namespace IHM.MVVM.ViewModels
 
         private void playAction()
         {
-            // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
-            Task.Factory.StartNew(() =>
+			// création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
+			Task.Factory.StartNew(() =>
             {
                 /* engine.NextTurn();
                  updateUnit();  // les appels sont implicitment fait dans le bon thread dans le modèle MVVM
