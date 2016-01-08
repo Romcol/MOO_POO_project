@@ -12,7 +12,6 @@ namespace IHM.MVVM.ViewModels
     public class TileViewModel : ViewModelBase
     {
         private TileAPI tile;
-
         public TileViewModel(int row, int column, TileAPI tile)
         {
             this.tile = tile;
@@ -48,14 +47,36 @@ namespace IHM.MVVM.ViewModels
         public int Row { get; private set; }
         public int Column { get; private set; }
 
-        bool hasUnit;
-        public bool HasUnit
+        bool hasElf;
+        public bool HasElf
         {
-            get { return hasUnit; }
+            get { return hasElf; }
             set
             {
-                hasUnit = value;
-                RaisePropertyChanged("HasUnit");
+                hasElf = value;
+                RaisePropertyChanged("HasElf");
+            }
+        }
+
+        bool hasOrc;
+        public bool HasOrc
+        {
+            get { return hasOrc; }
+            set
+            {
+                hasOrc = value;
+                RaisePropertyChanged("HasElf");
+            }
+        }
+
+        bool hasHuman;
+        public bool HasHuman
+        {
+            get { return hasHuman; }
+            set
+            {
+                hasHuman = value;
+                RaisePropertyChanged("HasHuman");
             }
         }
 
