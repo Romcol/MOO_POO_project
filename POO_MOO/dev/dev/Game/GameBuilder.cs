@@ -55,11 +55,18 @@ namespace dev
 		public GameAPI load(string file)
 		{
 			IFormatter formatter = new BinaryFormatter();
-			Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
-			Game ret = (Game)formatter.Deserialize(stream);
-			stream.Close();
+			try
+			{
+				Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
+				Game ret = (Game)formatter.Deserialize(stream);
+				stream.Close();
+				return ret;
+			}
+			catch(Exception e)
+			{
+				return null;
+			}
 
-			return ret;
 		}
 	}
 }
