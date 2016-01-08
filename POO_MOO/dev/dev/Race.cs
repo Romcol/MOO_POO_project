@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-public enum Race
+namespace dev
 {
-	Human = 0,
-	Elf = 1,
-	Orc = 2
+	public enum Race
+	{
+		Human = 0,
+		Elf = 1,
+		Orc = 2
+	}
 }

@@ -11,7 +11,7 @@ namespace dev
 		public MapStrategy map_strategy {get;}
 
 
-		public MapTilesFactory(string type)
+		public MapTilesFactory(MapType type)
 		{
 			this.map_strategy = getMapStrategy(type);
 		}
@@ -21,22 +21,22 @@ namespace dev
 			return this.map_strategy.createMap(game);
 		}
 
-		public static MapStrategy getMapStrategy(string type)
+		public static MapStrategy getMapStrategy(MapType type)
 		{
 			MapStrategy strategy;
 			switch (type)
 			{
-				case "demo":
+				case MapType.Demo:
 					strategy = new DemoMapStrategy();
 					break;
-				case "small":
+				case MapType.Small:
 					strategy = new SmallMapStrategy();
 					break;
-				case "standard":
+				case MapType.Standard:
 					strategy = new StandardMapStrategy();
 					break;
 				default:
-					throw new ArgumentException("Incorrect map type : " + type + ". Must be \"demo#\", \"small\" or \"standard\".");
+					throw new ArgumentException("Incorrect map type.");
 			}
 			return strategy;
 

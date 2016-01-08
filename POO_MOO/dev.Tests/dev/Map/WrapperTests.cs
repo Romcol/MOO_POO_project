@@ -19,10 +19,10 @@ namespace dev.Tests
             builder.setPlayer1("john", Race.Orc);
             builder.setPlayer2("james", Race.Human);
 
-            builder.createMap("demo");
+            builder.createMap(MapType.Demo);
             Wrapper wrapper = new Wrapper();
 
-            int[] moves = wrapper.getMoves(MapTilesFactory.getMapStrategy("demo"), Game.INSTANCE.player1.units[0], Game.INSTANCE.player1, Game.INSTANCE.player2, 1, Game.INSTANCE);
+            int[] moves = wrapper.getMoves(MapTilesFactory.getMapStrategy(MapType.Demo), Game.INSTANCE.player1.units[0], Game.INSTANCE.player1, Game.INSTANCE.player2, 1, Game.INSTANCE);
 
            // Assert.IsNull(moves);
            // Assert.Fail();

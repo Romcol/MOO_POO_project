@@ -15,28 +15,28 @@ namespace dev.Tests
 		[TestMethod()]
 		public void demoGameTest()
 		{
-			typeMapTest("demo", 6, 5);
+			typeMapTest(MapType.Demo, 6, 5);
 		}
 
 		[TestMethod()]
 		public void smallGameTest()
 		{
-			typeMapTest("small", 10, 20);
+			typeMapTest(MapType.Small, 10, 20);
 		}
 
 		[TestMethod()]
 		public void standardGameTest()
 		{
-			typeMapTest("standard", 14, 30);
+			typeMapTest(MapType.Standard, 14, 30);
 		}
 
-		private void typeMapTest(string type, int size, int turns_left)
+		private void typeMapTest(MapType type, int size, int turns_left)
 		{
 			GameBuilder builder = new GameBuilder();
 			builder.setPlayer1("john", Race.Orc);
 			builder.setPlayer2("james", Race.Human);
 
-			builder.createMap(type);
+			GameAPI game = builder.createMap(type);
 			Assert.AreEqual(Game.INSTANCE.turns_left, turns_left);
 			Assert.AreEqual(Game.INSTANCE.map.size, size);
 
@@ -61,7 +61,7 @@ namespace dev.Tests
 			GameBuilder builder = new GameBuilder();
 			try
 			{
-				builder.createMap("demo");
+				builder.createMap(MapType.Demo);
 				Assert.Fail();
 			}
 			catch (Exception e) { }
@@ -70,7 +70,7 @@ namespace dev.Tests
 
 			try
 			{
-				builder.createMap("demo");
+				builder.createMap(MapType.Demo);
 				Assert.Fail();
 			}
 			catch (Exception e) { }
@@ -79,7 +79,7 @@ namespace dev.Tests
 
 			try
 			{
-				builder.createMap("demo");
+				builder.createMap(MapType.Demo);
 			}
 			catch (Exception e) { Assert.Fail(); }
 
@@ -140,13 +140,13 @@ namespace dev.Tests
 		[TestMethod()]
 		public void saveLoadTest()
 		{
-			typeMapTest("standard", 14, 30);
+			typeMapTest(MapType.Standard, 14, 30);
 
 			GameBuilder builder = new GameBuilder();
 			builder.setPlayer1("john", Race.Orc);
 			builder.setPlayer2("james", Race.Human);
 
-			builder.createMap("standard");
+			builder.createMap(MapType.Standard);
 
 			builder.save("test.dat");
 

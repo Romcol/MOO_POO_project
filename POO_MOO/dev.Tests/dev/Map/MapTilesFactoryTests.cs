@@ -15,22 +15,22 @@ namespace dev.Tests
 		[TestMethod()]
 		public void demoMapTest()
 		{
-			typeMapTest("demo", 6, 5, 4);
+			typeMapTest(MapType.Demo, 6, 5, 4);
 		}
 		[TestMethod()]
 		public void smallMapTest()
 		{
-			typeMapTest("small", 10, 20, 6);
+			typeMapTest(MapType.Small, 10, 20, 6);
 		}
 
 		[TestMethod()]
 		public void standardMapTest()
 		{
-			typeMapTest("standard", 14, 30, 8);
+			typeMapTest(MapType.Standard, 14, 30, 8);
 		}
 
 
-		private void typeMapTest(string type, int size, int nb_turns, int nb_units)
+		private void typeMapTest(MapType type, int size, int nb_turns, int nb_units)
 		{
 			MapTilesFactory factory = new MapTilesFactory(type);
 			Assert.AreEqual(factory.map_strategy.nb_turns, nb_turns);

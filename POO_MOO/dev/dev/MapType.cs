@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-public enum TileType
+namespace dev
 {
-	Plain = 0,
-	Mountain = 1,
-	Forest = 2,
-	Water = 3
+	public enum MapType
+	{
+		Demo = 0,
+		Small = 1,
+		Standard = 2
+	}
 }
