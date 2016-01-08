@@ -3,14 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:IHM.MVVM.Views"
+        xmlns:local="clr-namespace:IHM.MVVM"
+        xmlns:Dev="clr-namespace:dev;assembly=dev"
         mc:Ignorable="d"
         Title="SmallWorld" Height="500" Width="800">
     <Grid>
-        <!--
+
         <Grid.Resources>
             <local:Converter x:Key="conv" />
-        </Grid.Resources>-->
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
             <RowDefinition Height="1*" />
@@ -20,9 +21,11 @@
         <TextBlock Grid.Row="0" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="0,30,0,0">SmallWorld</TextBlock>
         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
             <Label  FontSize="20" FontWeight="Bold" Content="Select map size:"/>
-            <RadioButton FontSize="20" GroupName="mapSize" IsChecked="True" Content="Demo"/>
-            <RadioButton  FontSize="20" GroupName="mapSize"  Content="Small"/>
-            <RadioButton FontSize="20" GroupName="mapSize" Content="Normal"/>
+
+            <RadioButton IsChecked="{Binding Path=map_type, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:MapType.Demo},UpdateSourceTrigger=PropertyChanged}"  Content="Demo" GroupName="mapSize" />
+            <RadioButton IsChecked="{Binding Path=map_type, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:MapType.Small},UpdateSourceTrigger=PropertyChanged}"  Content="Small" GroupName="mapSize"/>
+            <RadioButton IsChecked="{Binding Path=map_type, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:MapType.Standard},UpdateSourceTrigger=PropertyChanged}"  Content="Standard" GroupName="mapSize"/>
+
         </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -34,18 +37,24 @@
                 <Label  FontSize="15" FontWeight="Bold" Content="Name:" Margin="10,0,0,0"/>
                 <TextBox Margin="5,0,60,0" Text="{Binding p1Name}"/>
                 <Label  FontSize="15" FontWeight="Bold" Content="Race:" Margin="10,0,0,0"/>
+
+                <RadioButton IsChecked="{Binding Path=p1Race, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:Race.Elf},UpdateSourceTrigger=PropertyChanged}"  Content="Elf" GroupName="p1Race"/>
+                <RadioButton IsChecked="{Binding Path=p1Race, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:Race.Orc},UpdateSourceTrigger=PropertyChanged}"  Content="Orc" GroupName="p1Race"/>
+                <RadioButton IsChecked="{Binding Path=p1Race, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:Race.Human},UpdateSourceTrigger=PropertyChanged}"  Content="Human" GroupName="p1Race"/>
+                <!--
                 <RadioButton FontSize="15" GroupName="p1Race" IsChecked="True" Content="Elf"/>
                 <RadioButton  FontSize="15" GroupName="p1Race" Content="Orc"/>
                 <RadioButton FontSize="15" GroupName="p1Race" Content="Human"/>
+                -->
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Vertical" Margin="10,0,0,0">
                 <Label  FontSize="20" FontWeight="Bold" Content="Player 2:" Margin="10,0,0,5"/>
                 <Label  FontSize="15" FontWeight="Bold" Content="Name:" Margin="10,0,0,0"/>
-                <TextBox Margin="5,0,60,0" Text="{Binding p2Name, Mode=TwoWay}"/>
+                <TextBox Margin="5,0,60,0" Text="{Binding p2Name}"/>
                 <Label  FontSize="15" FontWeight="Bold" Content="Race:" Margin="10,0,0,0"/>
-                <RadioButton FontSize="15" GroupName="p2Race" IsChecked="True" Content="Elf"/>
-                <RadioButton  FontSize="15" GroupName="p2Race" Content="Orc"/>
-                <RadioButton FontSize="15" GroupName="p2Race" Content="Human"/>
+                <RadioButton IsChecked="{Binding Path=p2Race, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:Race.Elf},UpdateSourceTrigger=PropertyChanged}"  Content="Elf" GroupName="p2Race"/>
+                <RadioButton IsChecked="{Binding Path=p2Race, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:Race.Orc},UpdateSourceTrigger=PropertyChanged}"  Content="Orc" GroupName="p2Race"/>
+                <RadioButton IsChecked="{Binding Path=p2Race, Converter={StaticResource conv}, ConverterParameter={x:Static Dev:Race.Human},UpdateSourceTrigger=PropertyChanged}"  Content="Human" GroupName="p2Race"/>
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
