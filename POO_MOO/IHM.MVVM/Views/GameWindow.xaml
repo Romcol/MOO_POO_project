@@ -22,6 +22,7 @@
                 <Label Content="{Binding Message}" />
             </StackPanel>
             <!-- Creation du bouton "Fin de tour" et Association à la commande 'NextTurn' -->
+            <Button HorizontalAlignment="Right"  Content="Save" Command="{Binding Save}" Margin="0,0,80,0"/>
             <Button HorizontalAlignment="Right"  Content="Fin du tour" Command="{Binding NextTurn}" />
         </Grid>
         <ListBox ItemsSource="{Binding Tiles}" SelectedItem="{Binding SelectedTile, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True">
