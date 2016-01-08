@@ -28,8 +28,7 @@ namespace IHM.MVVM.ViewModels
                 }
             }
 
-            /*
-            updateUnit();*/
+            updateUnit();
         }
 
         /// <summary>
@@ -38,14 +37,31 @@ namespace IHM.MVVM.ViewModels
         /// </summary>
         private void updateUnit()
         {
-           /* var unit = engine.GetUnit();
-            // on enlève l'unité de son ancienne tuile
-            var tile = tiles.FirstOrDefault(t => t.HasUnit);
-            if (tile != null)
-                tile.HasUnit = false;
-            // on positionne l'unité sur sa nouvelle tuile
-            tile = tiles.FirstOrDefault(t => t.Row == unit.Row && t.Column == unit.Column);
-            tile.HasUnit = true;*/
+            /* var unit = engine.GetUnit();
+             // on enlève l'unité de son ancienne tuile
+             var tile = tiles.FirstOrDefault(t => t.HasUnit);
+             if (tile != null)
+                 tile.HasUnit = false;
+             // on positionne l'unité sur sa nouvelle tuile
+             tile = tiles.FirstOrDefault(t => t.Row == unit.Row && t.Column == unit.Column);
+             tile.HasUnit = true; tile.hasElf= true; tile.hasOrc = tile.hasHuman*/
+
+            for (int i = 0; i < tiles.Count(); i++)
+            {
+                TileViewModel tile = Tiles.FirstOrDefault();
+                switch (game.getUnits(tile.Row, tile.Column).FirstOrDefault().getRace())
+                {
+                    case dev.Race.Elf:
+                        tile.HasElf = true; break;
+                    case dev.Race.Human:
+                        tile.HasHuman = true; break;
+                    case dev.Race.Orc:
+                        tile.HasOrc = true; break;
+                    default:
+                        break;
+                }
+            }
+            
         }
         /// <summary>
         /// Mise à jour des Tuiles : les resources en fer peuvent diminuer à chaque Tour
