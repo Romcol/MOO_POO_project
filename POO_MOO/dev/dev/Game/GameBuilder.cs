@@ -49,7 +49,7 @@ namespace dev
 		{
 			IFormatter formatter = new BinaryFormatter();
 			Stream stream = new FileStream(file, FileMode.Create, FileAccess.Write, FileShare.None);
-			formatter.Serialize(stream, this.game);
+			formatter.Serialize(stream, Game.INSTANCE);
 			stream.Close();
 		}
 		public GameAPI load(string file)
@@ -60,12 +60,15 @@ namespace dev
 				Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
 				Game ret = (Game)formatter.Deserialize(stream);
 				stream.Close();
+
 				return ret;
 			}
 			catch(Exception e)
 			{
 				return null;
 			}
+
+
 
 		}
 	}
