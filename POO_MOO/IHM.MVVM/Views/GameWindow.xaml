@@ -44,7 +44,8 @@
                     <!--implictement = Datacontext = l'item-->
                     <Grid>
                         <Rectangle Fill="{Binding Color}" Stroke="Black" StrokeThickness="1" Width="50" Height="50"/>
-                        <Ellipse Fill="White" Width="10" Height="10" Visibility="{Binding HasUnit, Converter={StaticResource bool2visibility}}"/>
+                        <!--<Ellipse Fill="White" "/>-->
+                        <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding HasElf, Converter={StaticResource bool2visibility}}" />
                         <Rectangle Stroke="Red" StrokeThickness="2" Width="50" Height="50" Visibility="{Binding IsSelected, Converter={StaticResource bool2visibility}}"/>
                     </Grid>
                 </DataTemplate>
