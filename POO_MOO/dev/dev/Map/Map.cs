@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 
 namespace dev
 {
-    public class Map : MapAPI
+	[Serializable()]
+	public class Map : MapAPI
 	{
 
         public Map(TileAPI[,] tiles)
         {
+			this.size = tiles.Length;
             this.tiles = tiles;
         }
 

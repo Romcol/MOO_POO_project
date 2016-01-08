@@ -24,7 +24,7 @@ namespace dev
 		* Create a map using the C++ library
 		*/
 
-        public int[] getMoves(MapStrategy strategy, UnitAPI unit, PlayerAPI p1, PlayerAPI p2, int curr_p)
+        public int[] getMoves(MapStrategy strategy, UnitAPI unit, PlayerAPI p1, PlayerAPI p2, int curr_p, GameAPI game)
         {
             int[] curr_pos = { unit.x, unit.y };
             Race race = (curr_p == 1) ? p1.race : p2.race;
@@ -47,7 +47,7 @@ namespace dev
             {
                 for (int j = 0; j < strategy.size; j++)
                 {
-                    tiles[i + strategy.size * j] = Game.INSTANCE.map.tiles[i, j].getType();
+                    tiles[i + strategy.size * j] = game.map.tiles[i, j].getType();
                 }
             }
 
@@ -100,19 +100,17 @@ namespace dev
                 switch (race)
                 {
                     case Race.Human:
-                        unit = new Human();
+                        unit = new Human(posUnits[0], posUnits[1]);
                         break;
                     case Race.Elf:
-                        unit = new Elf();
-                        break;
+                        unit = new Elf(posUnits[0], posUnits[1]);
+						break;
                     case Race.Orc:
-                        unit = new Orc();
-                        break;
+                        unit = new Orc(posUnits[0], posUnits[1]);
+						break;
                     default:
                         throw new ArgumentException();
                 }
-                unit.x = posUnits[0];
-                unit.y = posUnits[1];
                 player.units.Add(unit);
             }
         }

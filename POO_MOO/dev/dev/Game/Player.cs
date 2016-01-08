@@ -6,7 +6,8 @@ using API;
 
 namespace dev
 {
-    public class Player : PlayerAPI
+	[Serializable()]
+	public class Player : PlayerAPI
     {
 		public string name { get; set; }
 

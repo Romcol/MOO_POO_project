@@ -6,7 +6,8 @@ using API;
 
 namespace dev
 {
-    public abstract class Unit : UnitAPI
+	[Serializable()]
+	public abstract class Unit : UnitAPI
     {
 		public abstract int InitialLifePoints { get; }
 		public int x {get;set;}
@@ -16,6 +17,12 @@ namespace dev
 		public int defencePoints { get; set; }
 		public double movePoints { get; set; }
 		const double MOV_PTS = 2;
+
+
+		public Unit(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
 
 		//public abstract List<TileAPI> getPossibleMoves();
 		public bool canMove(int x, int y)
@@ -31,7 +38,7 @@ namespace dev
 		}
 		public void move(int x, int y)
 		{
-			if(this.canMove(x,y))
+			if(!this.canMove(x,y))
 			{
 				return;
 			}

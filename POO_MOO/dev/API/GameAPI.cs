@@ -8,7 +8,7 @@ namespace API
 	/// <summary>
 	/// Interface representing a Game (global object of the game)
 	/// </summary>
-    public interface GameAPI
+	public interface GameAPI
     {
 		/// <summary>
 		/// First player of the game
@@ -48,8 +48,6 @@ namespace API
 		PlayerAPI getWinner();
 
 
-		void load();
-
 		/// <summary>
 		/// Go to the next turn
 		/// </summary>
@@ -59,7 +57,6 @@ namespace API
 		/// Starts the game
 		/// </summary>
 		void start();
-
-		void save();
+		
     }
 }

@@ -25,9 +25,9 @@ namespace dev
 		/*
 		* Create a map using the C++ library
 		*/
-		public MapAPI createMap()
+		public MapAPI createMap(GameAPI game)
 		{
-            return wrapper.createMap(this, Game.INSTANCE);
+            return wrapper.createMap(this, game);
         }
         
 	}

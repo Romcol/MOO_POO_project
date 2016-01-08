@@ -6,10 +6,12 @@ using API;
 using System.Xml.Serialization;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 namespace dev
 {
-    public class Game : GameAPI
+	[Serializable()]
+	public class Game : GameAPI
     {
         public static Game INSTANCE = new Game();
 
@@ -18,14 +20,14 @@ namespace dev
             get;
             set;
         }
-        
+
         public MapAPI map
         {
             get;
             set;
         }
 
-        public PlayerAPI player1
+		public PlayerAPI player1
         {
             get;
             set;
@@ -83,19 +85,7 @@ namespace dev
 			return null;
 		}
 
-		public void save()
-        {
-			XmlSerializer xs = new XmlSerializer(typeof(Game));
-			using (StreamWriter wr = new StreamWriter("person.xml"))
-			{
-				xs.Serialize(wr, this);
-			}
-			BinaryFormatter formatter = new BinaryFormatter();
-            FileStream fileStream = new FileStream("save.dat", FileMode.Create, FileAccess.Write);
-			formatter.Serialize(fileStream, this);
-			fileStream.Close();
 
-		}
 
 		public UnitAPI getUnit(int x, int y)
 		{
