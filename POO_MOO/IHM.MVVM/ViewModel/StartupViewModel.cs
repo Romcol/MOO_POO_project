@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using IHM.MVVM.Infra;
 using System.Windows;
+using IHM.MVVM.Views;
 
 namespace IHM.MVVM.ViewModels
 {
@@ -54,8 +55,9 @@ namespace IHM.MVVM.ViewModels
 
         private void playAction()
         {
-			// création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
-			Task.Factory.StartNew(() =>
+            MainWindow.launchGame();
+            // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
+            Task.Factory.StartNew(() =>
             {
                 /* engine.NextTurn();
                  updateUnit();  // les appels sont implicitment fait dans le bon thread dans le modèle MVVM

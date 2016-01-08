@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\App.xaml
-21544440388
+3363851280
 
-10823774690
+12-1126022564
 16-2074543898
-Views\MainWindow.xaml;Views\Startup.xaml;
+Views\GameWindow.xaml;Views\MainWindow.xaml;Views\StartupWindow.xaml;
 
 False
 

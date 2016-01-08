@@ -22,12 +22,22 @@ namespace IHM.MVVM.Views
     /// </summary>
     public partial class MainWindow : Window
     {
+        static StartupWindow startup;
+        static GameWindow game;
         public MainWindow()
         {
             InitializeComponent();
-            var window = new Startup();
-            window.DataContext = new StartupViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
-            window.Show();
+            startup = new StartupWindow();
+            startup.DataContext = new StartupViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
+            startup.Show();
+        }
+
+        public static void launchGame()
+        {
+            game = new GameWindow();
+            game.DataContext = new GameViewModel();
+            startup.Hide();
+            game.Show();
         }
     }
 }
