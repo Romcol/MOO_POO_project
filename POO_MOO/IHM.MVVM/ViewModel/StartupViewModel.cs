@@ -57,19 +57,32 @@ namespace IHM.MVVM.ViewModels
             updateUnit();*/
         }
 
-        private ICommand play;
-        public ICommand Play
-        {
-            get
-            {;
+		private ICommand play;
+		public ICommand Play
+		{
+			get
+			{
+				;
 				if (play == null)
-                    play = new RelayCommand(playAction);
-                return play;
-            }
-        }
+					play = new RelayCommand(playAction);
+				return play;
+			}
+		}
+		private ICommand load;
+		public ICommand Load
+		{
+			get
+			{
+				;
+				if (load == null)
+					load = new RelayCommand(loadAction);
+				return load;
+			}
+		}
 
-        private void playAction()
+		private void playAction()
         {
+
 			if (p1Name == "" || p2Name == "" || p1Name == null || p2Name == null)
 			{
 				MessageBox.Show("You must type your names."); return;
@@ -78,6 +91,10 @@ namespace IHM.MVVM.ViewModels
 			{
 				MessageBox.Show("You must choose different names."); return;
 			}
+			if (p1Race == p2Race)
+			{
+				MessageBox.Show("You must choose different races."); return;
+			}
 
 			GameBuilder builder = new GameBuilder();
 			builder.setPlayer1(p1Name, p1Race);
@@ -85,16 +102,21 @@ namespace IHM.MVVM.ViewModels
 			GameAPI game = builder.createMap(map_type);
 
 			Views.MainWindow.launchGame(game);
-			// création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
-			Task.Factory.StartNew(() =>
-            {
-                /* engine.NextTurn();
-                 updateUnit();  // les appels sont implicitment fait dans le bon thread dans le modèle MVVM
-                 updateTiles();
-                 Message = "Prochain tour";
-             });*/
-            });
         }
 
-    }
+		private void loadAction()
+		{
+
+			GameBuilder builder = new GameBuilder();
+			GameAPI game = builder.load("save.dat");
+			if(game==null)
+			{
+				MessageBox.Show("No game saved."); return;
+			}
+			Views.MainWindow.launchGame(game);
+
+		}
+
+
+	}
 }

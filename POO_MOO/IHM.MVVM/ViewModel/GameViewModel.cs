@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using IHM.MVVM.Infra;
 using System.Windows;
 using API;
+using dev;
+using System;
 
 namespace IHM.MVVM.ViewModels
 {
@@ -106,18 +108,20 @@ namespace IHM.MVVM.ViewModels
             }
         }
 
-        private ICommand nextTurn;
-        public ICommand NextTurn
-        {
-            get
-            {
-                if (nextTurn == null)
-                    nextTurn = new RelayCommand(nextTurnAction);
-                return nextTurn;
-            }
-        }
+		private ICommand nextTurn;
+		public ICommand NextTurn
+		{
+			get
+			{
+				if (nextTurn == null)
+					nextTurn = new RelayCommand(nextTurnAction);
+				return nextTurn;
+			}
+		}
 
-        private void nextTurnAction()
+
+
+		private void nextTurnAction()
         {
             // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
             Task.Factory.StartNew(() =>
@@ -128,7 +132,31 @@ namespace IHM.MVVM.ViewModels
                 Message = "Prochain tour";*/
             });
         }
-        string message;
+
+		private ICommand save;
+		public ICommand Save
+		{
+			get
+			{
+				if (save == null)
+					save = new RelayCommand(saveAction);
+				return save;
+			}
+		}
+		private void saveAction()
+		{
+			GameBuilder builder = new GameBuilder();
+			try
+			{
+				builder.save("save.dat");
+			} catch(Exception e)
+			{
+				MessageBox.Show("Error while saving the game.");
+			}
+			
+		}
+
+		string message;
         public string Message
         {
             get { return message; }

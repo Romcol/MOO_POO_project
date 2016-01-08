@@ -58,7 +58,12 @@
             </StackPanel>
         </Grid>
         <Grid Grid.Row="3">
-            <Button Grid.Row="3" FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding Play}" Margin="10,10,10,10" Content="Play" />
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="345*"/>
+                <ColumnDefinition Width="448*"/>
+            </Grid.ColumnDefinitions>
+            <Button FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding Play}" Margin="4.8,12,350.6,12.4" Content="Play" Grid.Column="1" />
+            <Button FontSize="50" VerticalAlignment="Center" HorizontalAlignment="Center" Command="{Binding Load}" Margin="169.4,12,9.6,9.4" Content="Load game" Grid.Column="1" Height="73" Width="269" />
         </Grid>
 
     </Grid>
