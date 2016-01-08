@@ -29,7 +29,7 @@ namespace dev
 		{
 			double moveCost = Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
 			// checks if enough move point/tile is free
-			if (moveCost == -1 || moveCost > this.movePoints || Game.INSTANCE.getUnit(x,y) != null)
+			if (moveCost == -1 || moveCost > this.movePoints || Game.INSTANCE.getUnits(x,y).Count() > 0)
 			{
 				return false;
 			}

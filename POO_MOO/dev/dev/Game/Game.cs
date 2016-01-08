@@ -87,24 +87,30 @@ namespace dev
 
 
 
-		public UnitAPI getUnit(int x, int y)
+		public List<UnitAPI> getUnits(int x, int y)
 		{
+			List<UnitAPI> list = new List<UnitAPI>();
+
 			for (int i = 0; i < this.player1.units.Count; i++)
 			{
 				if (this.player1.units[i].x == x && this.player1.units[i].y == y)
 				{
-					return this.player1.units[i];
+					list.Add(this.player1.units[i]);
 				}
 			}
+			if (list.Count() != 0)
+				return list;
+
 			for (int i = 0; i < this.player2.units.Count; i++)
 			{
 				if (this.player2.units[i].x == x && this.player2.units[i].y == y)
 				{
-					return this.player2.units[i];
+					list.Add(this.player2.units[i]);
 				}
 			}
 
-			return null;
+			return list;
 		}
+
 	}
 }

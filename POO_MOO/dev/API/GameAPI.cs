@@ -57,6 +57,8 @@ namespace API
 		/// Starts the game
 		/// </summary>
 		void start();
+
+		List<UnitAPI> getUnits(int x, int y);
 		
     }
 }
