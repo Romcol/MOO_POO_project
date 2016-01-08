@@ -6,7 +6,48 @@
         xmlns:local="clr-namespace:IHM.MVVM.Views"
         mc:Ignorable="d"
         Title="Smallworld" Height="500" Width="800">
-    <Grid>
-        <TextBox>Hello world</TextBox>
-    </Grid>
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="bool2visibility"/>
+    </Window.Resources>
+    <DockPanel>
+        <Grid DockPanel.Dock="Bottom">
+            <!-- Définiton des labels d'information / Par Binding sur SelectedTile -->
+            <StackPanel  Orientation="Horizontal" DataContext="{Binding SelectedTile}">
+                <Label Foreground="Blue" Content="{Binding Column}"/>
+                <Label Foreground="Blue" Content="{Binding Row}"/>
+                <Label Foreground="Red" Content="{Binding Type}"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+                <TextBox Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Content="{Binding Message}" />
+            </StackPanel>
+            <!-- Creation du bouton "Fin de tour" et Association à la commande 'NextTurn' -->
+            <Button HorizontalAlignment="Right"  Content="Fin du tour" Command="{Binding NextTurn}" />
+        </Grid>
+        <ListBox ItemsSource="{Binding Tiles}" SelectedItem="{Binding SelectedTile, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True">
+            <!--Définition du conteneur de la listBox : une grille uniforme -->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="{Binding Width}"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <!--Définition du style de la listBox -->
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="Padding" Value="0"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <!-- Chaque élément (Item) de la listBox (ItemsSource = liste des tuiles "Tiles") sera associé à une grille (1x1) qui pourra superposer 3 entités : Rectangle+Ellipse+Rectangle  -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <!--implictement = Datacontext = l'item-->
+                    <Grid>
+                        <Rectangle Fill="{Binding Color}" Stroke="Black" StrokeThickness="1" Width="50" Height="50"/>
+                        <Ellipse Fill="White" Width="10" Height="10" Visibility="{Binding HasUnit, Converter={StaticResource bool2visibility}}"/>
+                        <Rectangle Stroke="Red" StrokeThickness="2" Width="50" Height="50" Visibility="{Binding IsSelected, Converter={StaticResource bool2visibility}}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
 </Window>

@@ -1,4 +1,5 @@
-﻿using IHM.MVVM.ViewModels;
+﻿using API;
+using IHM.MVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -32,10 +33,10 @@ namespace IHM.MVVM.Views
             startup.Show();
         }
 
-        public static void launchGame()
+        public static void launchGame(GameAPI gameInst)
         {
             game = new GameWindow();
-            game.DataContext = new GameViewModel();
+            game.DataContext = new GameViewModel(gameInst);
             startup.Hide();
             game.Show();
         }
