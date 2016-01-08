@@ -13,3 +13,7 @@ C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\dev.exe
 C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\bin\Debug\dev.pdb
 C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.exe
 C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM.pdb
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\IHM.MVVM_MarkupCompile.lref
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\Views\Startup.g.cs
+C:\Users\Romcol\MOO_POO_project\POO_MOO\IHM.MVVM\obj\Debug\Views\Startup.baml

@@ -10,7 +10,7 @@ namespace IHM.MVVM.ViewModels
     /// <summary>
     /// VueModele principale
     /// </summary>
-    public class MainViewModel : ViewModelBase
+    public class StartupViewModel : ViewModelBase
     {
 
         public string p1Name
@@ -24,7 +24,7 @@ namespace IHM.MVVM.ViewModels
         /// <summary>
         /// Constructeur de la VueModele pricipale
         /// </summary>
-        public MainViewModel()
+        public StartupViewModel()
         {
 			
             /*engine = new Cours.Engine.Engine();

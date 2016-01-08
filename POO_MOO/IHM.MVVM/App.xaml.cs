@@ -19,10 +19,9 @@ namespace IHM.MVVM
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
-
             var window = new MainWindow();
-            window.DataContext = new MainViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
-            window.Show();
+            //window.DataContext = new MainViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
+            //window.Show();
         }
     }
 }
