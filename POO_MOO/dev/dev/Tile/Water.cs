@@ -5,6 +5,7 @@ using System.Text;
 
 namespace dev
 {
+	[Serializable()]
     public class Water : Tile
     {
 		public override TileType getType()

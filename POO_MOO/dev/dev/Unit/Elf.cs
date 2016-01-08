@@ -6,11 +6,12 @@ using System.Text;
 
 namespace dev
 {
-    public class Elf : Unit
+	[Serializable()]
+	public class Elf : Unit
     {
 		public override int InitialLifePoints { get { return 12; } }
 
-		public Elf()
+		public Elf(int x, int y) : base(x,y)
 		{
 			this.lifePoints = InitialLifePoints;
 			this.attackPoints = 4;

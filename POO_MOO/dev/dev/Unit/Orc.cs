@@ -6,11 +6,12 @@ using API;
 
 namespace dev
 {
+	[Serializable()]
 	public class Orc : Unit
 	{
 		public override int InitialLifePoints { get { return 17; } }
 
-		public Orc()
+		public Orc(int x, int y) : base(x,y)
 		{
 			this.lifePoints = InitialLifePoints;
 			this.attackPoints = 5;

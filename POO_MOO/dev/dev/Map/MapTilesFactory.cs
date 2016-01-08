@@ -16,9 +16,9 @@ namespace dev
 			this.map_strategy = getMapStrategy(type);
 		}
 
-		public MapAPI createMap()
+		public MapAPI createMap(GameAPI game)
 		{
-			return this.map_strategy.createMap();
+			return this.map_strategy.createMap(game);
 		}
 
 		public static MapStrategy getMapStrategy(string type)

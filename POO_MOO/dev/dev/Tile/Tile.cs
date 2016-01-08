@@ -6,6 +6,7 @@ using API;
 
 namespace dev
 {
+	[Serializable()]
 	public abstract class Tile : TileAPI
 	{
 		public abstract TileType getType();

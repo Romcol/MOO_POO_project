@@ -22,7 +22,7 @@ namespace dev.Tests
             builder.createMap("demo");
             Wrapper wrapper = new Wrapper();
 
-            int[] moves = wrapper.getMoves(MapTilesFactory.getMapStrategy("demo"), Game.INSTANCE.player1.units[0], Game.INSTANCE.player1, Game.INSTANCE.player2, 1);
+            int[] moves = wrapper.getMoves(MapTilesFactory.getMapStrategy("demo"), Game.INSTANCE.player1.units[0], Game.INSTANCE.player1, Game.INSTANCE.player2, 1, Game.INSTANCE);
 
            // Assert.IsNull(moves);
            // Assert.Fail();

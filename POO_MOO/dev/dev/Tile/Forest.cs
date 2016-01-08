@@ -6,6 +6,7 @@ using API;
 
 namespace dev
 {
+	[Serializable()]
 	public class Forest : Tile
 	{
 		public override TileType getType()

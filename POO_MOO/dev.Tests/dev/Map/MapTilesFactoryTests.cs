@@ -36,9 +36,6 @@ namespace dev.Tests
 			Assert.AreEqual(factory.map_strategy.nb_turns, nb_turns);
 			Assert.AreEqual(factory.map_strategy.nb_units, nb_units);
 			Assert.AreEqual(factory.map_strategy.size, size);
-
-			MapAPI map = factory.createMap();
-			Assert.AreEqual(map.size, size);
 			
 		}
 	}
