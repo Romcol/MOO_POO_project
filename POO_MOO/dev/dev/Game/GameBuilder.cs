@@ -29,7 +29,7 @@ namespace dev
 			this.game.player2 = new Player(name, race);
 		}
 		
-		public GameAPI createMap(string map_type)
+		public GameAPI createMap(MapType map_type)
 		{
 			if (this.game.player1 == null || this.game.player2 == null)
 			{
@@ -37,7 +37,7 @@ namespace dev
 			}
 
 			MapTilesFactory factory = new MapTilesFactory(map_type);
-// this.game.map = factory.createMap(this.game);
+			this.game.map = factory.createMap(this.game);
             this.game.turns_left = factory.map_strategy.nb_turns;
 
 			Game.INSTANCE = this.game;
