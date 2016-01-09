@@ -11,19 +11,65 @@
     </Window.Resources>
     <DockPanel>
         <Grid DockPanel.Dock="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
             <!-- Définiton des labels d'information / Par Binding sur SelectedTile -->
-            <StackPanel  Orientation="Horizontal" DataContext="{Binding SelectedTile}">
-                <Label Foreground="Blue" Content="{Binding Column}"/>
-                <Label Foreground="Blue" Content="{Binding Row}"/>
-                <Label Foreground="Red" Content="{Binding Type}"/>
+            <StackPanel  Orientation="Horizontal" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedTile}">
+                    <Label Foreground="Blue" Content="{Binding Column}"/>
+                    <Label Foreground="Blue" Content="{Binding Row}"/>
+                    <Label Foreground="Red" Content="{Binding Type}"/>
+                    <StackPanel Orientation="Horizontal" Visibility="{Binding HasUnits, Converter={StaticResource bool2visibility}}">
+                        <Label Content="Race:"/>
+                        <Label Foreground="Green" Visibility="{Binding HasElf, Converter={StaticResource bool2visibility}}" Content="Elf" />
+                        <Label Foreground="Brown"  Visibility="{Binding HasOrc, Converter={StaticResource bool2visibility}}" Content="Orc"/>
+                        <Label Foreground="Orange"  Visibility="{Binding HasHuman, Converter={StaticResource bool2visibility}}" Content="Human"/>
+                        <Label Content="Attack Points"/>
+                        <Label Foreground="Red" Content="{Binding AttackPoints}"/>
+                        <Label Content="Defence Points"/>
+                        <Label Foreground="Blue" Content="{Binding DefencePoints}"/>
+                        <Label Content="Move Points"/>
+                        <Label Foreground="Orange" Content="{Binding MovePoints}"/>
+                        <Label Content="Life Points"/>
+                        <Label Foreground="Green" Content="{Binding LifePoints}"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Grid.Row="0" DataContext="{Binding MemUnit}">
+                    <Label Content="Selected:"/>
+                    <Label Content="{Binding raceUnit}"/>
+                    <Label Content="{Binding xUnit}"/>
+                    <Label Content=","/>
+                    <Label Content="{Binding yUnit}"/>
+                </StackPanel>
             </StackPanel>
-            <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+            <!--<StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
                 <TextBox Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="{Binding Message}" />
-            </StackPanel>
+            </StackPanel>-->
             <!-- Creation du bouton "Fin de tour" et Association à la commande 'NextTurn' -->
-            <Button HorizontalAlignment="Right"  Content="Save" Command="{Binding Save}" Margin="0,0,80,0"/>
-            <Button HorizontalAlignment="Right"  Content="Fin du tour" Command="{Binding NextTurn}" />
+            <Button HorizontalAlignment="Right"  Content="Select" Command="{Binding Select}" Margin="0,0,130,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Content="Save" Command="{Binding Save}" Margin="0,0,80,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Content="Fin du tour" Command="{Binding NextTurn}" Grid.Row="0"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="1">
+                <Label Content="Nation 1:"/>
+                <Label Foreground="Silver" Content="{Binding p1Race}" FontWeight="Bold"/>
+                <Label Foreground="Red" Visibility="{Binding isP1Turn, Converter={StaticResource bool2visibility}}" FontWeight="Bold" Content="(You!)"/>
+                <Label Content="Pts:"/>
+                <Label Foreground="Green" Content="{Binding p1Pts}"/>
+                <Label Content="Units:"/>
+                <Label Foreground="Red" Content="{Binding p1Units}"/>
+                <Label Content="| Nation 2:"/>
+                <Label Foreground="Silver" Content="{Binding p2Race}" FontWeight="Bold"/>
+                <Label Foreground="Red" Visibility="{Binding isP2Turn, Converter={StaticResource bool2visibility}}" FontWeight="Bold" Content="(You!)"/>
+                <Label Content="Pts:"/>
+                <Label Foreground="Green" Content="{Binding p2Pts}"/>
+                <Label Content="Units:"/>
+                <Label Foreground="Red" Content="{Binding p2Units}"/>
+            </StackPanel>
+            <Label HorizontalAlignment="Right" Grid.Row="1" Content="Turns left:" Margin="0,0,20,0"/>
+            <Label HorizontalAlignment="Right" Foreground="Blue" Grid.Row="1" Content="{Binding TurnsLeft}"/>
         </Grid>
         <ListBox ItemsSource="{Binding Tiles}" SelectedItem="{Binding SelectedTile, Mode=TwoWay}" HorizontalAlignment="Center" VerticalAlignment="Center" SnapsToDevicePixels="True">
             <!--Définition du conteneur de la listBox : une grille uniforme -->
@@ -46,7 +92,10 @@
                         <Rectangle Fill="{Binding Color}" Stroke="Black" StrokeThickness="1" Width="50" Height="50"/>
                         <!--<Ellipse Fill="White" "/>-->
                         <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding HasElf, Converter={StaticResource bool2visibility}}" />
+                        <Image Source="orc.png" Width="50" Height="50" Visibility="{Binding HasOrc, Converter={StaticResource bool2visibility}}" />
+                        <Image Source="human.png" Width="50" Height="50" Visibility="{Binding HasHuman, Converter={StaticResource bool2visibility}}" />
                         <Rectangle Stroke="Red" StrokeThickness="2" Width="50" Height="50" Visibility="{Binding IsSelected, Converter={StaticResource bool2visibility}}"/>
+                        <TextBlock Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Purple" Foreground="White" FontSize="13" Text="{Binding tileNbUnits}" Visibility="{Binding HasUnits, Converter={StaticResource bool2visibility}}"/>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>

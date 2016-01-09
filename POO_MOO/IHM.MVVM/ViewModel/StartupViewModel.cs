@@ -100,7 +100,7 @@ namespace IHM.MVVM.ViewModels
 			builder.setPlayer1(p1Name, p1Race);
 			builder.setPlayer2(p2Name, p2Race);
 			GameAPI game = builder.createMap(map_type);
-
+            game.start();
 			Views.MainWindow.launchGame(game);
         }
 

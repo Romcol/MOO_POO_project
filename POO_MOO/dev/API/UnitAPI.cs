@@ -29,5 +29,8 @@ namespace API
 		void kill();
 
 		Race getRace();
-	}
+
+        PlayerAPI getPlayer();
+
+    }
 }

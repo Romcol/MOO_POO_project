@@ -12,14 +12,17 @@ namespace IHM.MVVM.ViewModels
     public class TileViewModel : ViewModelBase
     {
         private TileAPI tile;
-        public TileViewModel(int row, int column, TileAPI tile)
+        private GameViewModel gameView;
+        private List<UnitAPI> tileUnits { get; set; }
+        public TileViewModel(List<UnitAPI> tileUnits, GameViewModel gameView, int row, int column, TileAPI tile)
         {
             this.tile = tile;
-
+            this.gameView = gameView;
+            this.tileUnits = tileUnits;
             if (tile is Plain)
             {
                 Type = "Terre";
-                Color = "PaleGreen";
+                Color = "Wheat";
             }
             if (tile is Forest)
             {
@@ -47,37 +50,52 @@ namespace IHM.MVVM.ViewModels
         public int Row { get; private set; }
         public int Column { get; private set; }
 
-        bool hasElf;
+        UnitAPI currentUnit;
+        public UnitAPI CurrentUnit
+        {
+            get { return currentUnit; }
+            set
+            {
+                currentUnit = value;
+                //RaisePropertyChanged("CurrentUnit");
+            }
+        }
+
+        public double MovePoints { get { return (currentUnit != null)?currentUnit.movePoints:0; } }
+        public double AttackPoints { get { return (currentUnit != null) ? currentUnit.attackPoints : 0; } }
+        public double DefencePoints { get { return (currentUnit != null) ? currentUnit.defencePoints : 0; } }
+        public double LifePoints { get { return (currentUnit != null) ? currentUnit.lifePoints : 0; } }
+
+        /*public bool Move
+        {
+            get { return true; }
+            set
+            {
+            }
+        }*/
+
         public bool HasElf
         {
-            get { return hasElf; }
-            set
-            {
-                hasElf = value;
-                RaisePropertyChanged("HasElf");
-            }
+            get { return (tileUnits.FirstOrDefault() != null && tileUnits.FirstOrDefault().getRace() == Race.Elf); }
         }
 
-        bool hasOrc;
         public bool HasOrc
         {
-            get { return hasOrc; }
-            set
-            {
-                hasOrc = value;
-                RaisePropertyChanged("HasElf");
-            }
+            get { return (tileUnits.FirstOrDefault() != null && tileUnits.FirstOrDefault().getRace() == Race.Orc); }
         }
-
-        bool hasHuman;
         public bool HasHuman
         {
-            get { return hasHuman; }
-            set
-            {
-                hasHuman = value;
-                RaisePropertyChanged("HasHuman");
-            }
+            get { return (tileUnits.FirstOrDefault() != null && tileUnits.FirstOrDefault().getRace() == Race.Human); }
+        }
+
+        public int tileNbUnits
+        {
+            get { return tileUnits.Count(); }
+        }
+
+        public bool HasUnits
+        {
+            get { return (tileUnits.Count() >0); }
         }
 
         bool isSelected;
@@ -94,9 +112,9 @@ namespace IHM.MVVM.ViewModels
         /// <summary>
         /// signal que les tuiles ont pu changer d'état via la resource 'fer'
         /// </summary>
-        internal void Refresh()
+        internal void Refresh(List<UnitAPI> tileUnits)
         {
-            RaisePropertyChanged("Iron");
+            this.tileUnits = tileUnits;
         }
     }
 }

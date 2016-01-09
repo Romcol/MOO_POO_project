@@ -39,12 +39,12 @@ namespace dev
 		/// </summary>
 		public void init()
         {
-			this.actions.Clear();
+			if(this.actions != null) this.actions.Clear();
 
 			Random rnd = new Random();
 			int rand = rnd.Next(0, 1);
 
-			if(rand==1)
+			if(rand == 1)
 			{
 				this.currentPlayer = Game.INSTANCE.player1;
 			}

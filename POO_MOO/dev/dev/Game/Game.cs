@@ -54,7 +54,8 @@ namespace dev
 
 		public void start()
 		{
-			this.turn.init();
+            this.turn = new Turn();
+            this.turn.init();
 		}
 
         public void next()

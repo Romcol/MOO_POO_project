@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\SelectedUnitViewModel.cs" />
     <Compile Include="ViewModel\GameViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\TileViewModel.cs" />
@@ -126,6 +127,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\elf.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\orc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\human.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
