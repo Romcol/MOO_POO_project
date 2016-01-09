@@ -60,7 +60,7 @@ namespace dev
 		/// </summary>
 		public void next()
 		{
-			this.actions.Clear();
+			if(actions != null) actions.Clear();
 			if (this.currentPlayer == Game.INSTANCE.player1)
 			{
 				this.currentPlayer = Game.INSTANCE.player2;

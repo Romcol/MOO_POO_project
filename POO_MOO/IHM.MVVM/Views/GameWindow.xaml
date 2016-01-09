@@ -10,6 +10,15 @@
         <BooleanToVisibilityConverter x:Key="bool2visibility"/>
     </Window.Resources>
     <DockPanel>
+        <Grid DockPanel.Dock="Right" Visibility="{Binding hasMemUnit, Converter={StaticResource bool2visibility}}">
+            <StackPanel  Orientation="Horizontal" Grid.Row="0" DataContext="{Binding MemUnit}">
+            <Label Content="Selected:"/>
+            <Label Content="{Binding raceUnit}"/>
+            <Label Content="{Binding xUnit}"/>
+            <Label Content=","/>
+            <Label Content="{Binding yUnit}"/>
+        </StackPanel>
+        </Grid>
         <Grid DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
@@ -36,22 +45,16 @@
                         <Label Foreground="Green" Content="{Binding LifePoints}"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel  Orientation="Horizontal" Grid.Row="0" DataContext="{Binding MemUnit}">
-                    <Label Content="Selected:"/>
-                    <Label Content="{Binding raceUnit}"/>
-                    <Label Content="{Binding xUnit}"/>
-                    <Label Content=","/>
-                    <Label Content="{Binding yUnit}"/>
-                </StackPanel>
             </StackPanel>
             <!--<StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
                 <TextBox Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                 <Label Content="{Binding Message}" />
             </StackPanel>-->
             <!-- Creation du bouton "Fin de tour" et Association à la commande 'NextTurn' -->
-            <Button HorizontalAlignment="Right"  Content="Select" Command="{Binding Select}" Margin="0,0,130,0" Grid.Row="0"/>
-            <Button HorizontalAlignment="Right"  Content="Save" Command="{Binding Save}" Margin="0,0,80,0" Grid.Row="0"/>
-            <Button HorizontalAlignment="Right"  Content="Fin du tour" Command="{Binding NextTurn}" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Content="Select" Command="{Binding Select}" Margin="0,0,170,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Content="Save" Command="{Binding Save}" Margin="0,0,140,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Content="Action" Command="{Binding DoAction}" Margin="0,0,60,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Content="Next Turn" Command="{Binding NextTurn}" Grid.Row="0"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <Label Content="Nation 1:"/>
                 <Label Foreground="Silver" Content="{Binding p1Race}" FontWeight="Bold"/>
@@ -94,6 +97,7 @@
                         <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding HasElf, Converter={StaticResource bool2visibility}}" />
                         <Image Source="orc.png" Width="50" Height="50" Visibility="{Binding HasOrc, Converter={StaticResource bool2visibility}}" />
                         <Image Source="human.png" Width="50" Height="50" Visibility="{Binding HasHuman, Converter={StaticResource bool2visibility}}" />
+                        <Rectangle Stroke="Gray" StrokeThickness="5" Width="50" Height="50" Visibility="{Binding HasUnitSelected, Converter={StaticResource bool2visibility}}"/>
                         <Rectangle Stroke="Red" StrokeThickness="2" Width="50" Height="50" Visibility="{Binding IsSelected, Converter={StaticResource bool2visibility}}"/>
                         <TextBlock Width="15" Height="15" VerticalAlignment="Top" HorizontalAlignment="Right" Background="Purple" Foreground="White" FontSize="13" Text="{Binding tileNbUnits}" Visibility="{Binding HasUnits, Converter={StaticResource bool2visibility}}"/>
                     </Grid>

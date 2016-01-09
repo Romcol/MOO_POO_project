@@ -60,9 +60,12 @@ namespace dev
 
         public void next()
         {
-			this.turn.next();
+            this.turn.currentPlayer.units.ForEach(delegate (UnitAPI u)
+            {
+                u.initMovePoints();
+            });
+            this.turn.next();
 			this.turns_left--;
-            throw new NotImplementedException();
         }
 
 		public bool isFinished()

@@ -14,7 +14,7 @@ namespace IHM.MVVM.ViewModels
         private TileAPI tile;
         private GameViewModel gameView;
         private List<UnitAPI> tileUnits { get; set; }
-        public TileViewModel(List<UnitAPI> tileUnits, GameViewModel gameView, int row, int column, TileAPI tile)
+        public TileViewModel(List<UnitAPI> tileUnits, GameViewModel gameView, int x, int y, TileAPI tile)
         {
             this.tile = tile;
             this.gameView = gameView;
@@ -34,21 +34,21 @@ namespace IHM.MVVM.ViewModels
                 Type = "Water";
                 Color = "DarkBlue";
             }
-            if(tile is Mountain)
+            if (tile is Mountain)
             {
                 Type = "Moutain";
                 Color = "Brown";
             }
-            Row = row;
-            Column = column;
+            X = x;
+            Y = y;
         }
 
 
         public string Color { get; private set; }
         public string Type { get; private set; }
 
-        public int Row { get; private set; }
-        public int Column { get; private set; }
+        public int X { get; private set; }
+        public int Y { get; private set; }
 
         UnitAPI currentUnit;
         public UnitAPI CurrentUnit
@@ -57,22 +57,20 @@ namespace IHM.MVVM.ViewModels
             set
             {
                 currentUnit = value;
-                //RaisePropertyChanged("CurrentUnit");
+                RaisePropertyChanged("CurrentUnit");
+                RaisePropertyChanged("AttackPoints");
+                RaisePropertyChanged("DefencePoints");
+                RaisePropertyChanged("LifePoints");
+                RaisePropertyChanged("MovePoints");
             }
         }
 
-        public double MovePoints { get { return (currentUnit != null)?currentUnit.movePoints:0; } }
+        public double MovePoints { get { return (currentUnit != null) ? currentUnit.movePoints : 0; } }
         public double AttackPoints { get { return (currentUnit != null) ? currentUnit.attackPoints : 0; } }
         public double DefencePoints { get { return (currentUnit != null) ? currentUnit.defencePoints : 0; } }
         public double LifePoints { get { return (currentUnit != null) ? currentUnit.lifePoints : 0; } }
 
-        /*public bool Move
-        {
-            get { return true; }
-            set
-            {
-            }
-        }*/
+        public bool HasUnitSelected { get { return gameView.isOneOfMyUnitsSelected(tileUnits); } }
 
         public bool HasElf
         {
@@ -112,9 +110,16 @@ namespace IHM.MVVM.ViewModels
         /// <summary>
         /// signal que les tuiles ont pu changer d'état via la resource 'fer'
         /// </summary>
-        internal void Refresh(List<UnitAPI> tileUnits)
+        internal void Refresh(List<UnitAPI> tileUnits, UnitAPI currentUnit)
         {
             this.tileUnits = tileUnits;
+            this.CurrentUnit = currentUnit;
+            RaisePropertyChanged("HasElf");
+            RaisePropertyChanged("HasOrc");
+            RaisePropertyChanged("HasHuman");
+            RaisePropertyChanged("tileNbUnits");
+            RaisePropertyChanged("HasUnits");
+            RaisePropertyChanged("HasUnitSelected");
         }
     }
 }

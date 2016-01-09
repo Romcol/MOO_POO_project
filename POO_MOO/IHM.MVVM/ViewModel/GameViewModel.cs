@@ -32,10 +32,9 @@ namespace IHM.MVVM.ViewModels
             }
             this.p1Race = game.player1.race;
             this.p2Race = game.player2.race;
-            updateUnit();
-            updateInfos();
+            updateTiles();
+            this.Refresh();
             this.SelectedTile = tiles.ElementAt(game.turn.currentPlayer.units.FirstOrDefault().x + game.map.size*game.turn.currentPlayer.units.FirstOrDefault().y);
-            //updateTiles();
         }
 
         public int TurnsLeft { get; private set; }
@@ -52,36 +51,18 @@ namespace IHM.MVVM.ViewModels
 
         public bool isP2Turn { get; private set; }
 
-        private void updateInfos()
+        private void Refresh()
         {
             this.p1Units = game.player1.units.Count;
             this.p2Units = game.player2.units.Count;
             this.isP1Turn = (game.player1 == game.turn.currentPlayer);
             this.isP2Turn = (game.player2 == game.turn.currentPlayer);
             this.TurnsLeft = game.turns_left;
-        }
-        /// <summary>
-        /// Mise à jour de l'unité
-        /// Principe : une unité est associée à une tuile
-        /// </summary>
-        private void updateUnit()
-        {
-            /* var unit = engine.GetUnit();
-             // on enlève l'unité de son ancienne tuile
-             var tile = tiles.FirstOrDefault(t => t.HasUnit);
-             if (tile != null)
-                 tile.HasUnit = false;
-             // on positionne l'unité sur sa nouvelle tuile
-             tile = tiles.FirstOrDefault(t => t.Row == unit.Row && t.Column == unit.Column);
-             tile.HasUnit = true; tile.hasElf= true; tile.hasOrc = tile.hasHuman*/
-
-            for (int i = 0; i < tiles.Count(); i++)
-            {
-                TileViewModel tile = Tiles.ElementAt(i);
-                UnitAPI unit = game.getUnits(tile.Row, tile.Column).FirstOrDefault();
-                tile.CurrentUnit = unit;
-            }
-            
+            RaisePropertyChanged("p1Units");
+            RaisePropertyChanged("p2Units");
+            RaisePropertyChanged("isP1Turn");
+            RaisePropertyChanged("isP2Turn");
+            RaisePropertyChanged("TurnsLeft");
         }
         /// <summary>
         /// Mise à jour des Tuiles : les resources en fer peuvent diminuer à chaque Tour
@@ -92,7 +73,8 @@ namespace IHM.MVVM.ViewModels
             {
                 for (int c = 0; c < game.map.size; c++)
                 {
-                    tiles.ElementAt(l + c * game.map.size).Refresh(game.getUnits(c, l));
+                    TileViewModel tile = tiles.ElementAt(l + c * game.map.size);
+                    tile.Refresh(game.getUnits(c, l), game.getUnits(tile.X,tile.Y).FirstOrDefault());
                 }
             }
             /*
@@ -142,12 +124,22 @@ namespace IHM.MVVM.ViewModels
             }
         }
 
-        public SelectedUnitViewModel memUnit;
+        private SelectedUnitViewModel memUnit;
 
         public SelectedUnitViewModel MemUnit
         {
             get { return memUnit; }
-            set { this.memUnit = value; RaisePropertyChanged("MemUnit"); }
+            set { this.memUnit = value; RaisePropertyChanged("MemUnit"); RaisePropertyChanged("hasMemUnit"); }
+        }
+
+        public bool hasMemUnit
+        {
+            get { return (MemUnit != null); }
+        }
+
+        public bool isOneOfMyUnitsSelected(List<UnitAPI> tileUnits)
+        {
+            return tileUnits.Any(t => (hasMemUnit &&  (t == MemUnit.getUnit())));
         }
 
         private ICommand select;
@@ -168,7 +160,7 @@ namespace IHM.MVVM.ViewModels
                 if (selectedUnit.getPlayer() == game.turn.currentPlayer)
                 {
                     this.MemUnit = new SelectedUnitViewModel(selectedUnit);
-                    RaisePropertyChanged("MemUnit");
+                    updateTiles();
                 }
                 else
                 {
@@ -200,6 +192,10 @@ namespace IHM.MVVM.ViewModels
 
 		private void nextTurnAction()
         {
+            game.next();
+            this.Refresh();
+            //memUnit
+            //SelectedTile
             // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
             Task.Factory.StartNew(() =>
             {
@@ -210,7 +206,54 @@ namespace IHM.MVVM.ViewModels
             });
         }
 
-		private ICommand save;
+        private ICommand doAction;
+        public ICommand DoAction
+        {
+            get
+            {
+                if (doAction == null)
+                    doAction = new RelayCommand(doActionAction);
+                return doAction;
+            }
+        }
+
+        private void doActionAction()
+        {
+            /*
+            bool canAttack(UnitAPI unit);
+            void attack(UnitAPI unit);*/
+            if (memUnit != null)
+            {
+                UnitAPI currunit = memUnit.getUnit();
+                if (currunit.canMove(SelectedTile.X, SelectedTile.Y))
+                {
+                    currunit.move(SelectedTile.X, SelectedTile.Y);
+                    memUnit.Refresh();
+                    updateTiles();
+                    this.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Unit can't move here");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No unit selected");
+            }
+            //memUnit
+            //SelectedTile
+            // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
+            Task.Factory.StartNew(() =>
+            {
+                /*engine.NextTurn();
+                updateUnit();  // les appels sont implicitment fait dans le bon thread dans le modèle MVVM
+                updateTiles();
+                Message = "Prochain tour";*/
+            });
+        }
+
+        private ICommand save;
 		public ICommand Save
 		{
 			get
@@ -232,18 +275,5 @@ namespace IHM.MVVM.ViewModels
 			}
 			
 		}
-
-		/*string message;
-        public string Message
-        {
-            get { return message; }
-            set
-            {
-                if (message == value)
-                    return;
-                message = value;
-                RaisePropertyChanged("Message");
-            }
-        }*/
     }
 }

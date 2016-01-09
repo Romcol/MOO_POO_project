@@ -21,6 +21,16 @@ namespace IHM.MVVM.ViewModel
             RaisePropertyChanged("raceUnit");
         }
 
+        public void Refresh()
+        {
+            RaisePropertyChanged("xUnit");
+            RaisePropertyChanged("yUnit");
+            RaisePropertyChanged("raceUnit");
+        }
+        public UnitAPI getUnit()
+        {
+            return unit;
+        }
         public int xUnit
         {
             get { return unit.x; }
