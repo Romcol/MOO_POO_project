@@ -24,15 +24,22 @@ namespace dev
 			this.y = y;
 		}
 
-		//public abstract List<TileAPI> getPossibleMoves();
-		public bool canMove(int x, int y)
+        //public abstract List<TileAPI> getPossibleMoves();
+        public bool hasEnemyUnits()
+        {
+            PlayerAPI enemy = (this.getPlayer() == Game.INSTANCE.player1) ? Game.INSTANCE.player2 : Game.INSTANCE.player1;
+            List<UnitAPI> l = Game.INSTANCE.getUnits(this.x, this.y, enemy);
+            return (l.Count() > 0);
+        }
+        public bool canMove(int x, int y)
 		{
 			double moveCost = Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
-			// checks if enough move point/tile is free
-			if (moveCost == -1 || moveCost > this.movePoints || Game.INSTANCE.getUnits(x,y).Count() > 0)
+            // checks if enough move point/tile is free
+			if (moveCost == -1 || moveCost > this.movePoints || this.hasEnemyUnits())
 			{
 				return false;
 			}
+
 			// checks if adjacent tile
 			return Map.areAdjacent(x, y, this.x, this.y);
 		}
@@ -44,29 +51,51 @@ namespace dev
 			}
 			this.x = x;
 			this.y = y;
-			this.movePoints -= Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
-		}
-		public void attack(UnitAPI unit)
+            this.movePoints -= Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
+            //Add victory points to player after move
+            this.getPlayer().victoryPoints += Game.INSTANCE.map.getTile(x, y).getVictoryPoints(this.getRace());
+        }
+		public UnitAPI attack(UnitAPI unit)
 		{
-			if (!this.canAttack(unit)) return;
+			if (!this.canAttack(unit)) return null;
 
+            this.movePoints -= Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
 
-			double attackerPoints = (this.lifePoints / this.InitialLifePoints) * this.attackPoints;
+            double attackerPoints = (this.lifePoints / this.InitialLifePoints) * this.attackPoints;
 			double defenderPoints = (this.lifePoints / this.InitialLifePoints) * this.defencePoints;
 
 			double attackerRate = attackerPoints / (attackerPoints + defenderPoints)*100;
 			double defenderRate = defencePoints / (attackerPoints + defenderPoints)*100;
 
 			int random = new Random().Next(1,100);
-			
-			if(random<=attackerRate) // attacker wins
+
+            UnitAPI loser = null;
+
+            if (random<=attackerRate) // attacker wins
 			{
-				unit.lifePoints--;
+                loser = unit;
 			}
 			else // defender wins
 			{
-				unit.lifePoints--;
+                loser = this;
 			}
+
+            int randomDamages = new Random().Next(1, loser.lifePoints);
+            loser.lifePoints -= randomDamages;
+
+            if (unit.lifePoints < 0)
+            {
+                unit.kill();
+                //If Defender is killed and there's no enemy on the tile the unit can move to the selected tile
+                if(Game.INSTANCE.getUnits(x,y) == null)
+                {
+                    this.x = x;
+                    this.y = y;
+                }
+            }
+            if (this.lifePoints < 0) this.kill();
+
+            return loser;
 
 		}
 		public abstract bool canAttack(UnitAPI unit);

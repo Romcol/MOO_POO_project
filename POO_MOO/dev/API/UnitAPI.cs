@@ -25,7 +25,7 @@ namespace API
 		bool canMove(int x, int y);
 		void move(int x, int y);
 		bool canAttack(UnitAPI unit);
-		void attack(UnitAPI unit);
+		UnitAPI attack(UnitAPI unit);
 		void kill();
 
 		Race getRace();

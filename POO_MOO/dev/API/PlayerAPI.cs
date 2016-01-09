@@ -18,6 +18,6 @@ namespace API
 		/// </summary>
 		Race race { get; set; }
 		string name { get; set; }
-        void getVictoryPoints();
+        int victoryPoints { get; set; }
     }
 }

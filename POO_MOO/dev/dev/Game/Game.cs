@@ -91,28 +91,29 @@ namespace dev
 
 
 
-		public List<UnitAPI> getUnits(int x, int y)
+		public List<UnitAPI> getUnits(int x, int y, PlayerAPI enemy = null)
 		{
-			List<UnitAPI> list = new List<UnitAPI>();
-
-			for (int i = 0; i < this.player1.units.Count; i++)
-			{
-				if (this.player1.units[i].x == x && this.player1.units[i].y == y)
-				{
-					list.Add(this.player1.units[i]);
-				}
-			}
-			if (list.Count() != 0)
-				return list;
-
-			for (int i = 0; i < this.player2.units.Count; i++)
-			{
-				if (this.player2.units[i].x == x && this.player2.units[i].y == y)
-				{
-					list.Add(this.player2.units[i]);
-				}
-			}
-
+            List<UnitAPI> list = new List<UnitAPI>();
+            if (enemy != Game.INSTANCE.player1)
+            {
+                for (int i = 0; i < this.player2.units.Count; i++)
+                {
+                    if (this.player2.units[i].x == x && this.player2.units[i].y == y)
+                    {
+                        list.Add(this.player2.units[i]);
+                    }
+                }
+            }
+            if(enemy != Game.INSTANCE.player2)
+            {
+                for (int i = 0; i < this.player1.units.Count; i++)
+                {
+                    if (this.player1.units[i].x == x && this.player1.units[i].y == y)
+                    {
+                        list.Add(this.player1.units[i]);
+                    }
+                }
+            }
 			return list;
 		}
 

@@ -10,6 +10,6 @@ namespace API
     {
         TileType getType();
 		double moveCost(Race race);
-
-	}
+        int getVictoryPoints(Race race);
+    }
 }

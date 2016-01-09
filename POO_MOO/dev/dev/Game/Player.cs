@@ -20,11 +20,9 @@ namespace dev
 			this.name = name;
 			this.race = race;
             this.units = new List<UnitAPI>();
+            this.victoryPoints = 0;
 		}
 
-        void PlayerAPI.getVictoryPoints()
-        {
-            throw new NotImplementedException();
-        }
+        public int victoryPoints { get; set; }
     }
 }

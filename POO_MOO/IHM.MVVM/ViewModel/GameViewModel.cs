@@ -27,7 +27,7 @@ namespace IHM.MVVM.ViewModels
             {
                 for (int c = 0; c < game.map.size; c++)
                 {
-                    tiles.Add(new TileViewModel(game.getUnits(c,l), this,l, c, game.map.tiles[c, l]));
+                    tiles.Add(new TileViewModel(game.getUnits(l,c), this,l, c, game.map.tiles[l, c]));
                 }
             }
             this.p1Race = game.player1.race;
@@ -42,6 +42,10 @@ namespace IHM.MVVM.ViewModels
         public Race p1Race { get; private set; }
 
         public Race p2Race { get; private set; }
+
+        public int p1Pts { get; private set; }
+
+        public int p2Pts { get; private set; }
 
         public int p1Units { get; private set; }
 
@@ -58,6 +62,10 @@ namespace IHM.MVVM.ViewModels
             this.isP1Turn = (game.player1 == game.turn.currentPlayer);
             this.isP2Turn = (game.player2 == game.turn.currentPlayer);
             this.TurnsLeft = game.turns_left;
+            this.p1Pts = game.player1.victoryPoints;
+            this.p2Pts = game.player2.victoryPoints;
+            RaisePropertyChanged("p1Pts");
+            RaisePropertyChanged("p2Pts");
             RaisePropertyChanged("p1Units");
             RaisePropertyChanged("p2Units");
             RaisePropertyChanged("isP1Turn");
@@ -225,17 +233,32 @@ namespace IHM.MVVM.ViewModels
             if (memUnit != null)
             {
                 UnitAPI currunit = memUnit.getUnit();
-                if (currunit.canMove(SelectedTile.X, SelectedTile.Y))
+                if (SelectedTile.getEnemy() != null)
                 {
-                    currunit.move(SelectedTile.X, SelectedTile.Y);
+                    if (currunit.canAttack(SelectedTile.getEnemy()))
+                    {
+                        UnitAPI loser = currunit.attack(SelectedTile.getEnemy());
+                        MessageBox.Show(loser.getPlayer().name + " loses the battle!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Attack action not possible");
+                    }
+                }
+                else {
+                    if (currunit.canMove(SelectedTile.X, SelectedTile.Y))
+                    {
+                        currunit.move(SelectedTile.X, SelectedTile.Y);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Move action not possible");
+                    }
+                }
+                    //Global Refresh
                     memUnit.Refresh();
                     updateTiles();
                     this.Refresh();
-                }
-                else
-                {
-                    MessageBox.Show("Unit can't move here");
-                }
             }
             else
             {

@@ -72,6 +72,20 @@ namespace IHM.MVVM.ViewModels
 
         public bool HasUnitSelected { get { return gameView.isOneOfMyUnitsSelected(tileUnits); } }
 
+        public UnitAPI getEnemy()
+        {
+            int max = 0;
+            UnitAPI maxDefenceUnit = tileUnits.FirstOrDefault();
+            if ((maxDefenceUnit == null) || (this.CurrentUnit.getRace() == maxDefenceUnit.getRace()))  return null;
+            tileUnits.ForEach(delegate (UnitAPI u) {
+                if (u.defencePoints > max)
+                {
+                    maxDefenceUnit = u;
+                }
+           }
+            ) ;
+            return maxDefenceUnit;
+        }
         public bool HasElf
         {
             get { return (tileUnits.FirstOrDefault() != null && tileUnits.FirstOrDefault().getRace() == Race.Elf); }

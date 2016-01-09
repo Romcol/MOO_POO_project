@@ -31,7 +31,7 @@ namespace dev
 
 		public override double moveCost(Race race)
 		{
-			return 1;
+            return 1;
 		}
 	}
 }

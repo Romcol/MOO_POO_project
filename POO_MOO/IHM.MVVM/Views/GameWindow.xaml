@@ -27,8 +27,8 @@
             <!-- Définiton des labels d'information / Par Binding sur SelectedTile -->
             <StackPanel  Orientation="Horizontal" Grid.Row="0">
                 <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedTile}">
-                    <Label Foreground="Blue" Content="{Binding Column}"/>
-                    <Label Foreground="Blue" Content="{Binding Row}"/>
+                    <Label Foreground="Blue" Content="{Binding X}"/>
+                    <Label Foreground="Blue" Content="{Binding Y}"/>
                     <Label Foreground="Red" Content="{Binding Type}"/>
                     <StackPanel Orientation="Horizontal" Visibility="{Binding HasUnits, Converter={StaticResource bool2visibility}}">
                         <Label Content="Race:"/>
