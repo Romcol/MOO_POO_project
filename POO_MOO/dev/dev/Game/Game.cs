@@ -15,6 +15,7 @@ namespace dev
     {
         public static Game INSTANCE = new Game();
 
+		private bool dec_turns = false;
 
         public int turns_left {
             get;
@@ -65,7 +66,9 @@ namespace dev
                 u.initMovePoints();
             });
             this.turn.next();
-			this.turns_left--;
+			if(this.dec_turns)
+				this.turns_left--;
+			this.dec_turns = !this.dec_turns;
         }
 
 		public bool isFinished()
