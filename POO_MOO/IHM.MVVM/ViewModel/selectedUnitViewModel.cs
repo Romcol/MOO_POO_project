@@ -16,15 +16,16 @@ namespace IHM.MVVM.ViewModel
         public SelectedUnitViewModel(UnitAPI unit)
         {
             this.unit = unit;
-            RaisePropertyChanged("xUnit");
-            RaisePropertyChanged("yUnit");
-            RaisePropertyChanged("raceUnit");
+            this.Refresh();
         }
 
         public void Refresh()
         {
             RaisePropertyChanged("xUnit");
             RaisePropertyChanged("yUnit");
+            RaisePropertyChanged("isHuman");
+            RaisePropertyChanged("isOrc");
+            RaisePropertyChanged("isElf");
             RaisePropertyChanged("raceUnit");
         }
         public UnitAPI getUnit()
@@ -42,6 +43,21 @@ namespace IHM.MVVM.ViewModel
         public Race raceUnit
         {
             get { return unit.getRace(); }
+        }
+
+        public bool isHuman
+        {
+            get { return (unit.getRace() == Race.Human); }
+        }
+
+        public bool isElf
+        {
+            get { return (unit.getRace() == Race.Elf); }
+        }
+
+        public bool isOrc
+        {
+            get { return (unit.getRace() == Race.Orc); }
         }
     }
 }

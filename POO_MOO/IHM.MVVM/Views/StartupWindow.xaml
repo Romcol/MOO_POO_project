@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:IHM.MVVM"
         xmlns:Dev="clr-namespace:dev;assembly=dev"
         mc:Ignorable="d"
-        Title="SmallWorld" Height="500" Width="800">
+        Title="SmallWorld" Height="500" Width="1000">
     <Grid>
 
         <Grid.Resources>

@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IHM.MVVM.Views"
         mc:Ignorable="d"
-        Title="Smallworld" Height="500" Width="800">
+        Title="Smallworld" Height="500" Width="1000">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="bool2visibility"/>
     </Window.Resources>
     <DockPanel>
         <Grid DockPanel.Dock="Right" Visibility="{Binding hasMemUnit, Converter={StaticResource bool2visibility}}">
-            <StackPanel  Orientation="Horizontal" Grid.Row="0" DataContext="{Binding MemUnit}">
+            <StackPanel  Orientation="Vertical" Grid.Row="0" DataContext="{Binding MemUnit}">
             <Label Content="Selected:"/>
-            <Label Content="{Binding raceUnit}"/>
-            <Label Content="{Binding xUnit}"/>
-            <Label Content=","/>
-            <Label Content="{Binding yUnit}"/>
-        </StackPanel>
+            <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding isElf, Converter={StaticResource bool2visibility}}" />
+            <Image Source="orc.png" Width="50" Height="50" Visibility="{Binding isOrc, Converter={StaticResource bool2visibility}}" />
+            <Image Source="human.png" Width="50" Height="50" Visibility="{Binding isHuman, Converter={StaticResource bool2visibility}}" />
+                <StackPanel  Orientation="Horizontal">
+                    <Label Content="{Binding xUnit}"/>
+                    <Label Content=","/>
+                    <Label Content="{Binding yUnit}"/>
+                </StackPanel>
+            </StackPanel>
         </Grid>
         <Grid DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
@@ -56,14 +60,17 @@
             <Button HorizontalAlignment="Right"  Content="Action" Command="{Binding DoAction}" Margin="0,0,60,0" Grid.Row="0"/>
             <Button HorizontalAlignment="Right"  Content="Next Turn" Command="{Binding NextTurn}" Grid.Row="0"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
-                <Label Content="Nation 1:"/>
+                <Label Foreground="Black" Content="{Binding p1Name}" FontWeight="Bold"/>
+                <Label Content=":"/>
                 <Label Foreground="Silver" Content="{Binding p1Race}" FontWeight="Bold"/>
                 <Label Foreground="Red" Visibility="{Binding isP1Turn, Converter={StaticResource bool2visibility}}" FontWeight="Bold" Content="(You!)"/>
                 <Label Content="Pts:"/>
                 <Label Foreground="Green" Content="{Binding p1Pts}"/>
                 <Label Content="Units:"/>
                 <Label Foreground="Red" Content="{Binding p1Units}"/>
-                <Label Content="| Nation 2:"/>
+                <Label Content="|"/>
+                <Label Foreground="Black" Content="{Binding p2Name}" FontWeight="Bold"/>
+                <Label Content=":"/>
                 <Label Foreground="Silver" Content="{Binding p2Race}" FontWeight="Bold"/>
                 <Label Foreground="Red" Visibility="{Binding isP2Turn, Converter={StaticResource bool2visibility}}" FontWeight="Bold" Content="(You!)"/>
                 <Label Content="Pts:"/>

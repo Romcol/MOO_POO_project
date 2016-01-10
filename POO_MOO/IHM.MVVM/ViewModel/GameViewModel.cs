@@ -32,10 +32,15 @@ namespace IHM.MVVM.ViewModels
             }
             this.p1Race = game.player1.race;
             this.p2Race = game.player2.race;
+            this.p1Name = game.player1.name;
+            this.p2Name = game.player2.name;
             updateTiles();
             this.Refresh();
             this.SelectedTile = tiles.ElementAt(game.turn.currentPlayer.units.FirstOrDefault().x + game.map.size*game.turn.currentPlayer.units.FirstOrDefault().y);
         }
+
+        public String p1Name { get; private set; }
+        public String p2Name { get; private set; }
 
         public int TurnsLeft { get; private set; }
 
