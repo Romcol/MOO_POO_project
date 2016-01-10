@@ -26,7 +26,7 @@ namespace dev
 		/// <returns></returns>
 		public override bool canAttack(UnitAPI unit)
 		{
-			return  unit.getRace() != this.getRace() && Map.areAdjacent(unit.x, unit.y, this.x, this.y);
+			return this.canMove(unit.x, unit.y) && unit.getRace() != this.getRace() && Map.areAdjacent(unit.x, unit.y, this.x, this.y);
 		}
 
 		public override Race getRace()

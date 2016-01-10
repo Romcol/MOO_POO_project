@@ -22,7 +22,7 @@ namespace dev
 
 		public override bool canAttack(UnitAPI unit)
 		{
-			if (unit.getRace() == this.getRace()) return false;
+			if (!this.canMove(unit.x, unit.y) || unit.getRace() == this.getRace()) return false;
 
 			if (Game.INSTANCE.map.getTile(this.x,this.y).getType() == TileType.Mountain)
 			{

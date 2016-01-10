@@ -27,7 +27,7 @@ namespace IHM.MVVM.ViewModels
             {
                 for (int c = 0; c < game.map.size; c++)
                 {
-                    tiles.Add(new TileViewModel(game.getUnits(l,c), this,l, c, game.map.tiles[l, c]));
+                    tiles.Add(new TileViewModel(game.getUnits(l,c), this, l, c, game.map.tiles[l, c]));
                 }
             }
             this.p1Race = game.player1.race;
@@ -81,15 +81,10 @@ namespace IHM.MVVM.ViewModels
             {
                 for (int c = 0; c < game.map.size; c++)
                 {
-                    TileViewModel tile = tiles.ElementAt(l + c * game.map.size);
-                    tile.Refresh(game.getUnits(c, l), game.getUnits(tile.X,tile.Y).FirstOrDefault());
+                    TileViewModel tile = tiles.ElementAt(c + l * game.map.size);
+                    tile.Refresh(game.getUnits(l,c), game.getUnits(l,c).FirstOrDefault());
                 }
             }
-            /*
-            foreach (var tile in tiles)
-            {
-                tile.Refresh();
-            }*/
         }
         /// <summary>
         /// Acces à la largeur de la map
@@ -227,10 +222,7 @@ namespace IHM.MVVM.ViewModels
 
         private void doActionAction()
         {
-            /*
-            bool canAttack(UnitAPI unit);
-            void attack(UnitAPI unit);*/
-            if (memUnit != null)
+            if (MemUnit != null && (MemUnit.getUnit().getPlayer() == game.turn.currentPlayer))
             {
                 UnitAPI currunit = memUnit.getUnit();
                 if (SelectedTile.getEnemy() != null)
@@ -239,6 +231,10 @@ namespace IHM.MVVM.ViewModels
                     {
                         UnitAPI loser = currunit.attack(SelectedTile.getEnemy());
                         MessageBox.Show(loser.getPlayer().name + " loses the battle!");
+                        if(loser.lifePoints <= 0)
+                        {
+                            MessageBox.Show(loser.getPlayer().name + " is dead!");
+                        }
                     }
                     else
                     {
@@ -255,10 +251,10 @@ namespace IHM.MVVM.ViewModels
                         MessageBox.Show("Move action not possible");
                     }
                 }
-                    //Global Refresh
-                    memUnit.Refresh();
-                    updateTiles();
-                    this.Refresh();
+                //Global Refresh
+                memUnit.Refresh();
+                updateTiles();
+                this.Refresh();
             }
             else
             {

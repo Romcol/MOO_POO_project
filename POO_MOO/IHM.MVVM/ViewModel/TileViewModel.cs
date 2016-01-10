@@ -76,7 +76,7 @@ namespace IHM.MVVM.ViewModels
         {
             int max = 0;
             UnitAPI maxDefenceUnit = tileUnits.FirstOrDefault();
-            if ((maxDefenceUnit == null) || (this.CurrentUnit.getRace() == maxDefenceUnit.getRace()))  return null;
+            if ((maxDefenceUnit == null) || (gameView.MemUnit.getUnit().getPlayer() == maxDefenceUnit.getPlayer()))  return null;
             tileUnits.ForEach(delegate (UnitAPI u) {
                 if (u.defencePoints > max)
                 {

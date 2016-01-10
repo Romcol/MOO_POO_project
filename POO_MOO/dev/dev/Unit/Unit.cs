@@ -83,17 +83,18 @@ namespace dev
             int randomDamages = new Random().Next(1, loser.lifePoints);
             loser.lifePoints -= randomDamages;
 
-            if (unit.lifePoints < 0)
+            if (unit.lifePoints <= 0)
             {
                 unit.kill();
                 //If Defender is killed and there's no enemy on the tile the unit can move to the selected tile
-                if(Game.INSTANCE.getUnits(x,y) == null)
+                if(Game.INSTANCE.getUnits(x,y).Count() == 0)
                 {
                     this.x = x;
                     this.y = y;
+                    this.getPlayer().victoryPoints += Game.INSTANCE.map.getTile(x, y).getVictoryPoints(this.getRace());
                 }
             }
-            if (this.lifePoints < 0) this.kill();
+            if (this.lifePoints <= 0) this.kill();
 
             return loser;
 
@@ -104,7 +105,8 @@ namespace dev
 		{
 			this.movePoints = MOV_PTS;
 		}
-		public void kill() { this.getPlayer().units.Remove(this); }
+		public void kill() { this.getPlayer().units.Remove(this);
+        }
 
 		public PlayerAPI getPlayer()
 		{
