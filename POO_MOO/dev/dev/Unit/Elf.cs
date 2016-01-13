@@ -26,7 +26,7 @@ namespace dev
 
 
 		public override bool canAttack(UnitAPI unit) {
-			return unit.getRace() != this.getRace() && Map.distance(unit.x, unit.y, this.x, this.y) <=2 && Map.inline(unit.x, unit.y, this.x, this.y);
+			return unit.getRace() != this.getRace() && Map.distance(unit.x, unit.y, this.x, this.y) <=2 && Map.inline(unit.x, unit.y, this.x, this.y) && this.movePoints >= 1;
 		}
 	}
 }
