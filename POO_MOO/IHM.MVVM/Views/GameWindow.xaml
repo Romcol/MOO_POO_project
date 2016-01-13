@@ -5,11 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IHM.MVVM.Views"
         mc:Ignorable="d"
-        Title="Smallworld" Height="500" Width="1000">
+        Title="Smallworld" Height="563" Width="1000">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="bool2visibility"/>
     </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding NextTurn}" Key="Enter"/>
+    </Window.InputBindings>
     <DockPanel>
+        <DockPanel.Background>
+            <ImageBrush ImageSource="bg.jpg"/>
+        </DockPanel.Background>
         <Grid DockPanel.Dock="Right" Visibility="{Binding hasMemUnit, Converter={StaticResource bool2visibility}}">
             <StackPanel  Orientation="Vertical" Grid.Row="0" DataContext="{Binding MemUnit}">
             <Label Content="Selected:"/>
@@ -99,8 +105,9 @@
                 <DataTemplate>
                     <!--implictement = Datacontext = l'item-->
                     <Grid>
-                        <Rectangle Fill="{Binding Color}" Stroke="Black" StrokeThickness="1" Width="50" Height="50"/>
+                        <!--<Rectangle Fill="{Binding Color}" Stroke="Black" StrokeThickness="1" Width="50" Height="50"/>-->
                         <!--<Ellipse Fill="White" "/>-->
+                        <Image Source="{Binding ImageSource}" Width="50" Height="50"/>
                         <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding HasElf, Converter={StaticResource bool2visibility}}" />
                         <Image Source="orc.png" Width="50" Height="50" Visibility="{Binding HasOrc, Converter={StaticResource bool2visibility}}" />
                         <Image Source="human.png" Width="50" Height="50" Visibility="{Binding HasHuman, Converter={StaticResource bool2visibility}}" />

@@ -77,9 +77,7 @@ namespace IHM.MVVM.ViewModels
             RaisePropertyChanged("isP2Turn");
             RaisePropertyChanged("TurnsLeft");
         }
-        /// <summary>
-        /// Mise à jour des Tuiles : les resources en fer peuvent diminuer à chaque Tour
-        /// </summary>
+
         private void updateTiles()
         {
             for (int l = 0; l < game.map.size; l++)
@@ -179,10 +177,6 @@ namespace IHM.MVVM.ViewModels
             {
                 MessageBox.Show("No unit to select");
             }
-            // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
-            Task.Factory.StartNew(() =>
-            {
-            });
         }
 
         private ICommand nextTurn;
@@ -196,22 +190,11 @@ namespace IHM.MVVM.ViewModels
 			}
 		}
 
-
-
 		private void nextTurnAction()
         {
             game.next();
             this.Refresh();
-            //memUnit
-            //SelectedTile
-            // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
-            Task.Factory.StartNew(() =>
-            {
-                /*engine.NextTurn();
-                updateUnit();  // les appels sont implicitment fait dans le bon thread dans le modèle MVVM
-                updateTiles();
-                Message = "Prochain tour";*/
-            });
+            this.isFinished();
         }
 
         private ICommand doAction;
@@ -265,16 +248,7 @@ namespace IHM.MVVM.ViewModels
             {
                 MessageBox.Show("No unit selected");
             }
-            //memUnit
-            //SelectedTile
-            // création d'un thread pour lancer le calcul du tour suivant sans que cela soit bloquant pour l'IHM
-            Task.Factory.StartNew(() =>
-            {
-                /*engine.NextTurn();
-                updateUnit();  // les appels sont implicitment fait dans le bon thread dans le modèle MVVM
-                updateTiles();
-                Message = "Prochain tour";*/
-            });
+            this.isFinished();
         }
 
         private ICommand save;
@@ -299,5 +273,19 @@ namespace IHM.MVVM.ViewModels
 			}
 			
 		}
+        private void isFinished()
+        {
+            if(game.isFinished())
+            {
+                PlayerAPI player = game.getWinner();
+                if (player == null)
+                {
+                    MessageBox.Show("Nobody wins!");
+                }
+                else {
+                    MessageBox.Show(player + " wins!");
+                }
+            }
+        }
     }
 }

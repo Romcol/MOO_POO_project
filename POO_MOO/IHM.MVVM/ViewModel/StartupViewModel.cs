@@ -73,7 +73,6 @@ namespace IHM.MVVM.ViewModels
 		{
 			get
 			{
-				;
 				if (load == null)
 					load = new RelayCommand(loadAction);
 				return load;
@@ -114,7 +113,6 @@ namespace IHM.MVVM.ViewModels
 				MessageBox.Show("No game saved."); return;
 			}
 			Views.MainWindow.launchGame(game);
-
 		}
 
 

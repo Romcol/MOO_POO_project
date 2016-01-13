@@ -129,10 +129,21 @@
     <Resource Include="Views\elf.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\orc.png" />
+    <Resource Include="Views\human.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\human.png" />
+    <Resource Include="Views\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\mountain.png" />
+    <Resource Include="Views\plain.png" />
+    <Resource Include="Views\water.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -36,9 +36,11 @@ namespace IHM.MVVM.Views
         public static void launchGame(GameAPI gameInst)
         {
             game = new GameWindow();
-            game.DataContext = new GameViewModel(gameInst);
+            GameViewModel gameview = new GameViewModel(gameInst);
+            game.DataContext = gameview;
             startup.Hide();
             game.Show();
+            //gameview.updateTiles();
         }
     }
 }

@@ -22,28 +22,32 @@ namespace IHM.MVVM.ViewModels
             if (tile is Plain)
             {
                 Type = "Terre";
-                Color = "Wheat";
+                //Color = "Wheat";
+                ImageSource = "plain.png";
             }
             if (tile is Forest)
             {
                 Type = "Forêt";
-                Color = "ForestGreen";
+                //Color = "ForestGreen
+                ImageSource = "forest.png";
             }
             if (tile is Water)
             {
                 Type = "Water";
-                Color = "DarkBlue";
+                //Color = "DarkBlue";
+                ImageSource = "water.png";
             }
             if (tile is Mountain)
             {
                 Type = "Moutain";
-                Color = "Brown";
+                //Color = "Brown";
+                ImageSource = "mountain.png";
             }
             X = x;
             Y = y;
         }
 
-
+        public string ImageSource { get; private set; }
         public string Color { get; private set; }
         public string Type { get; private set; }
 
