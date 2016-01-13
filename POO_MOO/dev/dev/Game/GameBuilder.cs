@@ -60,7 +60,7 @@ namespace dev
 				Stream stream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read);
 				Game ret = (Game)formatter.Deserialize(stream);
 				stream.Close();
-
+				Game.INSTANCE = ret;
 				return ret;
 			}
 			catch(Exception e)
