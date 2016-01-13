@@ -45,6 +45,8 @@ namespace dev
 			return this.tiles[x,y];
 		}
 
+
+
 		public bool verifyCoord(int x)
 		{
 			return x >= 0 && x < this.size;
@@ -59,6 +61,11 @@ namespace dev
 		{
 			return Math.Abs(x1 - x2) + Math.Abs(y1 - y2);
         }
+
+		internal static bool inline(int x1, int y1, int x2, int y2)
+		{
+			return x1 == x2 || y1 == y2;
+		}
 
 	}
 }

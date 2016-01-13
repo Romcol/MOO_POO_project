@@ -35,7 +35,8 @@ namespace dev
 		{
 			double moveCost = Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
             // checks if enough move point/tile is free
-			if (moveCost == -1 || moveCost > this.movePoints || this.hasEnemyUnits())
+
+			if (moveCost == -1 || moveCost > this.movePoints)
 			{
 				return false;
 			}
@@ -61,11 +62,14 @@ namespace dev
 
             this.movePoints -= Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
 
-            double attackerPoints = (this.lifePoints / this.InitialLifePoints) * this.attackPoints;
-			double defenderPoints = (this.lifePoints / this.InitialLifePoints) * this.defencePoints;
+			double attackerHealth = (double) this.lifePoints / this.InitialLifePoints;
+			double defenderHealth = (double) unit.lifePoints / unit.InitialLifePoints;
+
+			double attackerPoints = attackerHealth * this.attackPoints;
+			double defenderPoints = defenderHealth * this.defencePoints;
 
 			double attackerRate = attackerPoints / (attackerPoints + defenderPoints)*100;
-			double defenderRate = defencePoints / (attackerPoints + defenderPoints)*100;
+			double defenderRate = defenderPoints / (attackerPoints + defenderPoints)*100;
 
 			int random = new Random().Next(1,100);
 
