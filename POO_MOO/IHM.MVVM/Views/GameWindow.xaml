@@ -9,6 +9,9 @@
         WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="bool2visibility"/>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="16" />
+        </Style>
     </Window.Resources>
     <Window.InputBindings>
         <KeyBinding Command="{Binding NextTurn}" Key="Enter"/>
@@ -19,11 +22,12 @@
         </DockPanel.Background>
         <Grid DockPanel.Dock="Right" Visibility="{Binding hasMemUnit, Converter={StaticResource bool2visibility}}">
             <StackPanel  Orientation="Vertical" Grid.Row="0" DataContext="{Binding MemUnit}">
-            <Label Content="Selected:"/>
-            <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding isElf, Converter={StaticResource bool2visibility}}" />
-            <Image Source="orc.png" Width="50" Height="50" Visibility="{Binding isOrc, Converter={StaticResource bool2visibility}}" />
-            <Image Source="human.png" Width="50" Height="50" Visibility="{Binding isHuman, Converter={StaticResource bool2visibility}}" />
+                <Label Content="--Selected--" HorizontalAlignment="Center"/>
+                <Image Source="elf.gif" Width="50" Height="50" Visibility="{Binding isElf, Converter={StaticResource bool2visibility}}" />
+                <Image Source="orc.png" Width="50" Height="50" Visibility="{Binding isOrc, Converter={StaticResource bool2visibility}}" />
+                <Image Source="human.png" Width="50" Height="50" Visibility="{Binding isHuman, Converter={StaticResource bool2visibility}}" />
                 <StackPanel  Orientation="Horizontal">
+                    <Label Content="Coords:"/>
                     <Label Content="{Binding xUnit}"/>
                     <Label Content=","/>
                     <Label Content="{Binding yUnit}"/>
@@ -36,7 +40,7 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <!-- Définiton des labels d'information / Par Binding sur SelectedTile -->
-            <StackPanel  Orientation="Horizontal" Grid.Row="0">
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
                 <StackPanel Orientation="Horizontal" DataContext="{Binding SelectedTile}">
                     <Label Foreground="Blue" Content="{Binding X}"/>
                     <Label Foreground="Blue" Content="{Binding Y}"/>
@@ -62,10 +66,10 @@
                 <Label Content="{Binding Message}" />
             </StackPanel>-->
             <!-- Creation du bouton "Fin de tour" et Association à la commande 'NextTurn' -->
-            <Button HorizontalAlignment="Right"  Content="Select" Command="{Binding Select}" Margin="0,0,170,0" Grid.Row="0"/>
-            <Button HorizontalAlignment="Right"  Content="Save" Command="{Binding Save}" Margin="0,0,140,0" Grid.Row="0"/>
-            <Button HorizontalAlignment="Right"  Content="Action" Command="{Binding DoAction}" Margin="0,0,60,0" Grid.Row="0"/>
-            <Button HorizontalAlignment="Right"  Content="Next Turn" Command="{Binding NextTurn}" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Background="White" Content="Select" Command="{Binding Select}" Margin="0,0,140,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Background="White" Content="Save" Command="{Binding Save}" Margin="0,0,105.6,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Background="White" Content="Action" Command="{Binding DoAction}" Margin="0,0,61.6,0" Grid.Row="0"/>
+            <Button HorizontalAlignment="Right"  Background="White" Content="Next Turn" Command="{Binding NextTurn}" Grid.Row="0"/>
             <StackPanel Orientation="Horizontal" Grid.Row="1">
                 <Label Foreground="Black" Content="{Binding p1Name}" FontWeight="Bold"/>
                 <Label Content=":"/>
