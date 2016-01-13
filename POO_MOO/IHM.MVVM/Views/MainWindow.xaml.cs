@@ -32,15 +32,13 @@ namespace IHM.MVVM.Views
             startup.DataContext = new StartupViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
             startup.Show();
         }
-
         public static void launchGame(GameAPI gameInst)
         {
             game = new GameWindow();
             GameViewModel gameview = new GameViewModel(gameInst);
             game.DataContext = gameview;
-            startup.Hide();
+            Views.StartupWindow.getStartup().Hide();
             game.Show();
-            //gameview.updateTiles();
         }
     }
 }

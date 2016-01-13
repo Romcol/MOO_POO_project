@@ -20,8 +20,6 @@ namespace IHM.MVVM
         {
             base.OnStartup(e);
             var window = new MainWindow();
-            //window.DataContext = new MainViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
-            //window.Show();
         }
     }
 }

@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:IHM.MVVM"
         xmlns:Dev="clr-namespace:dev;assembly=dev"
         mc:Ignorable="d"
-        Title="SmallWorld" Height="563" Width="1000">
+        Title="SmallWorld" Height="563" Width="1000"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="bg.jpg"/>

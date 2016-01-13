@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IHM.MVVM.Views"
         mc:Ignorable="d"
-        Title="Smallworld" Height="563" Width="1000">
+        Title="Smallworld" Height="563" Width="1000"
+        WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="bool2visibility"/>
     </Window.Resources>
@@ -70,7 +71,7 @@
                 <Label Content=":"/>
                 <Label Foreground="Silver" Content="{Binding p1Race}" FontWeight="Bold"/>
                 <Label Foreground="Red" Visibility="{Binding isP1Turn, Converter={StaticResource bool2visibility}}" FontWeight="Bold" Content="(You!)"/>
-                <Label Content="Pts:"/>
+                <Label Content="Victory points:"/>
                 <Label Foreground="Green" Content="{Binding p1Pts}"/>
                 <Label Content="Units:"/>
                 <Label Foreground="Red" Content="{Binding p1Units}"/>
@@ -79,7 +80,7 @@
                 <Label Content=":"/>
                 <Label Foreground="Silver" Content="{Binding p2Race}" FontWeight="Bold"/>
                 <Label Foreground="Red" Visibility="{Binding isP2Turn, Converter={StaticResource bool2visibility}}" FontWeight="Bold" Content="(You!)"/>
-                <Label Content="Pts:"/>
+                <Label Content="Victory points:"/>
                 <Label Foreground="Green" Content="{Binding p2Pts}"/>
                 <Label Content="Units:"/>
                 <Label Foreground="Red" Content="{Binding p2Units}"/>

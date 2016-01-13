@@ -1,4 +1,6 @@
-﻿using System;
+﻿using API;
+using IHM.MVVM.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,19 @@ namespace IHM.MVVM.Views
     /// </summary>
     public partial class GameWindow : Window
     {
+        static GameWindow gameWin;
+        static StartupWindow startup;
         public GameWindow()
         {
             InitializeComponent();
+            gameWin = this;
+        }
+        public static void goToStartup()
+        {
+            startup = new StartupWindow();
+            startup.DataContext = new StartupViewModel(); // couplage de la vue (fenêtre principale) avec le VueModel (MainViewModel)
+            gameWin.Hide();
+            startup.Show();
         }
     }
 }

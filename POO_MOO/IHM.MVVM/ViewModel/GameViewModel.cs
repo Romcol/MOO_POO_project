@@ -287,6 +287,7 @@ namespace IHM.MVVM.ViewModels
                 else {
                     MessageBox.Show(player.name + " wins!");
                 }
+                Views.GameWindow.goToStartup();
             }
         }
     }

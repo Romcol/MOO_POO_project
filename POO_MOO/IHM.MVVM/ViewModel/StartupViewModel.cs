@@ -42,19 +42,6 @@ namespace IHM.MVVM.ViewModels
 		/// </summary>
 		public StartupViewModel()
         {
-			
-            /*engine = new Cours.Engine.Engine();
-            map = engine.GetMap();
-
-            // création pour chaque tuile de sa VueModele associée 'TileViewModel'
-            for (int l = 0; l < map.Height; l++)
-            {
-                for (int c = 0; c < map.Width; c++)
-                {
-                    tiles.Add(new TileViewModel(l, c, map.Tiles[c, l]));
-                }
-            }
-            updateUnit();*/
         }
 
 		private ICommand play;

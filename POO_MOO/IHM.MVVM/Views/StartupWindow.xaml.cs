@@ -20,9 +20,16 @@ namespace IHM.MVVM.Views
     /// </summary>
     public partial class StartupWindow : Window
     {
+        static StartupWindow startup;
         public StartupWindow()
         {
             InitializeComponent();
+            startup = this;
+        }
+
+        public static StartupWindow getStartup()
+        {
+            return startup;
         }
     }
 }

@@ -3,5 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:loc="clr-namespace:IHM.MVVM.Views"
         xmlns:local="clr-namespace:IHM.MVVM"
-        Title="SmallWorld" Height="500" Width="1000">
+        Title="SmallWorld" Height="563" Width="1000"
+        WindowStartupLocation="CenterScreen">
 </Window>
