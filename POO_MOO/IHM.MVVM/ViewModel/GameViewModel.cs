@@ -285,7 +285,7 @@ namespace IHM.MVVM.ViewModels
                     MessageBox.Show("Nobody wins!");
                 }
                 else {
-                    MessageBox.Show(player + " wins!");
+                    MessageBox.Show(player.name + " wins!");
                 }
             }
         }
