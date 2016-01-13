@@ -86,6 +86,7 @@ namespace IHM.MVVM.ViewModels
                 {
                     TileViewModel tile = tiles.ElementAt(c + l * game.map.size);
                     tile.Refresh(game.getUnits(l,c), game.getUnits(l,c).FirstOrDefault());
+
                 }
             }
         }
@@ -267,6 +268,7 @@ namespace IHM.MVVM.ViewModels
 			try
 			{
 				builder.save("save.dat");
+				MessageBox.Show("The game has been saved.");
 			} catch(Exception e)
 			{
 				MessageBox.Show("Error while saving the game.");

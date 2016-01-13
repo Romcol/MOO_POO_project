@@ -12,6 +12,8 @@ namespace API
 		int x { get; set; }
 		int y { get; set; }
 
+		int InitialLifePoints { get; }
+
 		int lifePoints { get; set; }
 		int attackPoints { get; set; }
 		int defencePoints { get; set; }
