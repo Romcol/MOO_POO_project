@@ -7,21 +7,48 @@
 
 using namespace std;
 
-
+Algo::Algo() {}
 
 void Algo::fillMap(TileType map[], int size, int pos[])
 {
-	int count = 0;
+	vector<TileType> tileInit;
+	int count;
+	int r;
+	srand(time(NULL));
+
+	count = 0;
 	for (int i = 0; i < size; i++)
 	{
 		for (int j = 0; j < size; j++)
 		{
-			map[i+size*j] = (TileType)(count % 4);
+			tileInit.push_back((TileType)(count % 4));
 			count++;
 		}
 	}
-	pos[0] = 1;
-	pos[size*size-1] = 2;
+
+	count = 0;
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			r = rand() % tileInit.size();
+			map[count] = tileInit[r];
+			tileInit.erase(tileInit.begin() + r);
+			count++;
+		}
+	}
+
+	r = rand() % 1 + 1;
+	int a = rand() % 1;
+	if (a == 0)
+	{
+		pos[0] = r;
+		pos[size*size - 1] = (r == 1) ? 2 : 1;
+	}
+	else {
+		pos[size-1] = r;
+		pos[size*size-size] = (r == 1) ? 2 : 1;
+	}
 }
 
 int getIndexMax(int a[])

@@ -1,4 +1,6 @@
 #pragma once
+#include <vector>
+using namespace std;
 
 enum TileType {
 	Plain = 0,
@@ -14,9 +16,8 @@ enum Race {
 };
 
 class Algo {
-
 public:
-	Algo() {}
+	Algo();
 	~Algo() {}
 
 	// You can change the return type and the parameters according to your needs.
