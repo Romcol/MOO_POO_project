@@ -59,8 +59,9 @@ namespace dev
 		public UnitAPI attack(UnitAPI unit)
 		{
 			if (!this.canAttack(unit)) return null;
-
-            this.movePoints -= Game.INSTANCE.map.getTile(x, y).moveCost(this.getRace());
+            int currX = unit.x;
+            int currY = unit.y;
+            this.movePoints -= Game.INSTANCE.map.getTile(currX, currY).moveCost(this.getRace());
 
 			double attackerHealth = (double) this.lifePoints / this.InitialLifePoints;
 			double defenderHealth = (double) unit.lifePoints / unit.InitialLifePoints;
@@ -90,11 +91,11 @@ namespace dev
             if (unit.lifePoints <= 0)
             {
                 unit.kill();
-                //If Defender is killed and there's no enemy on the tile the unit can move to the selected tile
-                if(Game.INSTANCE.getUnits(x,y).Count() == 0)
+                //If Defender is killed and there's no enemy on the tile the unit shall move to the selected tile
+                if (Game.INSTANCE.getUnits(currX,currY).Count() == 0)
                 {
-                    this.x = x;
-                    this.y = y;
+                    this.x = currX;
+                    this.y = currY;
                     this.getPlayer().victoryPoints += Game.INSTANCE.map.getTile(x, y).getVictoryPoints(this.getRace());
                 }
             }
