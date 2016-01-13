@@ -73,7 +73,7 @@ namespace dev
 
 		public bool isFinished()
 		{
-			return this.turns_left == 0 || this.player1.units.Count() == 0 || this.player2.units.Count() == 0;
+			return this.turns_left <= 0 || this.player1.units.Count() == 0 || this.player2.units.Count() == 0;
         }
 
 		public PlayerAPI getWinner()
@@ -87,11 +87,18 @@ namespace dev
 			if (this.player2.units.Count() == 0)
 				return this.player1;
 			if (this.turns_left == 0)
-				return null;
+			{
+				if (this.player1.victoryPoints > this.player2.victoryPoints)
+				{
+					return this.player1;
+				} else if (this.player1.victoryPoints < this.player2.victoryPoints)
+				{
+					return this.player2;
+				}
+			}
 
 			return null;
 		}
-
 
 
 		public List<UnitAPI> getUnits(int x, int y, PlayerAPI enemy = null)
