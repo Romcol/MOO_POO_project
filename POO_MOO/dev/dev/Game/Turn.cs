@@ -6,7 +6,8 @@ using API;
 
 namespace dev
 {
-    public class Turn : TurnAPI
+	[Serializable()]
+	public class Turn : TurnAPI
     {
 		/// <summary>
 		///  Current player
