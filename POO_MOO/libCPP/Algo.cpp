@@ -38,8 +38,8 @@ void Algo::fillMap(TileType map[], int size, int pos[])
 		}
 	}
 
-	r = rand() % 1 + 1;
-	int a = rand() % 1;
+	r = ((int)rand() %2) + 1;
+	int a = ((int)rand())%2;
 	if (a == 0)
 	{
 		pos[0] = r;

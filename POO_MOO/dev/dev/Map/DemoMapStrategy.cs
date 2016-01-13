@@ -7,7 +7,7 @@ namespace dev
 {
     public class DemoMapStrategy : MapStrategy
     {
-		private const int SIZE = 4;
+		private const int SIZE = 6;
 		private const int NB_TURNS = 5;
 		private const int NB_UNITS = 4;
 

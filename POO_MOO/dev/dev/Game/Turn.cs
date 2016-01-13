@@ -42,10 +42,10 @@ namespace dev
         {
 			if(this.actions != null) this.actions.Clear();
 
-			Random rnd = new Random();
-			int rand = rnd.Next(0, 1);
+			Random rnd = new Random(DateTime.Now.Millisecond);
+			int rand = rnd.Next(0,2);
 
-			if(rand == 1)
+			if(rand == 0)
 			{
 				this.currentPlayer = Game.INSTANCE.player1;
 			}
